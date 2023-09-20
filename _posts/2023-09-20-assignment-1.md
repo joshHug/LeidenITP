@@ -2,7 +2,7 @@
 
 **Deadline: 10 October 2023 23:59**
 
-Hand in your assignment via Brightspace. See the "Delivery" section for instructions.
+Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
 ## PyCharm projects
 
@@ -39,4 +39,4 @@ Once you are sure about your program, save a copy of your `.py` file with your *
 
 If your program consists of multiple files, then compress these into a `.zip` file with the same naming scheme: `123456_1.zip`. Please make sure to **not** include your `venv` folder if you do this. Your submission should not be larger than 50kB.
 
-Next, upload your `.py` or `.zip` file on Brightspace under "Assignments" > Assignment 1 - Higher or Lower?
+Next, upload your `.py` or `.zip` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322) under "Assignments" > Assignment 1 - Higher or Lower?
