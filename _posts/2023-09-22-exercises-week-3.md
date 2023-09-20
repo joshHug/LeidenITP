@@ -2,6 +2,8 @@ There is no lab session on Friday 22 September, but we recommend you do the foll
 
 You can refer to [Lab 2](/LeidenITP/2023/09/14/lab-2.html) for a refresher on CodingBat.
 
+Should you have any questions, please ask those in [the discussion forum on Brightspace](https://brightspace.universiteitleiden.nl/d2l/le/240322/discussions/List). We will also practice these topics during the lab session on Friday 29 September.
+
 ### strings
 - [make_tags](https://codingbat.com/prob/p132290)
 - [without_end](https://codingbat.com/prob/p138533)
