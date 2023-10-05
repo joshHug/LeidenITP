@@ -20,7 +20,7 @@ tagline: tagline
 description: description
 author: Josh Hug
 #baseurl: '/calendar' # the subpath of your site, e.g. /blog
-url: 'https://joshhug.github.io/leidenITP/' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://joshhug.github.io/LeidenITP/' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE"]
 
 # Theme settings

@@ -1,5 +1,5 @@
 ---
-redirect_to: "https://joshhug.github.io/leidenITP/calendar"
+redirect_to: "https://joshhug.github.io/LeidenITP/calendar"
 ---
 
 Redirecting...
