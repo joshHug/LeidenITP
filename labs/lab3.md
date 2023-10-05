@@ -3,10 +3,9 @@ layout: minimal
 title: Lab 3
 description: &desc Lab 3
 summary: *desc
-has_children: true
-has_toc: true
-parent: Leiden ITP
-permalink: /:path/
+nav_order: 1
+parent: Labs
+grand_parent: Leiden ITP
 ---
 
 # {{ page.title }}
