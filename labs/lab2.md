@@ -1,4 +1,22 @@
-Welcome to week 2! We hope you like the new look of the lab.
+---
+layout: minimal
+title: Lab 2
+description: &desc Lab 2
+summary: *desc
+has_children: true
+has_toc: true
+parent: Leiden ITP
+permalink: /:path/
+---
+
+# {{ page.title }}
+{: .no_toc .mb-2 }
+
+{{ page.description }}
+{: .fs-6 .fw-300 }
+
+1. TOC
+{:toc}
 
 Reminder before we get started: If you have any problems or additional questions, feel free to post them on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/le/240322/discussions/List). Questions can be about anything, not just the contents of this lab page.
 
@@ -60,7 +78,7 @@ Once you've passed this exercise, you're ready to start using the new material f
 
 ## Booleans Practice
 
-In the lecture, we covered Booleans and operators. For example, the expression `True and False` evaluates to `False`. In other words `True and False == False`.
+In the lecture, we covered booleans and operators. For example, the expression `True and False` evaluates to `False`. In other words `True and False == False`.
 
 The following statements cover all of the important facts we learned about the Boolean operators `not`, `and` and `or`. For a further refresher, you can refer to the lecture slides on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2628793).
 
@@ -96,7 +114,7 @@ Do the following exercises on `CodingBat`. If you're someone who came into the c
 - [alarm_clock](https://codingbat.com/prob/p119867)
 - [near_ten](https://codingbat.com/prob/p165321)
 
-Optional challenge for people with prior programming experience: Do these problems without using `if-elif-else`. It's possible, but you'll have to be very clever and pay close attention to the week 2 lecture notes. Note: You'd never want to write code like this in real life. Writing easy-to-read code is better than writing clever-and-tricky code.
+Optional challenge for people with prior programming experience: Do these problems without using `if-elif-else`. It's possible, but you'll have to very clever and pay close attention to the week 2 lecture notes. Note: You'd never want to write code like this in real life. Writing easy-to-read code is better than writing clever-and-tricky code.
 
 ## Lists Practice
 

@@ -1,3 +1,23 @@
+---
+layout: minimal
+title: Lab 5
+description: &desc Lab 5
+summary: *desc
+has_children: true
+has_toc: true
+parent: Leiden ITP
+permalink: /:path/
+---
+
+# {{ page.title }}
+{: .no_toc .mb-2 }
+
+{{ page.description }}
+{: .fs-6 .fw-300 }
+
+1. TOC
+{:toc}
+
 Welcome to week 5!
 
 This week contains a number of further exercises on loops and a couple on dictionaries.

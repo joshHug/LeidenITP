@@ -1,3 +1,23 @@
+---
+layout: minimal
+title: Assignment 1
+description: &desc Assignment 1
+summary: *desc
+has_children: true
+has_toc: true
+parent: Leiden ITP
+permalink: /:path/
+---
+
+# {{ page.title }}
+{: .no_toc .mb-2 }
+
+{{ page.description }}
+{: .fs-6 .fw-300 }
+
+1. TOC
+{:toc}
+
 # Assignment 1: Higher or Lower?
 
 **Deadline: 10 October 2023 23:59**

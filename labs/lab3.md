@@ -1,6 +1,23 @@
-There is no lab session on Friday 22 September, but we recommend you do the following exercises on CodingBat at home to practise with the lecture material.
+---
+layout: minimal
+title: Lab 3
+description: &desc Lab 3
+summary: *desc
+has_children: true
+has_toc: true
+parent: Leiden ITP
+permalink: /:path/
+---
 
-You can refer to [lab 2](/LeidenITP/2023/09/14/lab-2.html) for a refresher on CodingBat.
+# {{ page.title }}
+{: .no_toc .mb-2 }
+
+{{ page.description }}
+{: .fs-6 .fw-300 }
+
+1. TOC
+{:toc}
+
 
 Should you have any questions, please ask those in [the discussion forum on Brightspace](https://brightspace.universiteitleiden.nl/d2l/le/240322/discussions/List). We will also practice these topics during the lab session on Friday 29 September.
 

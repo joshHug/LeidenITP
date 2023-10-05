@@ -1,4 +1,22 @@
-Welcome to week 4!
+---
+layout: minimal
+title: Lab 4
+description: &desc Lab 4
+summary: *desc
+has_children: true
+has_toc: true
+parent: Leiden ITP
+permalink: /:path/
+---
+
+# {{ page.title }}
+{: .no_toc .mb-2 }
+
+{{ page.description }}
+{: .fs-6 .fw-300 }
+
+1. TOC
+{:toc}
 
 ## Sequences
 
