@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 5
-description: &desc Lab 5.
+description: &desc 6 Sep - Loops and Dictionaries
 summary: *desc
 nav_order: 1
 parent: Labs
