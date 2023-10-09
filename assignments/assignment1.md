@@ -20,7 +20,7 @@ permalink: /:path/
 
 # Assignment 1: Higher or Lower?
 
-**Deadline: 10 October 2023 23:59**
+**Deadline: Tuesday 10 October 2023 23:59**
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
