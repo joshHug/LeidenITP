@@ -62,6 +62,7 @@ for num in list:
 - you can use dictionaries as a data structure to store key-value pairs. Recall the following about dictionaries:
 ```python
 fruitbasket = { "apple":3, "banana":5, "cherry":50 } # initialise a dictionary
+fruitbasket["apple"] # will give the value 3 corresponding to the key "apple""
 fruitbasket["apple"] += 2 # update a value
 fruitbasket["mango"] = 1 # add a new value
 del fruitbasket["banana"] # delete a value
