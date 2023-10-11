@@ -2,6 +2,13 @@
 title: Introduction to Programming
 ---
 
+13 Oct
+: **Lab**{: .label .label-purple }
+: **Assignment**{: .label .label-red }[Collecting moon stones]({{ site.baseurl }}{% link assignments/assignment2.md %})
+
+11 Oct
+: **Lecture**{: .label .label-blue }Functions
+
 10 Oct
 : **Assignment 1 due**{: .label .label-red }
 
