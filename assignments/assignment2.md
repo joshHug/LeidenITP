@@ -118,7 +118,7 @@ if __name__ == "__main__":
 
 ### NumPy arrays
 
-The template code above uses the NumPy library as a convenient tool to generate a two-dimensional array as the moon surface. The moon surface's  (`type(moon)`) is `numpy.ndarray`, but you can generally treat it like a list of lists: you can access the value at coordinate `(3, 0)` (row 3, column 0) through `moon[3][0]` and you can iterate over its rows:
+The template code above uses the NumPy library as a convenient tool to generate a two-dimensional array as the moon surface. The moon surface's type (`type(moon)`) is `numpy.ndarray`, but you can generally treat it like a list of lists: you can access the value at coordinate `(3, 0)` (row 3, column 0) through `moon[3][0]` and you can iterate over its rows:
 ```python
 for row in moon:
 	print(row)
