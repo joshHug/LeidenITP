@@ -3,9 +3,11 @@ layout: minimal
 title: Assignment 2
 description: &desc Assignment 2
 summary: *desc
-has_children: true
+# has_children: true
+nav_order: 1
 has_toc: true
-parent: Leiden ITP
+parent: Assignments
+grand_parent: Leiden ITP
 permalink: /:path/
 ---
 
