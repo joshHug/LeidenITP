@@ -62,7 +62,7 @@ For more advanced students, you might find the `fibonacci` and `hard` exercises 
 
 To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
 
-Open "Conversion2D_1D.py" and work your way through the exercises.
+Open `Conversion2D_1D.py` and work your way through the exercises.
 
 ## Enumerate (standard)
 
@@ -71,6 +71,10 @@ The `enumerate` function in Python allows us to loop over an iterable (such as a
 Furthermore, this exercise focus on creating new lists, lists in lists, and dictionaries.
 
 Open `enumerate.py` and work your way through the exercises.
+
+## Functions and Side Effects (standard)
+
+description
 
 ## Scrabble (challenge, normal)
 
