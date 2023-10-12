@@ -28,7 +28,7 @@ In this lab, we'll be using and combining all of the techniques and syntax we've
 
 ### Installing Anaconda
 
-To be better prepared for future exercises, we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra libraries one at the time, it is easier to install the most common libraries all at once into what is called a "python environment". We will do this by installing  a tool called[anaconda](https://www.anaconda.com/download). Go to the page, scroll down, choose your operating system and download anaconda. After downloading, run the installer and follow the instructions.
+To be better prepared for future exercises, we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra libraries one at the time, it is easier to install the most common libraries all at once into what is called a "python environment". We will do this by installing  a tool called [Anaconda](https://www.anaconda.com/download). Go to the page, scroll down, choose your operating system and download Anaconda. After downloading, run the installer and follow the instructions.
 
 ### Open Project
 
