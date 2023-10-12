@@ -38,29 +38,33 @@ Modify the `squared_plus_one` function so that it is correct and try running the
 
 Lastly, modify the `remove_last_item` function so that it is correct, and try running the tests again. This time all tests have passed. You're ready to move on to this week's exercises.
 
-This week we have 5 different exercises that range in difficulty. For those of you who are newer to programming, you might stick to only the first three (Conversion2D_1D, Enumerate, and Scrabble). For those of you with more experience, you might consider only completing some of the later exercises.
+This week we have 5 different exercises that range in difficulty. All students, regardless of experience, should be able to complete the standard exercises.
 
-## Conversion2D_1D
+The challenge exercises provide additional challenge for interested students. Any student in the class should be able to complete the "normal" difficulty challenge in this lab, which builds on the Scrabble exercise from week 3.
+
+For more advanced students, you might find the `fibonacci` and `hard` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. 
+
+## Conversion2D_1D (standard)
 
 To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
 
 Open "Conversion2D_1D.py" and work your way through the exercises.
 
-## Enumerate
+## Enumerate (standard)
 
 The `enumerate` keyword in Python allows us to (brief explanation). 
 
 Open `enumerate.py`. 
 
-## Scrabble (challenging)
+## Scrabble (challenge, normal)
 
 The last set of exercises that we'd like everyone to complete is `scrabble.py`. 
 
-## fibonacci (hard)
+## fibonacci (challenge, hard)
 
 Fibonacci.py contains some additional exercises that [describe them]. 
 
-## add (very hard)
+## add (challenge, very hard)
 
 This week we've included one especially challening exercise.
 
