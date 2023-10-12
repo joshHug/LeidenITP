@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 6
-description: &desc 12 October, 2023 - Loops and Dictionaries
+description: &desc 12 October, 2023 - Trickier Problems
 summary: *desc
 nav_order: 1
 parent: Labs
@@ -68,7 +68,7 @@ For more advanced students, you might find the more difficult `fibonacci` and `a
 
 ## Exercise 2: conversion2D_1D (standard)
 
-To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
+To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
 
 Open `Conversion2D_1D.py` and work your way through the exercises.
 
