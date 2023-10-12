@@ -26,11 +26,11 @@ Starting this week, we're saying goodbye to CodingBat. From now on, we'll be usi
 
 ### Installing Anaconda
 
-To be better prepared for future exercise we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra library one at the time, it is easier to install the most common libraries all at once with a new python environment. We will do this by installing [anaconda](https://www.anaconda.com/download). Go to the page, scrolldown, choose your operating system and download anaconda. After downloading, run the installer and follow the instructions.
+To be better prepared for future exercise we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra libraries one at the time, it is easier to install the most common libraries all at once with a new python environment. We will do this by installing [anaconda](https://www.anaconda.com/download). Go to the page, scrolldown, choose your operating system and download anaconda. After downloading, run the installer and follow the instructions.
 
 ### Open Project
 
-Start by downloading the .zip file for this week's code. Unzip the file.
+Start by downloading the .zip file for this week's code [at this link](). Unzip the file.
 
 Now open PyCharm and select open and select the folder you just created (when unzipping). To work with the new conda environment, that we just installed, go to the lower corner of your screen where it says */home/user/current_python_installation*. Click on it and select **Add New Interpreter** -> **Add Local Interpreter**. This should look like the image below.
 
@@ -44,13 +44,15 @@ If you opened the unpacked zip folder, you are now able to click on the python f
 
 ### Running a Test
 
-Try opening `lab6_intro.py`. Click the "run" button in PyCharm and you should see two red x's appear. This is because the code we currently have provided in `lab6_intro.py` is not correct.
+Try opening `lab6_intro.py`. Click the "run" button in PyCharm and you should see several yellow x's appear. This is because the code we currently have provided in `lab6_intro.py` is not correct.
 
-Modify the `squared_plus_one` function so that it is correct and try running the tests again. This time you should get a green arrow.
+Modify the `squared_plus_one` function so that it is correct and try running the tests again. Make sure to remove the line that says ` raise NotImplementedError("Complete the code in this function")`. The yellow x for `TestSquaredPlusOne` should be gone, leaving only the yellow x for `TestRemoveLastItem`.
 
-Lastly, modify the `remove_last_item` function so that it is correct, and try running the tests again. This time all tests have passed. You're ready to move on to this week's exercises.
+Lastly, modify the `remove_last_item` function so that it is correct, and try running the tests again. You should get a green check mark, indicating you've passed all of the tests. You're ready to move on to this week's exercises.
 
-This week we have 5 different exercises that range in difficulty. All students, regardless of experience, should be able to complete the standard exercises.
+### Overview of Remanining Exercises
+
+This week we have 6 different exercises that range in difficulty. All students, regardless of experience, should be able to complete the standard exercises.
 
 The challenge exercises provide additional challenge for interested students. Any student in the class should be able to complete the "normal" difficulty challenge in this lab, which builds on the Scrabble exercise from week 3.
 
@@ -64,7 +66,7 @@ For more advanced students, you might find the `fibonacci` and `hard` exercises 
 
 To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
 
-Open "Conversion2D_1D.py" and work your way through the exercises.
+Open `Conversion2D_1D.py` and work your way through the exercises.
 
 ## Enumerate (standard)
 
@@ -73,6 +75,10 @@ The `enumerate` function in Python allows us to loop over an iterable (such as a
 Furthermore, this exercise focus on creating new lists, lists in lists, and dictionaries.
 
 Open `enumerate.py` and work your way through the exercises.
+
+## Functions and Side Effects (standard)
+
+description
 
 ## Scrabble (challenge, normal)
 
