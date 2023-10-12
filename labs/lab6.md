@@ -86,7 +86,7 @@ If you don't think a hard challenge is something for you try to solve the first 
 
 ## add (challenge, very hard)
 
-This week we've included one especially challenging exercise. This involves adding [binary numbers](https://en.wikipedia.org/wiki/Binary_number) together. This challenge involves string to lists and vise versa and 
+This week we've included one especially challenging exercise. This involves adding [binary numbers](https://en.wikipedia.org/wiki/Binary_number) together. This challenge involves string to lists and vise versa and building new lists with severel if-statements.
 
 
 
