@@ -58,9 +58,9 @@ The challenge exercises provide additional challenge for interested students. An
 
 For more advanced students, you might find the `fibonacci` and `hard` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. 
 
-## helper_functions_side_effects (standard)
+## Functions and Side Effects (standard)
 
-....
+description
 
 ## Conversion2D_1D (standard)
 
@@ -75,10 +75,6 @@ The `enumerate` function in Python allows us to loop over an iterable (such as a
 Furthermore, this exercise focus on creating new lists, lists in lists, and dictionaries.
 
 Open `enumerate.py` and work your way through the exercises.
-
-## Functions and Side Effects (standard)
-
-description
 
 ## Scrabble (challenge, normal)
 
