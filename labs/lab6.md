@@ -56,6 +56,10 @@ The challenge exercises provide additional challenge for interested students. An
 
 For more advanced students, you might find the `fibonacci` and `hard` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. 
 
+## helper_functions_side_effects (standard)
+
+....
+
 ## Conversion2D_1D (standard)
 
 To get more practice with basic Python, we're going to write some code that works on lists that contains lists. For example, consider the list `x = ["cat", 5, ["dog", "cow", "kaas", "koe"]]]`. This list has 3 items. `x[0]` is the string "cat". `x[1]` is the number 5. `x[2]` is also a list, in this case of length 4.
@@ -86,7 +90,7 @@ If you don't think a hard challenge is something for you try to solve the first 
 
 ## add (challenge, very hard)
 
-This week we've included one especially challenging exercise. This involves adding [binary numbers](https://en.wikipedia.org/wiki/Binary_number) together. This challenge involves string to lists and vise versa and building new lists with severel if-statements.
+This week we've included one especially challenging exercise. This involves adding [binary numbers](https://en.wikipedia.org/wiki/Binary_number) together. This challenge involves string to lists and vise versa and building new lists with several if-statements.
 
 
 
