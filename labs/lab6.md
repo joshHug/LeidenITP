@@ -103,7 +103,9 @@ def set_element_zero_no_side_effects(lst):
 
 To see this in action, go to [this link](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+set_element_zero_no_side_effects(lst)%3A%0A+++lst%5B0%5D+%3D+4%0A+++return+lst%0A%0Alst+%3D+%5B%22alpha%22,+%22beta%22,+%22gamma%22%5D%0Anew_lst+%3D+set_element_zero_no_side_effects(lst)%0Aprint(lst)%0Aprint(new_lst)&mode=display&raw_input=&curInstr=0) and watch carefully to see what happens as the code runs.
 
-In this exercise, we'll explore this idea more carefully.
+Open `helper_functions_side_effects.py` and run the code. You'll see an incorrect statement printed.
+
+Which function(s) have side effects? How should we best fix the problem? Fix the code so that when you run it, the print statement is true.
 
 ## Exercise 5: scrabble (challenge, medium)
 
