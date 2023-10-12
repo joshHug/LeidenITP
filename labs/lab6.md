@@ -24,11 +24,21 @@ Welcome to week 6!
 
 Starting this week, we're saying goodbye to CodingBat. From now on, we'll be using PyCharm to write and test all of our code.
 
+### Installing Anaconda
+
+To be better prepared for future exercise we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra library one at the time, it is easier to install the most common libraries all at once with a new python environment. We will do this by installing [anaconda](https://www.anaconda.com/download). Go to the page, scrolldown, choose your operating system and download anaconda. After downloading, run the installer and follow the instructions.
+
+### Open Project
+
 Start by downloading the .zip file for this week's code. Unzip the file.
 
-Now open PyCharm and select ...
+Now open PyCharm and select open and select the folder you just created (when unzipping). To work with the new conda environment, that we just installed, go to the lower corner of your screen where it says */home/user/current_python_installation*. Click on it and select **Add New Interpreter** -> **Add Local Interpreter**. This should look like the image below.
 
-(add screenshots and further directions)
+![images](/LeidenITP/assets/images/Add_interpreter.png)
+
+Next, you will see a screen similar to the screenshot down below. At the left side of the popup screen click on **conda environment**. Then it should already be on **use existing environment** but if not click that radiobutton. Now, click on **ok** and from now you should program in this environment.
+
+![images](/LeidenITP/assets/images/Interpreter.png)
 
 ### Running a Test
 
