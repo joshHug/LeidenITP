@@ -6,7 +6,7 @@ title: Introduction to Programming
 : **Assignment 2 due**{: .label .label-red }
 
 13 Oct
-: **Lab**{: .label .label-purple }
+: **Lab**{: .label .label-purple }[Trickier Problems]({{ site.baseurl }}{% link labs/lab6.md %})
 : **Assignment**{: .label .label-red }[Collecting moon stones]({{ site.baseurl }}{% link assignments/assignment2.md %})
 
 11 Oct

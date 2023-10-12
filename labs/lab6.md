@@ -24,6 +24,8 @@ Welcome to week 6!
 
 Starting this week, we're saying goodbye to CodingBat. From now on, we'll be using PyCharm to write and test all of our code.
 
+In this lab, we'll be using and combining all of the techniques and syntax we've seen from labs 1 through 5.
+
 ### Installing Anaconda
 
 To be better prepared for future exercise we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra libraries one at the time, it is easier to install the most common libraries all at once with a new python environment. We will do this by installing [anaconda](https://www.anaconda.com/download). Go to the page, scrolldown, choose your operating system and download anaconda. After downloading, run the installer and follow the instructions.
@@ -50,11 +52,11 @@ Modify the `squared_plus_one` function so that it is correct and try running the
 
 Lastly, modify the `remove_last_item` function so that it is correct, and try running the tests again. You should get a green check mark, indicating you've passed all of the tests. You're ready to move on to this week's exercises.
 
-### Overview of Remanining Exercises
+### Overview of This Lab
 
 This week we have 6 different exercises that range in difficulty. All students, regardless of experience, should be able to complete the standard exercises.
 
-The challenge exercises provide additional challenge for interested students. Any student in the class should be able to complete the "normal" difficulty challenge in this lab, which builds on the Scrabble exercise from week 3.
+The exercises marked as "challenge" provide additional practice for interested students. Any student in the class should be able to complete the "normal" difficulty challenge in this lab, which builds on the Scrabble exercise from week 3.
 
 For more advanced students, you might find the `fibonacci` and `hard` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. 
 
