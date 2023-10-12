@@ -32,7 +32,7 @@ To be better prepared for future exercises, we need more than the standard pytho
 
 ### Open Project
 
-Start by downloading the .zip file for this week's code [at this link](). Unzip the file.
+Start by downloading the .zip file for this week's code [at this link](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2661436). Unzip the file.
 
 Now open PyCharm and select open and select the folder you just created (when unzipping). To work with the new conda environment, that we just installed, go to the lower corner of your screen where it says */home/user/current_python_installation*. Click on it and select **Add New Interpreter** -> **Add Local Interpreter**. This should look like the image below.
 
