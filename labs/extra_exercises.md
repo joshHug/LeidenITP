@@ -1,7 +1,7 @@
 ---
 layout: minimal
-title: Lab 6
-description: &desc 13 October, 2023 - Extra Problems
+title: Extra Exercises
+description: &desc 13 October, 2023 - Extra Exercises
 summary: *desc
 nav_order: 1
 parent: Labs
