@@ -52,4 +52,30 @@ Open abs.py, here you will implement absolute values [wiki](https://en.wikipedia
 
 ## logic
 
+## Ternary Operator
+
+The idea of a ternary operator is that you can have two outcomes depending on a rule. While python does not officially have a ternary operator (like C#, C++, java, etc.), there is a common way of writing them. You should use a ternary operator when the value of a variable should be A in the case of ... ortherwise B. It replace the following code:
+```python
+if SomeCondition:
+    value = 10 #this can be any value
+else:
+    value = 20
+```
+
+The problem with the code above is that an `if` `else` statement can do anything, while the a ternary statement signals to the reader that a value is assigned according to some condition. The code above as a ternary statement in python looks as follows:
+```python
+value = 10 if SomeCondintion else 20
+```
+
+- abs (Easy -> Hard)
+
+## isinstance
+
+- abs (Easy -> Hard)
+
+## complex arithmetic
+
+- abs (Easy -> Hard)
+
+
 ....
