@@ -42,7 +42,20 @@ This topic covers all standard python library functions that might be useful. Al
 
 ### abs (Easy -> Hard)
 
-Open abs.py, here you will implement absolute values [wiki](https://en.wikipedia.org/wiki/Absolute_value).
+Open abs.py, here you will implement absolute values, see [wiki](https://en.wikipedia.org/wiki/Absolute_value) for more information.
+
+### all (Easy)
+
+Open all.py, here you will implement the `all()` function. This checks if all values in an iterable are True. 
+
+### any (Easy)
+
+Open any.py, here you will implement the `any()` function. This checks if a values in an iterable is True. 
+
+### isinstance (Easy)
+
+Open isinstance.py, here you will implement the `isinstance()` function. `isinstance`
+can be used to check if a object is of a certain type.
 
 ## Useful Python Functions
 
@@ -50,7 +63,17 @@ Open abs.py, here you will implement absolute values [wiki](https://en.wikipedia
 
 ## loops
 
-## logic
+In the following exercises you can practise with for loops:
+
+- any
+- all
+
+## logic (boolean)
+
+In the following exercises you can practise with booleans and if statements:
+
+- any
+- all
 
 ## Ternary Operator
 
@@ -67,15 +90,25 @@ The problem with the code above is that an `if` `else` statement can do anything
 value = 10 if SomeCondintion else 20
 ```
 
+In the following exercises you can practise with ternary operators:
+
 - abs (Easy -> Hard)
 
 ## isinstance
 
+`isinstance` returns True if the object argument is an instance of the classinfo argument, or of a (direct, indirect, or virtual) subclass thereof. If object is not an object of the given type, the function always returns False. 
+
+It is recommended that you fist do the isinstance.py exercise.
+
+In the following exercises you can practise with the isinstance function:
+
 - abs (Easy -> Hard)
+- isinstance (Easy)
 
 ## complex arithmetic
 
+For info on complex numbers, see [wiki](https://en.wikipedia.org/wiki/Complex_number). Just skip this part of the exercise, if you did not get complex numbers with calculus.
+
+In the following exercises you can practise with complex numbers:
+
 - abs (Easy -> Hard)
-
-
-....
