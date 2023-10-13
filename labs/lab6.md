@@ -44,9 +44,9 @@ Next, you will see a screen similar to the screenshot down below. At the left si
 
 ## Exercise 1: Trying Out Our New Pycharm Environment
 
-Try opening `lab6_intro.py`. Click the "run" button in PyCharm and you should see several yellow x's appear. This is because the code we currently have provided in `lab6_intro.py` is not correct.
+Try opening `lab6_intro.py`. Click the "run" button in PyCharm and you should see several yellow or red x's appear. This is because the code we currently have provided in `lab6_intro.py` is not correct.
 
-Modify the `squared_plus_one` function so that it is correct and try running the tests again. Make sure to remove the line that says ` raise NotImplementedError("Complete the code in this function")`. The yellow x for `TestSquaredPlusOne` should be gone, leaving only the yellow x for `TestRemoveLastItem`.
+Modify the `squared_plus_one` function so that it is correct and try running the tests again. Make sure to remove the line that says `raise NotImplementedError("Complete the code in this function")`. The yellow or red x for `TestSquaredPlusOne` should be gone, leaving only the yellow or red x for `TestRemoveLastItem`.
 
 Lastly, modify the `remove_last_item` function so that it is correct, and try running the tests again. You should get a green check mark, indicating you've passed all of the tests. You're ready to move on to this week's exercises.
 
