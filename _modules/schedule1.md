@@ -10,7 +10,8 @@ title: Introduction to Programming
 : **Assignment**{: .label .label-red }[Collecting moon stones]({{ site.baseurl }}{% link assignments/assignment2.md %})
 
 11 Oct
-: **Lecture**{: .label .label-blue }Functions
+: **Lecture**{: .label .label-blue }[Functions](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2659756)
+  : [Earthquakes_analysis.py](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2660511)
 
 10 Oct
 : **Assignment 1 due**{: .label .label-red }
