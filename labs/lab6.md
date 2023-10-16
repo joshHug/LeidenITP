@@ -48,11 +48,11 @@ Instead of running the python files in the interpreter, you can also run the uni
 
 To configure the test environment in PyCharm you go to the dropdown menu next to the run and debug icons in the top right corner. Here, you click **edit configurations...**, this should like the image below.
 
-![image](/Leiden/ITP/assets/images/unittest_configure_menu.png)
+![images](/Leiden/ITP/assets/images/unittest_configure_menu.png)
 
 Next, you click on the **plus icon** in the right upper corner. Go to the **python tests** and click on **unittests**. See below, for an example how it would look like. 
 
-![image](/Leiden/ITP/assets/images/configure_unittests.png)
+![images](/Leiden/ITP/assets/images/configure_unittests.png)
 
 Next, you can configure what file needs to be tested when the **run icon** is clicked. However, it is easier to just let everything stand on the default and click **ok**. Now, go back to the dropdown menu, where you click **edit configurations...**, but now click **current file**. This way if you go to another file it runs that file, and you do not reconfigure anything.
 
@@ -64,13 +64,13 @@ It is important to realize that unittest can not actually test if your code is c
 
 When an unittest succeeds, it does not print that much (or nothing) in the interpreter screen. However, when something does go wrong it prints out a lot. Important to note, that it will never tell you which line of code is wrong because it can only tell you if your output is wrong, unless there is an error. The screenshot below can help you understand what goes wrong. In the red box, you can find which unittest goes wrong (which is in our case always the name of the function that is wrong). In the green box, you can find which test case goes wrong. For this course we choose to give you several unittest per function. So, if there is an edge case that is wrong the other test are still right. In the yellow box, you can see of which test suite this unittest belongs. When running the test in PyCharm this will be a folder on the lower left hand side. Lastly, the green box tells you how your input is different from the expected input.
 
-![image](/Leiden/ITP/assets/images/unittest_debug.png)
+![images](/Leiden/ITP/assets/images/unittest_debug.png)
 
 ### Debug Tips
 
 Even though the unittest can help you with understanding what goes wrong in your code. They are not the only tool you have to check your work. One of the easiest way to check if one line of code works the way you think it works is to run python in an interpreter and run the line of code. Running python in the interpreter can be done by just typing `python` in the interpreter/terminal. See below for an example to see what `range` returns.
 
-![image](/Leiden/ITP/assets/images/use_terminal.png)
+![images](/Leiden/ITP/assets/images/use_terminal.png)
 
 Another option is to suppress the unittests and use print statements. This can be done by changing the `VERBOSE` at the beginning of the file to 0. Now, only the number of correct and incorrect test cases are shown and your print statements are easier to find/read. Important to note, that this will only work when running the file as a normal `.py` file and not as a unittest file as we previously configured. There are two ways to run it as a normal `.py` file. One run it in the terminal by typing `python fileName.py`. The other option is to redo the steps to run it as an unittest file and instead of unittest click **python** and by script choose the script you want to run.
 
