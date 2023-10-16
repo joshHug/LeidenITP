@@ -42,6 +42,40 @@ Next, you will see a screen similar to the screenshot down below. At the left si
 
 ![images](/LeidenITP/assets/images/Interpreter.png)
 
+### Configure Unittests
+
+Instead of running the python files in the interpreter, you can also run the unittests in a test environment. The additional benefit of doing this is that you get a file tree on the left hand side with green checkmarks or red/yellow cross for each test. When you click on a tests suite you see all the results for these tests and when clicking on a single test you see only the result of that test. To do this a more elaborate editor is needed such as PyCharm or vscode. In this next section you find how to configure it for PyCharm.
+
+To configure the test environment in PyCharm you go to the dropdown menu next to the run and debug icons in the top right corner. Here, you click **edit configurations...**, this should like the image below.
+
+![image](/Leiden/ITP/assets/images/unittest_configure_menu.png)
+
+Next, you click on the **plus icon** in the right upper corner. Go to the **python tests** and click on **unittests**. See below, for an example how it would look like. 
+
+![image](/Leiden/ITP/assets/images/configure_unittests.png)
+
+Next, you can configure what file needs to be tested when the **run icon** is clicked. However, it is easier to just let everything stand on the default and click **ok**. Now, go back to the dropdown menu, where you click **edit configurations...**, but now click **current file**. This way if you go to another file it runs that file, and you do not reconfigure anything.
+
+### Read Unittests Results
+
+Unittests are something new, that you did not see before. However, they are merely a tool for you to check if you work is correct. In large production environment they also function as a safety net to not push wrong code. For now, you do not need to worry about that. 
+
+It is important to realize that unittest can not actually test if your code is correct. They just check if for a few example your code gives the correct output. Therefore, you can never rely solely on unittest to check your work. Therefore, normal debug methods are still important.
+
+When an unittest succeeds, it does not print that much (or nothing) in the interpreter screen. However, when something does go wrong it prints out a lot. Important to note, that it will never tell you which line of code is wrong because it can only tell you if your output is wrong, unless there is an error. The screenshot below can help you understand what goes wrong. In the red box, you can find which unittest goes wrong (which is in our case always the name of the function that is wrong). In the green box, you can find which test case goes wrong. For this course we choose to give you several unittest per function. So, if there is an edge case that is wrong the other test are still right. In the yellow box, you can see of which test suite this unittest belongs. When running the test in PyCharm this will be a folder on the lower left hand side. Lastly, the green box tells you how your input is different from the expected input.
+
+![image](/Leiden/ITP/assets/images/unittest_debug.png)
+
+### Debug Tips
+
+Even though the unittest can help you with understanding what goes wrong in your code. They are not the only tool you have to check your work. One of the easiest way to check if one line of code works the way you think it works is to run python in an interpreter and run the line of code. Running python in the interpreter can be done by just typing `python` in the interpreter/terminal. See below for an example to see what `range` returns.
+
+![image](/Leiden/ITP/assets/images/use_terminal.png)
+
+Another option is to suppress the unittests and use print statements. This can be done by changing the `VERBOSE` at the beginning of the file to 0. Now, only the number of correct and incorrect test cases are shown and your print statements are easier to find/read. Important to note, that this will only work when running the file as a normal `.py` file and not as a unittest file as we previously configured. There are two ways to run it as a normal `.py` file. One run it in the terminal by typing `python fileName.py`. The other option is to redo the steps to run it as an unittest file and instead of unittest click **python** and by script choose the script you want to run.
+
+Lastly, you can copy the code you want to test to an empty file, at some print statements and run that file.
+
 ## Exercise 1: Trying Out Our New Pycharm Environment
 
 Try opening `lab6_intro.py`. Click the "run" button in PyCharm and you should see several yellow or red x's appear. This is because the code we currently have provided in `lab6_intro.py` is not correct.
