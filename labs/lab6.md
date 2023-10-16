@@ -58,7 +58,7 @@ Next, you can configure what file needs to be tested when the **run icon** is cl
 
 ### Read Unittests Results
 
-Unittests are something new, that you did not see before. However, they are merely a tool for you to check if you work is correct. In large production environment they also function as a safety net to not push wrong code. For now, you do not need to worry about that. 
+Unittests are something new, that you did not see before. However, they are merely a tool for you to check if you work is correct. In large production environment they also function as a safety net to not release wrong code. For now, you do not need to worry about that. 
 
 It is important to realize that unittest can not actually test if your code is correct. They just check if for a few example your code gives the correct output. Therefore, you can never rely solely on unittest to check your work. Therefore, normal debug methods are still important.
 
