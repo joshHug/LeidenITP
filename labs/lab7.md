@@ -79,19 +79,21 @@ Lastly, you can copy the code you want to test to an empty file, at some print s
 ## Overview of This Lab
 
 In addition to the warmup exercise earlier, this week we have 6 different exercises that range in difficulty:
- * Exercise 1: 
- * Exercise 2: 
- * Exercise 3:
- * Exercise 4: 
- * Exercise 5: 
- * Exercise 6: 
- * Exercise 7: 
+ * Exercise 1: [Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-1-shopping-list-standard) (standard)
+   *  [Ternary Operator](https://joshhug.github.io/LeidenITP/labs/lab7/#ternary-operator-challenge-medium) (challenge, normal)
+ * Exercise 2: [Improving Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-2-improving-shopping-list-standard) (standard)
+ * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
+ * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
+ * Exercise 5: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-blurring-an-images-challenge-hard) (challenge, hard)
+ * Exercise 6: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
 
-All students, regardless of experience, should be able to complete the three standard exercises. Whether you complete all three is up to you.
+All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
 
-The three exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge, which builds on scrabble from an earlier lab.
+The three exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge, which extends exercise 2 by making a pretty print.
 
-For more advanced students, you might find the more difficult `fibonacci` and `add` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. 
+For more advanced students, you might find the more difficult `Blurring an Images` and `Make an Image Criminal Friendly` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging.
+
+If you feel that this week's challenges are too hard for you feel free to do a challenging exercise from last week which should be a little easier now you know more.
 
 ## Exercise 1: Shopping List (standard)
 
@@ -153,7 +155,7 @@ Open improve_shopping_list.py and work your way through the exercises.
 
 As an extra practise exercise, you can also try to remove the side effect from `remove_all_count` and let it return the updated list. 
 
-### Ternary Operator (challenge, hard)
+### Ternary Operator (challenge, medium)
 
 Lastly, we can a bit of cleanup in the print statement. Now, it adds always a *s* to the name of a grocery even if it is singular. To make it only put an *s* behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
 
