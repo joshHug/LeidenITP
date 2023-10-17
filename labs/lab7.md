@@ -117,7 +117,7 @@ Question 1: Try to fix the code by creating a side effect in the function `remov
 
 Question 2: Try to fix the code by not using side effects in the function `remove_all`. In the code, there are TWO TODO comment specifying where you need to add code for question 2.
 
-### Exercise 2: Improving Shopping List (standard)
+## Exercise 2: Improving Shopping List (standard)
 
 Look at this [code](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+removes+all+the+items+from+the+lst+with+the+value+x.%0A%0A++++For+example%3A+%5B1,+2,+3,+2%5D,+2+-%3E+%5B1,+3%5D%0A++++%22%22%22%0A++++for+i,+item+in+enumerate(lst)%3A%0A+++++++if+item+%3D%3D+x%3A%0A++++++++++del+lst%5Bi%5D+++++%0A%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%23+remove+one+product+from+the+shopping+list%0Aremove_all(shopping_lst,+%22banana%22)%0Aprint(shopping_lst)&mode=display&raw_input=&curInstr=0) and try to analyse what is wrong. Why does it not remove all banana's? 
 
@@ -153,7 +153,7 @@ Open improve_shopping_list.py and work your way through the exercises.
 
 As an extra practise exercise, you can also try to remove the side effect from `remove_all_count` and let it return the updated list. 
 
-#### Ternary Operator (challenge, hard)
+### Ternary Operator (challenge, hard)
 
 Lastly, we can a bit of cleanup in the print statement. Now, it adds always a *s* to the name of a grocery even if it is singular. To make it only put an *s* behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
 
@@ -170,7 +170,7 @@ The problem with the code above is that an `if` `else` statement can do anything
 value = 10 if SomeCondintion else 20
 ```
 
-### Exercise 3: Basic Numpy (standard)
+## Exercise 3: Basic Numpy (standard)
 
 In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics.
 
@@ -178,7 +178,7 @@ Open basic_numpy.py and work your way through the exercises.
 
 This exercise focuses on creating numpy arrays, indexing them, and slicing.
 
-### Exercise 4: Arithmetic With Numpy (standard)
+## Exercise 4: Arithmetic With Numpy (standard)
 
 Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra with. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
 
@@ -186,6 +186,7 @@ Open arithmetic_numpy.py and work your way through the exercises.
 
 This exercise focuses on arithmetic with numpy arrays.
 
-### Exercise 5: Blurring an Images (challenge, hard)
+## Exercise 5: Blurring an Images (challenge, hard)
 
-### Exercise 6: Make an Image Criminal Friendly (challenge, very hard)
+
+## Exercise 6: Make an Image Criminal Friendly (challenge, very hard)
