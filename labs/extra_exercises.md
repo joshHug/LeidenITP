@@ -38,42 +38,165 @@ When you already downloaded an older zip file, but there are new exercises. Go t
 
 ## Standard Python Library Functions
 
-This topic covers all standard python library functions that might be useful. All exercise in this topic exist of making your own basic function with a certain functionality and slowly building towards more advanced implementations. The last function always asks you to use the standard python library function.
+This topic covers all standard python library functions that might be useful. All exercise in this topic exist of making your own basic function with a certain functionality and slowly building towards more advanced implementations. The last function always asks you to use the standard python library function. Note, that you implementations only mimic the standard python library functions, often they are implemented smart and/or handle more inputs. 
 
-### abs (Easy -> Hard)
+### abs (easy -> hard)
 
 Open abs.py, here you will implement absolute values, see [wiki](https://en.wikipedia.org/wiki/Absolute_value) for more information.
 
-### all (Easy)
+### all (easy)
 
 Open all.py, here you will implement the `all()` function. This checks if all values in an iterable are True. 
 
-### any (Easy)
+### any (easy)
 
 Open any.py, here you will implement the `any()` function. This checks if a values in an iterable is True. 
 
-### isinstance (Easy)
+### bool (very easy)
+
+Open bool.py, here you will implement the `bool()` function. This checks if a values is True.
+
+### chr and ord (easy)
+
+Open chr_and_ord.py, here you will use the `ord` and `chr` functions to convert ascii values to characters and vise versa.
+
+### combine map and filter (medium -> very hard)
+
+Open combine_map_and_filter.py, here you will combine what you have learned in the map exercise and the filter exercise. It is recommended to do those exercises first. 
+
+### dict (very easy)
+
+Open dict.py, here you will practise with various ways of initializing a `dict`.
+
+### divmod (very easy)
+
+Open divmod.py, here you will implement `divmod`. This is a useful function when dealing with 2D array indices.
+
+### filter (easy -> very hard)
+
+Open filter.py, here you will implement `filter` using various syntax. Each function uses a bit more advanced syntax until you reach using `filter` itself. This is a good exercise to see how various for loops work and that a function like `filter` is just an advanced for loop. 
+
+This exercises also shows you that there are many ways to code the same functionality. However, they are not all as "good". Generally, the "goodness" of a block of code can be measured in two ways: speed and readability. Speed is a bit to advanced to get into at this point, however, during the exercise question yourself which code has a clearer functionality. For example, a for loop only signals that it loops over an iterable object, but can be anything. So, if there is a good alternative, a for loop is most likely not the most clear/readable choice.
+
+### isinstance (easy)
 
 Open isinstance.py, here you will implement the `isinstance()` function. `isinstance`
 can be used to check if a object is of a certain type.
+
+### map (easy -> very hard)
+
+Open map.py, here you will implement `map` using various syntax. Each function uses a bit more advanced syntax until you reach using `map` itself. This is a good exercise to see how various for loops work and that a function like `map` is just an advanced for loop. 
+
+This exercises also shows you that there are many ways to code the same functionality. However, they are not all as "good". Generally, the "goodness" of a block of code can be measured in two ways: speed and readability. Speed is a bit to advanced to get into at this point, however, during the exercise question yourself which code has a clearer functionality. For example, a for loop only signals that it loops over an iterable object, but can be anything. So, if there is a good alternative, a for loop is most likely not the most clear/readable choice.
+
+### min max and intervals (easy)
+
+Open min_max_intervals.py, here you will implement `min`, `max` and how to make sure that a value is between an interval. In other words, how to make sure that `x >= min value`, `x =< max value` and `left boundary <= x <= right boundary`.
+
+### reversed (medium)
+
+Open reversed.py, here you will implement `reversed`. Reversed is a good function when you want to loop through an object in the reversed order.
+
+### sorted (very hard)
+
+Open sorted.py, here you will implement `sorted`. Sorted is a good function when you want to loop through an object in the sorted order.
+
+### sum (easy)
+
+Open sum.py, here you will implement `sum`. Sum is a good function when you want to know the total of a list. However, every object that implemented the operator `+=` can be used. Thus, a 2D list can also be "flattened" to a 1D list using sum.
+
+### zip (easy)
+
+Open zip.py, here you will implement `zip`. Zip can interleave iterables together into a generator (list) with tuples that contain the i'th element from each iterable. Zip is very useful function when you want to create a dictionary from to lists or want to loop over two or more lists at the same time.
+
+Examples of zip:
+```python
+>>> list(zip([1, 2, 3]))
+[(1, ), (2, ), (3, )] # (1, ) is a tuple with one object (1) is just parentheses around the int 1.
+>>> list(zip([1, 2, 3], [4, 5, 6]))
+[(1, 4), (2, 5), (3, 6)]
+```
+
 
 ## Useful Python Functions
 
 # Syntax
 
-## loops
+## complex arithmetic
 
-In the following exercises you can practise with for loops:
+For info on complex numbers, see [wiki](https://en.wikipedia.org/wiki/Complex_number). Just skip this part of the exercise, if you did not get complex numbers with calculus.
 
-- any
-- all
+In the following exercises you can practise with complex numbers:
+
+- abs (easy -> hard)
+
+## dictionaries
+
+In the following exercises you can practise with dictionaries:
+
+- dict (very easy)
+
+## (helper) functions
+
+In the following exercises you can practise with (helper) functions:
+
+- combine map and filter (medium -> very hard)
+- filter (easy -> very hard)
+- map (easy -> very hard)
+- sorted (very hard)
+
+## isinstance
+
+`isinstance` returns True if the object argument is an instance of the classinfo argument, or of a (direct, indirect, or virtual) subclass thereof. If object is not an object of the given type, the function always returns False. 
+
+It is recommended that you fist do the isinstance.py exercise.
+
+In the following exercises you can practise with the isinstance function:
+
+- abs (easy -> hard)
+- isinstance (easy)
+
+## list comprehensions
+
+In the following exercises you can practise with list comprehensions:
+
+- combine map and filter (medium -> very hard)
+- filter (easy -> very hard)
+- map (easy -> very hard)
 
 ## logic (boolean)
 
 In the following exercises you can practise with booleans and if statements:
 
-- any
-- all
+- any (easy)
+- all (easy)
+- bool (Very easy)
+- min max and intervals (easy)
+
+## loops
+
+In the following exercises you can practise with for loops:
+
+- any (easy)
+- all (easy)
+- chr and ord (easy)
+- combine map and filter (medium -> very hard)
+- filter (easy -> very hard)
+- map (easy -> very hard)
+- reversed (medium)
+- sorted (very hard)
+- sum (easy)
+- zip (easy)
+
+In the following exercises you can practise with while loops:
+
+- sorted (very hard)
+
+## slicing
+
+In the following exercises you can practise with slicing:
+
+- reversed (medium)
 
 ## Ternary Operator
 
@@ -92,23 +215,8 @@ value = 10 if SomeCondintion else 20
 
 In the following exercises you can practise with ternary operators:
 
-- abs (Easy -> Hard)
+- abs (easy -> hard)
 
-## isinstance
 
-`isinstance` returns True if the object argument is an instance of the classinfo argument, or of a (direct, indirect, or virtual) subclass thereof. If object is not an object of the given type, the function always returns False. 
 
-It is recommended that you fist do the isinstance.py exercise.
 
-In the following exercises you can practise with the isinstance function:
-
-- abs (Easy -> Hard)
-- isinstance (Easy)
-
-## complex arithmetic
-
-For info on complex numbers, see [wiki](https://en.wikipedia.org/wiki/Complex_number). Just skip this part of the exercise, if you did not get complex numbers with calculus.
-
-In the following exercises you can practise with complex numbers:
-
-- abs (Easy -> Hard)
