@@ -197,3 +197,10 @@ Open blur_image.py and work your way through the exercises.
 This exercise focuses mainly on loops and slicing of numpy arrays.
 
 ## Exercise 6: Make an Image Criminal Friendly (challenge, very hard)
+
+In this exercise, we continue with using numpy and slicing arrays. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original image of a pumpkin and a blurred out pumpkin.
+
+Open pixelate_image.py and work your way through the exercises.
+
+This exercise focuses mainly on loops, slicing of numpy arrays and finding a point in an image.
+
