@@ -84,8 +84,9 @@ In addition to the warmup exercise earlier, this week we have 6 different exerci
  * Exercise 2: [Improving Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-2-improving-shopping-list-standard) (standard)
  * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
  * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
- * Exercise 5: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-blurring-an-images-challenge-hard) (challenge, hard)
- * Exercise 6: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
+ * Exercise 5: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-rotate-colors-challenge-hard)
+ * Exercise 6: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-blurring-an-images-challenge-very-hard) (challenge, hard)
+ * Exercise 7: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
 
 All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
 
@@ -188,7 +189,16 @@ Open arithmetic_numpy.py and work your way through the exercises.
 
 This exercise focuses on arithmetic with numpy arrays.
 
-## Exercise 5: Blurring an Images (challenge, hard)
+## Exercise 5: Rotate Colors (challenge, hard)
+
+This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself.
+
+Open rotate_colors.py and work your way through the exercises.
+
+In this exercise, we continue with using numpy and slicing arrays. 
+Also, we come back to reference to an object or making a copy of an object.
+
+## Exercise 6: Blurring an Images (challenge, very hard)
 
 In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
 
