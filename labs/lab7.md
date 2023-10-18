@@ -198,6 +198,10 @@ Open rotate_colors.py and work your way through the exercises.
 In this exercise, we continue with using numpy and slicing arrays. 
 Also, we come back to reference to an object or making a copy of an object.
 
+The end results should look like this:
+
+![images](/LeidenITP/assets/images/lab7/rotate_colors.png)
+
 ## Exercise 6: Blurring an Images (challenge, very hard)
 
 In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
@@ -205,6 +209,10 @@ In this exercise, we continue with using numpy. However, this exercise is no lon
 Open blur_image.py and work your way through the exercises.
 
 This exercise focuses mainly on loops and slicing of numpy arrays.
+
+The end results should look like this:
+
+![images](/LeidenITP/assets/images/lab7/blur_image.png)
 
 ## Exercise 7: Make an Image Criminal Friendly (challenge, very hard)
 
@@ -214,3 +222,6 @@ Open pixelate_image.py and work your way through the exercises.
 
 This exercise focuses mainly on loops, slicing of numpy arrays and finding a point in an image.
 
+The end results should look somthing like this:
+
+![images](/LeidenITP/assets/images/lab7/pixelate_image.png)
