@@ -5,6 +5,9 @@ title: Introduction to Programming
 7 Nov
 : **Assignment 2 due**{: .label .label-red }
 
+20 Oct
+: **Lab**{: .label .label-purple }[Arrays and Side effects]({{ site.baseurl }}{% link labs/lab7.md %})
+
 13 Oct
 : **Lab**{: .label .label-purple }[Trickier Problems]({{ site.baseurl }}{% link labs/lab6.md %})
 : **Assignment**{: .label .label-red }[Collecting moon stones]({{ site.baseurl }}{% link assignments/assignment2.md %})
