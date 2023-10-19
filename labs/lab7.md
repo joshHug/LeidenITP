@@ -84,9 +84,10 @@ In addition to the warmup exercise earlier, this week we have 6 different exerci
  * Exercise 2: [Improving Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-2-improving-shopping-list-standard) (standard)
  * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
  * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
- * Exercise 5: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-rotate-colors-challenge-hard)
- * Exercise 6: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-blurring-an-images-challenge-very-hard) (challenge, hard)
- * Exercise 7: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
+ * Exercise 5: (standard)
+ * Exercise 6: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-rotate-colors-challenge-hard)
+ * Exercise 7: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-blurring-an-images-challenge-very-hard) (challenge, hard)
+ * Exercise 8: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-8-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
 
 All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
 
@@ -184,15 +185,13 @@ while flag:
             break
 ```
 
-In the previous exercise, the code for the function `remove_all` was not according two either one of these approaches. For this exercise rewrite the code for `remove_all_count`. However, the biggest and most dangerous part of the previous code was the line `while shopping_lst:`. This code is likely to create an infinite loop because unless we code everything correct the default is an infinite loop. Therefore, in this exercise we will also change that code to a more safe version which is also better readable. To do this, we will break the while loop (`while shopping_lst:`) into two parts. One loop will find all the unique items and another loop loops over these unique items and count and removes them from the original list.
+In the previous exercise, the code for the function `remove_all` was not according two either one of these approaches. For this exercise rewrite the code for `remove_all`. However, the biggest and most dangerous part of the previous code was the line `while shopping_lst:`. This code is likely to create an infinite loop because unless we code everything correct the default is an infinite loop. Therefore, in this exercise we will also change that code to a more safe version which is also better readable. To do this, we will break the while loop (`while shopping_lst:`) into two parts. One loop will find all the unique items and another loop loops over these unique items and count and removes them from the original list.
 
 Open improve_shopping_list.py and work your way through the exercises.
 
-As an extra practise exercise, you can also try to remove the side effect from `remove_all_count` and let it return the updated list. 
-
 ### Ternary Operator (challenge, medium)
 
-Lastly, we can a bit of cleanup in the print statement. Now, it adds always a *s* to the name of a grocery even if it is singular. To make it only put an *s* behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
+Lastly, we can a bit of cleanup in the print statement. Now, it adds always a '*s*' to the name of a grocery even if it is singular. To make it only put an '*s*' behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
 
 The idea of a ternary operator is that you can have two outcomes depending on a rule. While python does not officially have a ternary operator (like C#, C++, java, etc.), there is a common way of writing them. You should use a ternary operator when the value of a variable should be A in the case of ... otherwise B. It replace the following code:
 ```python
@@ -209,7 +208,11 @@ value = 10 if SomeCondintion else 20
 
 ## Exercise 3: Basic Numpy (standard)
 
-In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics.
+In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics. Each function in this exercise will have a numpy function that does the work for you or there is a specific bracket notation `[]` that you can use. 
+
+Often the joke is made that coding is just good googling. This is rather true in the sentence that often programmers do not know all code by hard but they know when they see a solution for their problem. To get more familiar with searching online for solution. We want you to find the solution online for this exercise. Keep in mind that the answer should be short.
+
+Also, if you are more experienced with coding, python and more specific numpy. This exercise can be a bit bland, so feel free to skip it. This also is the case for exercise 4.
 
 Open basic_numpy.py and work your way through the exercises.
 
@@ -217,15 +220,23 @@ This exercise focuses on creating numpy arrays, indexing them, and slicing.
 
 ## Exercise 4: Arithmetic With Numpy (standard)
 
-Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra with. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
+Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
+
+There is a specific operator, for each function that you need to implement in this exercise. As seen in the example above `array1 + array2` will added the elements of each array together. Therefore, there is no need for a for loop. This is the same for the function in this exercise. Do not use a for loop but use operators and if needed `np.sqrt` or `np.sum`. Feel free to google what the intended operator should be.
 
 Open arithmetic_numpy.py and work your way through the exercises.
 
 This exercise focuses on arithmetic with numpy arrays.
 
-## Exercise 5: Rotate Colors (challenge, hard)
+## Exercise 5: (standard)
 
-This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself.
+...
+
+## Exercise 6: Rotate Colors (challenge, hard)
+
+This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself. 
+
+A color is an array of three values. In this exercise, we will rotate or shift each value to the left. This means that the first value becomes the third, the second the first, and the third becomes the second value. For a simplified version of the problem you can have a look at [practise exercise](https://codingbat.com/prob/p148661) of CodingBat.
 
 Open rotate_colors.py and work your way through the exercises.
 
@@ -236,7 +247,7 @@ The end results should look like this:
 
 ![images](/LeidenITP/assets/images/lab7/rotate_colors.png)
 
-## Exercise 6: Blurring an Images (challenge, very hard)
+## Exercise 7: Blurring an Images (challenge, very hard)
 
 In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
 
@@ -248,7 +259,7 @@ The end results should look like this:
 
 ![images](/LeidenITP/assets/images/lab7/blur_image.png)
 
-## Exercise 7: Make an Image Criminal Friendly (challenge, very hard)
+## Exercise 8: Make an Image Criminal Friendly (challenge, very hard)
 
 In this exercise, we continue with using numpy and slicing arrays. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original image of a pumpkin and a blurred out pumpkin.
 
