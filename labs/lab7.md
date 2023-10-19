@@ -84,9 +84,10 @@ In addition to the warmup exercise earlier, this week we have 6 different exerci
  * Exercise 2: [Improving Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-2-improving-shopping-list-standard) (standard)
  * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
  * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
- * Exercise 5: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-rotate-colors-challenge-hard)
- * Exercise 6: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-blurring-an-images-challenge-very-hard) (challenge, hard)
- * Exercise 7: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
+ * Exercise 5: (standard)
+ * Exercise 6: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-rotate-colors-challenge-hard)
+ * Exercise 7: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-blurring-an-images-challenge-very-hard) (challenge, hard)
+ * Exercise 8: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-8-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
 
 All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
 
@@ -110,7 +111,7 @@ It's clear there's an infinite loop. Just like in your own programs that you'll 
 
 Consider: Is the problem in the removeAll function? Or is it in the script that calls the removeAll function? Or is it in the interaction between the two pieces of code? 
 
-### Exercise 1A
+### Exercise 1A (standard)
 
 In exercise 1A, we'll fix the problem by ONLY changing the removeAll function so that it has a side effect. Go back to [the visualizer](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+should+remove+all+the+items+from+the+lst+with+the+value+x.%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A%0A++++%23+TODO%3A+add+code+below+to+make+the+program+work%0A%0A%0A%23+The+code+below+should+create+a+shopping_dict+counting+the+number+of+times%0A%23+each+grocery+appears.+For+the+example+below,+we+should+get%3A%0A%23+++%7B%22banana%22%3A+4,+%22apple%22%3A+2,+%22cheese%22%3A+1,+%22bread%22%3A+2%7D%0A%23%0A%23+However,+the+code+we've+provided+fails.+Follow+the+direction+in+the+lab%0A%23+text+to+fix.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++%23+get+the+front+item+in+the+shopping_lst%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++%23+add+the+count+of+the+current+grocery+item%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+all+copies+of+the+given+grocery,+e.g.+if+%22banana%22+is+the%0A++++%23+current+grocery,+the+shopping_lst+should+have+no+more+bananas+after+this+line%0A++++remove_all(shopping_lst,+grocery)%0A%0A%23+nice+print+to+make+the+shopping+list.%0Afor+grocery,+number+in+shopping_dict.items()%3A%0A++++print(f%22Buy+%7Bnumber%7D+%7Bgrocery%7D(s).%22)&mode=edit&raw_input=) and fill in the TODO.
 
@@ -124,7 +125,7 @@ Buy 1 cheese(s).
 Buy 2 bread(s).
 ```
 
-### Exercise 1B
+### Exercise 1B (standard)
 
 Let's start over again and consider an alternate solution.
 
@@ -190,15 +191,13 @@ while flag:
 
 In exercise 1A, the code for the function `remove_all` was not according to either one of these approaches. 
 
-For this exercise rewrite the code for `remove_all_count`. You'll be doing this in pycharm.
+For this exercise rewrite the code for `remove_all`. You'll be doing this in pycharm.
 
-As an extra practise exercise, you can also try to remove the side effect from `remove_all_count` and let it return the updated list. 
-
-Quick pedagogical note: The code we provided for exercises 1 and 2 is artificial and not a great solution for the problem. Using `while shopping_lst:` is tricky to get right, as you've seen throughout this exercise. A better approach avoids remove operations entirely. Optionally, try to recreate this entire script without having to remove anything from a list at all.
+Quick pedagogical note: The code we provided for exercises 1 and 2 is artificial and not a great solution for the problem. Using `while shopping_lst:` is tricky to get right, as you've seen throughout this exercise. A better approach avoids remove operations entirely. Optionally, try to recreate this entire script without having to remove anything from a list at all. Tip: Try to loop only once through the shopping_lst and update the dictionary as you go. 
 
 ### Ternary Operator (challenge, medium)
 
-Lastly, we can a bit of cleanup in the print statement. Now, it adds always a *s* to the name of a grocery even if it is singular. To make it only put an *s* behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
+Lastly, we can a bit of cleanup in the print statement. Now, it adds always a "*s*" to the name of a grocery even if it is singular. To make it only put an "*s*" behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
 
 The idea of a ternary operator is that you can have two outcomes depending on a rule. While python does not officially have a ternary operator (like C#, C++, java, etc.), there is a common way of writing them. You should use a ternary operator when the value of a variable should be A in the case of ... otherwise B. It replace the following code:
 ```python
@@ -215,7 +214,11 @@ value = 10 if SomeCondintion else 20
 
 ## Exercise 3: Basic Numpy (standard)
 
-In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics.
+In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics. Each function in this exercise will have a numpy function that does the work for you or there is a specific bracket notation `[]` that you can use. 
+
+Often the joke is made that coding is just good googling. This is rather true, in the sentence that often programmers do not know all code by hard, but they know when they see a solution for their problem and how to find it. To get more familiar with searching online for solutions, we want you to find the solution online for this exercise. Keep in mind that the answer should be short.
+
+Also, if you are more experienced with coding, python and more specific numpy. This exercise can be a bit bland, so feel free to skip it. This also is the case for exercise 4.
 
 Open basic_numpy.py and work your way through the exercises.
 
@@ -224,6 +227,8 @@ This exercise focuses on creating numpy arrays, indexing them, and slicing.
 ## Exercise 4: Arithmetic With Numpy (standard)
 
 Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
+
+There is a specific operator, for each function that you need to implement in this exercise. As seen in the example above `array1 + array2` will add the elements of each array together. Therefore, there is no need for a for loop. This is the same for the function in this exercise. Do not use a for loop but use operators and if needed `np.sqrt` or `np.sum`. Feel free to google what the intended operator should be.
 
 Open arithmetic_numpy.py and work your way through the exercises.
 
@@ -252,11 +257,13 @@ s = Student("Frank", 7.7)
 s.print_score_n_times(10)
 ```
 
-Unimportant note: The example class in lecture declared the class with `class Student(object)`, but the `(object)` is unnecessary. 
+Unimportant note: The example class in lecture declared the class with `class Student(object)` on the top line, but the `(object)` is unnecessary. 
 
 ## Exercise 6: Rotate Colors (challenge, hard)
 
-This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself.
+This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself. 
+
+A color is an array of three values. In this exercise, we will rotate or shift each value to the left. This means that the first value becomes the third, the second the first, and the third becomes the second value. For a simplified version of the problem you can have a look at [practise exercise](https://codingbat.com/prob/p148661) of CodingBat.
 
 Open rotate_colors.py and work your way through the exercises.
 
@@ -269,7 +276,9 @@ The end results should look like this:
 
 ## Exercise 7: Blurring an Images (challenge, very hard)
 
-In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
+In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image. Blurring an image has the effect of taking an unsharp photograph. This is done by averaging each pixel by its neighbouring pixels.
+
+The function `len` is a bit ambiguous when it comes down to numpy arrays as they can be multidimensional. To get more readable code, we use `size` to get the overall size of the numpy array (as if it was a one dimensional list) and `shape` if we want the length of each axis in the array. Note, that shape return a tuple for each axis the length. For more information see the numpy documentation.
 
 Open blur_image.py and work your way through the exercises.
 
@@ -282,6 +291,8 @@ The end results should look like this:
 ## Exercise 8: Make an Image Criminal Friendly (challenge, very hard)
 
 In this exercise, we continue with using numpy and slicing arrays. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original image of a pumpkin and a blurred out pumpkin.
+
+Blurring out the pumpkin or pixelating it is similar to what you see when a face is made unrecognizable on tv. This is done by creating the effect of locally reducing the pixel density. In this exercise, we will do this by making patches of 30x30 pixels and giving all the pixels the same color value.
 
 Open pixelate_image.py and work your way through the exercises.
 
