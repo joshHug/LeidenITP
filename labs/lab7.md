@@ -98,15 +98,25 @@ If you feel that this week's challenges are too hard for you feel free to do a c
 
 ## Exercise 1: Shopping List (standard)
 
+**For this exercise, we're going to do all of our work in the python visualizer. There's no local copy of the code.**
+
 Before you start this exercise, make sure you understand [exercise 4 of lab 6 (helper_functions_side_effects)](https://joshhug.github.io/LeidenITP/labs/lab6/#exercise-4-helper_functions_side_effects-standard). 
 
-In this and the next exercise, you are improving given code in two ways. We will fix the code ex.1, such that it runt correctly, and we will make the code safer and better readable ex2.. 
+In this exercise, we'll give you buggy code that you'll need to fix. Specifically, it gets stuck in an infinite loop. 
 
-Important note, if a program is in an infinite loop (a loop that will never stop) you can stop the program with `CRTL-C` in the terminal or click the red square in the upper left corner of the run screen.
+Let's try running it. Go to [this website](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+should+remove+all+the+items+from+the+lst+with+the+value+x.%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A%0A++++%23+TODO%3A+add+code+below+to+make+the+program+work%0A%0A%0A%23+The+code+below+should+create+a+shopping_dict+counting+the+number+of+times%0A%23+each+grocery+appears.+For+the+example+below,+we+should+get%3A%0A%23+++%7B%22banana%22%3A+4,+%22apple%22%3A+2,+%22cheese%22%3A+1,+%22bread%22%3A+2%7D%0A%23%0A%23+However,+the+code+we've+provided+fails.+Follow+the+direction+in+the+lab%0A%23+text+to+fix.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++%23+get+the+front+item+in+the+shopping_lst%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++%23+add+the+count+of+the+current+grocery+item%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+all+copies+of+the+given+grocery,+e.g.+if+%22banana%22+is+the%0A++++%23+current+grocery,+the+shopping_lst+should+have+no+more+bananas+after+this+line%0A++++remove_all(shopping_lst,+grocery)%0A%0A%23+nice+print+to+make+the+shopping+list.%0Afor+grocery,+number+in+shopping_dict.items()%3A%0A++++print(f%22Buy+%7Bnumber%7D+%7Bgrocery%7D(s).%22)&mode=display&raw_input=&curInstr=0) and get a feeling for what's going in.
 
-Take a look at the following code on [this website](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+removes+all+the+items+from+the+lst+with+the+value+x.%0A%0A++++For+example%3A+%5B1,+2,+3,+2%5D,+2+-%3E+%5B1,+3%5D%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A++++%23+TODO+add+code+below+to+make+the+program+work%0A%0A%23+A+shopping+list+if+an+item+is+in+the+list+multiple+times+get+that+many.%0A%23+For+example%3A+%5B%22x%22,+%22x%22+,+%22y%22%5D+is+buy+2x+and+1y.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+items+that+we+have+already+seen+for+efficiency.%0A++++remove_all(shopping_lst,+grocery)&mode=display&raw_input=&curInstr=71) and try to understand what goes wrong. 
+It's clear there's an infinite loop. Just like in your own programs that you'll write later, it's not always clear where the problem lies. 
 
-In the question below you will fix the code. During, the question think about the difference in memory usage and code safety. The output for both questions should look like this:
+Consider: Is the problem in the removeAll function? Or is it in the script that calls the removeAll function? Or is it in the interaction between the two pieces of code? 
+
+### Exercise 1A
+
+In exercise 1A, we'll fix the problem by ONLY changing the removeAll function so that it has a side effect. Go back to [the website](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+should+remove+all+the+items+from+the+lst+with+the+value+x.%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A%0A++++%23+TODO%3A+add+code+below+to+make+the+program+work%0A%0A%0A%23+The+code+below+should+create+a+shopping_dict+counting+the+number+of+times%0A%23+each+grocery+appears.+For+the+example+below,+we+should+get%3A%0A%23+++%7B%22banana%22%3A+4,+%22apple%22%3A+2,+%22cheese%22%3A+1,+%22bread%22%3A+2%7D%0A%23%0A%23+However,+the+code+we've+provided+fails.+Follow+the+direction+in+the+lab%0A%23+text+to+fix.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++%23+get+the+front+item+in+the+shopping_lst%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++%23+add+the+count+of+the+current+grocery+item%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+all+copies+of+the+given+grocery,+e.g.+if+%22banana%22+is+the%0A++++%23+current+grocery,+the+shopping_lst+should+have+no+more+bananas+after+this+line%0A++++remove_all(shopping_lst,+grocery)%0A%0A%23+nice+print+to+make+the+shopping+list.%0Afor+grocery,+number+in+shopping_dict.items()%3A%0A++++print(f%22Buy+%7Bnumber%7D+%7Bgrocery%7D(s).%22)&mode=display&raw_input=&curInstr=0) and fill in the TODO.
+
+Your new code should modify `removeAll` so that it has the intended side effect.
+
+Once your code is working correctly, the output should look like:
 ```
 Buy 3 banana(s).
 Buy 2 apple(s).
@@ -114,13 +124,37 @@ Buy 1 cheese(s).
 Buy 2 bread(s).
 ```
 
-Open shopping_list.py and work your way through the exercises.
+### Exercise 1B
 
-Question 1: Try to fix the code by creating a side effect in the function `remove_all`. In the code, there is ONE TODO comment specifying where you need to add code for question 1.
+Let's start over again and consider an alternate solution.
 
-Question 2: Try to fix the code by not using side effects in the function `remove_all`. In the code, there are TWO TODO comment specifying where you need to add code for question 2.
+Open [this link](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+should+return+a+new+copy+of+the+lst+with+all+instances+of+x+removed.%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A%0A++++%23+TODO%3A+add+code+below+to+make+the+program+work%0A%0A%0A%23+The+code+below+should+create+a+shopping_dict+counting+the+number+of+times%0A%23+each+grocery+appears.+For+the+example+below,+we+should+get%3A%0A%23+++%7B%22banana%22%3A+4,+%22apple%22%3A+2,+%22cheese%22%3A+1,+%22bread%22%3A+2%7D%0A%23%0A%23+However,+the+code+we've+provided+fails.+Follow+the+direction+in+the+lab%0A%23+text+to+fix.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++%23+get+the+front+item+in+the+shopping_lst%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++%23+add+the+count+of+the+current+grocery+item%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+all+copies+of+the+given+grocery,+e.g.+if+%22banana%22+is+the%0A++++%23+current+grocery,+the+shopping_lst+should+have+no+more+bananas+after+this+line%0A++++%23+TODO%3A+modify+the+line+below+so+that+the+code+works%0A++++remove_all(shopping_lst,+grocery)%0A%0A%23+nice+print+to+make+the+shopping+list.%0Afor+grocery,+number+in+shopping_dict.items()%3A%0A++++print(f%22Buy+%7Bnumber%7D+%7Bgrocery%7D(s).%22)&mode=edit&raw_input=). 
+
+This time, you'll have two different TODOs to fill in. 
+
+For the first TODO, modify the function so that it has no side effects, and instead returns a copy of the lst with all instances of x removed. Then modify the second TODO so that the code works overall. We won't tell exactly how to do this.
+
+Once your code is working correctly, the output should again look like:
+```
+Buy 3 banana(s).
+Buy 2 apple(s).
+Buy 1 cheese(s).
+Buy 2 bread(s).
+```
+
+Now that you've solved the problem in two ways, let's think very carefully about how the two approaches compare. Below, we visualize the return step of the function for both approaches. Note the differences.
+
+First approach (with side effects):
+![images](/LeidenITP/assets/images/lab7/lab7_side_effect_return.png)
+
+Second approach (no side effects):
+![images](/LeidenITP/assets/images/lab7/lab7_no_side_effect_return.png)
+
+Also consider: Which solution has safer code?
 
 ## Exercise 2: Improving Shopping List (standard)
+
+In the previous exercise, you fixed shopping_list in two different ways. Now, in exercise 2, we will make the code safer and more readable. Your code should always show your intent. While our exercise 1A and 1B code works, it's ugly.
 
 Look at this [code](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+removes+all+the+items+from+the+lst+with+the+value+x.%0A%0A++++For+example%3A+%5B1,+2,+3,+2%5D,+2+-%3E+%5B1,+3%5D%0A++++%22%22%22%0A++++for+i,+item+in+enumerate(lst)%3A%0A+++++++if+item+%3D%3D+x%3A%0A++++++++++del+lst%5Bi%5D+++++%0A%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%23+remove+one+product+from+the+shopping+list%0Aremove_all(shopping_lst,+%22banana%22)%0Aprint(shopping_lst)&mode=display&raw_input=&curInstr=0) and try to analyse what is wrong. Why does it not remove all banana's? 
 
