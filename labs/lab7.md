@@ -229,7 +229,32 @@ Open arithmetic_numpy.py and work your way through the exercises.
 
 This exercise focuses on arithmetic with numpy arrays.
 
-## Exercise 5: Rotate Colors (challenge, hard)
+## Exercise 5: Declaring a Class (standard)
+
+To get some practice declaring a class, work your way through `person.py`. In this class, you'll define a `Person` class.
+
+To help guide you, an example class from lecture is given below, with one new method `print_score_n_times` given as well.
+
+```python
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    def print_score(self):
+        print(f"{self.name} earned a score of {self.score}")
+
+    def print_score_n_times(self, n):
+        for i in range(n):
+            self.print_score()
+
+s = Student("Frank", 7.7)
+s.print_score_n_times(10)
+```
+
+Unimportant note: The example class in lecture declared the class with `class Student(object)`, but the `(object)` is unnecessary. 
+
+## Exercise 6: Rotate Colors (challenge, hard)
 
 This exercise learns you how to rotate the colors of an images. This is ofter one of the basic tools in photoshop but not hard to implement yourself.
 
@@ -242,7 +267,7 @@ The end results should look like this:
 
 ![images](/LeidenITP/assets/images/lab7/rotate_colors.png)
 
-## Exercise 6: Blurring an Images (challenge, very hard)
+## Exercise 7: Blurring an Images (challenge, very hard)
 
 In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
 
@@ -254,7 +279,7 @@ The end results should look like this:
 
 ![images](/LeidenITP/assets/images/lab7/blur_image.png)
 
-## Exercise 7: Make an Image Criminal Friendly (challenge, very hard)
+## Exercise 8: Make an Image Criminal Friendly (challenge, very hard)
 
 In this exercise, we continue with using numpy and slicing arrays. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original image of a pumpkin and a blurred out pumpkin.
 
