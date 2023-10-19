@@ -255,7 +255,9 @@ The end results should look like this:
 
 ## Exercise 7: Blurring an Images (challenge, very hard)
 
-In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image.
+In this exercise, we continue with using numpy. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original and blurred image. Blurring an image has the effect of taking an unsharp photograph. This is done by averaging each pixel by its neighbouring pixels.
+
+The function `len` is a bit ambiguous when it comes down to numpy arrays as they can be multidimensional. To get more readable code, we use `size` to get the overall size of the numpy array (as if it was a one dimensional list) and `shape` if we want the length of each axis in the array. Note, that shape return a tuple for each axis the length. For more information see the numpy documentation.
 
 Open blur_image.py and work your way through the exercises.
 
@@ -268,6 +270,8 @@ The end results should look like this:
 ## Exercise 8: Make an Image Criminal Friendly (challenge, very hard)
 
 In this exercise, we continue with using numpy and slicing arrays. However, this exercise is no longer a simple toy problem, but also has some real world applications. When, you complete both function you will also see the end result of the original image of a pumpkin and a blurred out pumpkin.
+
+Blurring out the pumpkin or pixelating it is similar to what you see when a face is made unrecognizable on tv. This is done by creating the effect of locally reducing the pixel density. In this exercise, we will do this by making patches of 30x30 pixels and giving all the pixels the same color value.
 
 Open pixelate_image.py and work your way through the exercises.
 
