@@ -223,7 +223,7 @@ This exercise focuses on creating numpy arrays, indexing them, and slicing.
 
 ## Exercise 4: Arithmetic With Numpy (standard)
 
-Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra with. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
+Arithmetic with numpy arrays works differently from native python list. The main reason for this difference is that the library is made to be very similar to linear algebra. These days almost all linear algebra expressions can be directly be used in python (with numpy). The main difference is that operators work on the values in the array and not on the array. For example, when adding list the list becomes bigger: `[1, 2] + [3, 4] = [1, 2, 3, 4]`, while when adding two arrays the size of the array stays the same and the values in the array are added: `np.array([1, 2]) + np.array([3, 4]) = np.array([4, 6])`.
 
 Open arithmetic_numpy.py and work your way through the exercises.
 
