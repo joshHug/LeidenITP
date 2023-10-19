@@ -111,7 +111,7 @@ It's clear there's an infinite loop. Just like in your own programs that you'll 
 
 Consider: Is the problem in the removeAll function? Or is it in the script that calls the removeAll function? Or is it in the interaction between the two pieces of code? 
 
-### Exercise 1A
+### Exercise 1A (standard)
 
 In exercise 1A, we'll fix the problem by ONLY changing the removeAll function so that it has a side effect. Go back to [the visualizer](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+remove_all(lst,+x)%3A%0A++++%22%22%22%0A++++This+function+should+remove+all+the+items+from+the+lst+with+the+value+x.%0A++++%22%22%22%0A++++new_lst+%3D+%5B%5D%0A++++for+item+in+lst%3A%0A++++++++if+item+%3D%3D+x%3A%0A++++++++++++continue%0A++++++++new_lst.append(item)%0A%0A++++%23+TODO%3A+add+code+below+to+make+the+program+work%0A%0A%0A%23+The+code+below+should+create+a+shopping_dict+counting+the+number+of+times%0A%23+each+grocery+appears.+For+the+example+below,+we+should+get%3A%0A%23+++%7B%22banana%22%3A+4,+%22apple%22%3A+2,+%22cheese%22%3A+1,+%22bread%22%3A+2%7D%0A%23%0A%23+However,+the+code+we've+provided+fails.+Follow+the+direction+in+the+lab%0A%23+text+to+fix.%0Ashopping_lst+%3D+%5B%22banana%22,+%22apple%22,+%22cheese%22,+%22banana%22,+%22banana%22,+%22bread%22,+%22banana%22,+%22apple%22,+%22bread%22%5D%0A%0A%23+Make+a+dict+with+the+grocery+and+number+in+the+shopping_lst%0Ashopping_dict+%3D+%7B%7D%0Awhile+shopping_lst%3A%0A++++%23+get+the+front+item+in+the+shopping_lst%0A++++grocery+%3D+shopping_lst%5B0%5D%0A++++print(f%22grocery+%7Bgrocery%7D+is+added+to+the+shopping+list.%22)%0A++++%23+add+the+count+of+the+current+grocery+item%0A++++shopping_dict%5Bgrocery%5D+%3D+shopping_lst.count(grocery)%0A%0A++++%23+remove+all+copies+of+the+given+grocery,+e.g.+if+%22banana%22+is+the%0A++++%23+current+grocery,+the+shopping_lst+should+have+no+more+bananas+after+this+line%0A++++remove_all(shopping_lst,+grocery)%0A%0A%23+nice+print+to+make+the+shopping+list.%0Afor+grocery,+number+in+shopping_dict.items()%3A%0A++++print(f%22Buy+%7Bnumber%7D+%7Bgrocery%7D(s).%22)&mode=edit&raw_input=) and fill in the TODO.
 
@@ -125,7 +125,7 @@ Buy 1 cheese(s).
 Buy 2 bread(s).
 ```
 
-### Exercise 1B
+### Exercise 1B (standard)
 
 Let's start over again and consider an alternate solution.
 
