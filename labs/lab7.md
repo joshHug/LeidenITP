@@ -193,11 +193,11 @@ In exercise 1A, the code for the function `remove_all` was not according to eith
 
 For this exercise rewrite the code for `remove_all`. You'll be doing this in pycharm.
 
-Quick pedagogical note: The code we provided for exercises 1 and 2 is artificial and not a great solution for the problem. Using `while shopping_lst:` is tricky to get right, as you've seen throughout this exercise. A better approach avoids remove operations entirely. Optionally, try to recreate this entire script without having to remove anything from a list at all.
+Quick pedagogical note: The code we provided for exercises 1 and 2 is artificial and not a great solution for the problem. Using `while shopping_lst:` is tricky to get right, as you've seen throughout this exercise. A better approach avoids remove operations entirely. Optionally, try to recreate this entire script without having to remove anything from a list at all. Tip: Try to loop only once through the shopping_lst and update the dictionary as you go. 
 
 ### Ternary Operator (challenge, medium)
 
-Lastly, we can a bit of cleanup in the print statement. Now, it adds always a '*s*' to the name of a grocery even if it is singular. To make it only put an '*s*' behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
+Lastly, we can a bit of cleanup in the print statement. Now, it adds always a "*s*" to the name of a grocery even if it is singular. To make it only put an "*s*" behind plural words we can use a ternary statement. Apply, a ternary statement to the print statement to fix the singular plural problem. Below is some explanation about ternary operators.
 
 The idea of a ternary operator is that you can have two outcomes depending on a rule. While python does not officially have a ternary operator (like C#, C++, java, etc.), there is a common way of writing them. You should use a ternary operator when the value of a variable should be A in the case of ... otherwise B. It replace the following code:
 ```python
@@ -216,7 +216,7 @@ value = 10 if SomeCondintion else 20
 
 In this exercise, you will learn how to do basic functionality of numpy (numerical python). There are a lot of functions in the numpy library, here we will focus on the absolute basics. Each function in this exercise will have a numpy function that does the work for you or there is a specific bracket notation `[]` that you can use. 
 
-Often the joke is made that coding is just good googling. This is rather true in the sentence that often programmers do not know all code by hard but they know when they see a solution for their problem. To get more familiar with searching online for solution. We want you to find the solution online for this exercise. Keep in mind that the answer should be short.
+Often the joke is made that coding is just good googling. This is rather true, in the sentence that often programmers do not know all code by hard, but they know when they see a solution for their problem and how to find it. To get more familiar with searching online for solutions, we want you to find the solution online for this exercise. Keep in mind that the answer should be short.
 
 Also, if you are more experienced with coding, python and more specific numpy. This exercise can be a bit bland, so feel free to skip it. This also is the case for exercise 4.
 
