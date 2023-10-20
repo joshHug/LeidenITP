@@ -1,7 +1,7 @@
 ---
 layout: minimal
-title: Assignment 2
-description: &desc Assignment 2
+title: Assignment 3
+description: &desc Assignment 3
 summary: *desc
 # has_children: true
 nav_order: 1
@@ -21,7 +21,7 @@ grand_parent: Leiden ITP
 
 # Assignment 3: word n-grams, generating text
 
-**Deadline: Tuesday 7 November 2023 23:59**
+**Deadline: ... 2023 23:59**
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
@@ -36,30 +36,31 @@ This assignment consists of three parts: reading a text file, *training* the mod
 
 To make it a bit easier, we did some parsing of the corpus to make each sentence span exactly one line, remove all character that are not letters and made everything lower caes. Parsing raw text is an assignment on its own, therefore you can just use the text file "abc_corpus.txt".
 
+In this assignment you will ask the user which model they want to train, how many sentences need to be generated with the learned model and how long each sentences can be at most.
+
 ## Template
 
-A more detailed description of each part should do can be found in the assignment3.pt file, which als provides a template. While it is not mandatory to use this file, it is highly recommended.
+A more detailed description of each part should do can be found in the assignment3.pt file, which als provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
 
 You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and the basic functionality is there.
 
 ## Grading
 
-Implementing the basic functionality as described above will give you 6 points out of 10.
+Implementing the basic functionality will give you 6 points out of 10.
 
-**Basic functionality**: Your program does everything described above without crashing (for example on bad user inputs). (5.5 points)
+**Basic functionality**: Your program does the three main parts, reading in the file, making the unigram and bigram model and generate sentences with each one. Use the user input do run the programming accordingly. In the template is a more detailed list what the basic functionality should be. (5.5 points)
 
 **Comments**: Include comments to explain the difficult parts of your code. (0.5 points)
 
 The remaining 4 points can be obtained by implementing additional functionality:
 
-**Pretty printing**: Instead of printing the robot's steps as a list of coordinates, show the steps on the moon surface itself by marking the coordinates and printing the moon surface again. You're free to mark it any way you want, as long as the robot's path is clear. (0.5 points)
+**Trigram model**: Also implementing the trigram model will earn you an additional point.
 
-**More stones**: Generate the moon with more than two stones and have your robot collect them all. You should still try to minimise the robot's path: finding a shortest path for an arbitrary number of stones is very difficult, so try to at least find a reasonably short path. (2 points)
+**Dry code**: Dry code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up just so you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point.
 
-**User menu**: Once you have implemented the options above, add them to a comprehensive menu in which the user can select the way of printing, the number of stones and any additional options you've added. Be careful of bad user inputs: your program should not crash. (1 point)
+**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
 
-**Extra**: This bonus is for those who go the extra mile. Implement a smart algorithm, a polished user interface, or anything that shows outstanding use of programming. (0.5 points)
-
+**New Coding Concepts**: This assignment lent itself for three programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. The last new coding concept you got the partial code for namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points.
 
 ## Tips
 
