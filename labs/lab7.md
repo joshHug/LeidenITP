@@ -119,7 +119,7 @@ Your new code should modify `removeAll` so that it has the intended side effect.
 
 Once your code is working correctly, the output should look like:
 ```
-Buy 3 banana(s).
+Buy 4 banana(s).
 Buy 2 apple(s).
 Buy 1 cheese(s).
 Buy 2 bread(s).
@@ -137,7 +137,7 @@ For the first TODO, modify the function so that it has no side effects, and inst
 
 Once your code is working correctly, the output should again look like:
 ```
-Buy 3 banana(s).
+Buy 4 banana(s).
 Buy 2 apple(s).
 Buy 1 cheese(s).
 Buy 2 bread(s).
