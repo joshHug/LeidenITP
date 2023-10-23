@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 7
-description: &desc 20 October, 2023 - Arrays & Side effects
+description: &desc 3 November, 2023 - Arrays & Side effects
 summary: *desc
 nav_order: 1
 parent: Labs
@@ -18,63 +18,11 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-Welcome to week 7!
+Welcome to week 8!
 
-## PyCharm
+## PyCharm recap
 
-Starting from last week, we're saying goodbye to CodingBat. From now on, we'll be using PyCharm to write and test all of our code. We provide the same manual as last week, just to have easy access to all the information. However, of course do not install Anaconda again. Also, if you have already done the other steps you can skip to the exercises.
-
-In this lab, we'll be using and combining all of the techniques and syntax we've seen from labs 1 through 6.
-
-### Installing Anaconda (redundant)
-
-To be better prepared for future exercises, we need more than the standard python library that was included with the PyCharm installation. While it is possible to install extra libraries one at the time, it is easier to install the most common libraries all at once into what is called a "python environment". We will do this by installing  a tool called [Anaconda](https://www.anaconda.com/download). Go to the page, scroll down, choose your operating system and download Anaconda. After downloading, run the installer and follow the instructions.
-
-### Open Project
-
-Start by downloading the .zip file for this week's code [at this link](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2661436). Unzip the file.
-
-Now open PyCharm and select open and select the folder you just created (when unzipping). To work with the new conda environment, that we just installed, go to the lower corner of your screen where it says */home/user/current_python_installation*. Click on it and select **Add New Interpreter** -> **Add Local Interpreter**. This should look like the image below.
-
-![images](/LeidenITP/assets/images/Add_interpreter.png)
-
-Next, you will see a screen similar to the screenshot down below. At the left side of the popup screen click on **conda environment**. Then it should already be on **use existing environment** but if not click that radiobutton. Now, click on **ok** and from now you should program in this environment.
-
-![images](/LeidenITP/assets/images/Interpreter.png)
-
-### Configure Unittests
-
-Instead of running the python files in the interpreter, you can also run the unittests in a test environment. The additional benefit of doing this is that you get a file tree on the left hand side with green checkmarks or red/yellow cross for each test. When you click on a tests suite you see all the results for these tests and when clicking on a single test you see only the result of that test. To do this a more elaborate editor is needed such as PyCharm or vscode. In this next section you find how to configure it for PyCharm.
-
-To configure the test environment in PyCharm you go to the dropdown menu next to the run and debug icons in the top right corner. Here, you click **edit configurations...**, this should like the image below.
-
-![images](/LeidenITP/assets/images/unittest_configure_menu.png)
-
-Next, you click on the **plus icon** in the right upper corner. Go to the **python tests** and click on **unittests**. See below, for an example how it would look like. 
-
-![images](/LeidenITP/assets/images/configure_unittests.png)
-
-Next, you can configure what file needs to be tested when the **run icon** is clicked. However, it is easier to just let everything stand on the default and click **ok**. Now, go back to the dropdown menu, where you click **edit configurations...**, but now click **current file**. This way if you go to another file it runs that file, and you do not reconfigure anything.
-
-### Read Unittests Results
-
-Unittests are something new, that you did not see before. However, they are merely a tool for you to check if you work is correct. In large production environment they also function as a safety net to not release wrong code. For now, you do not need to worry about that. 
-
-It is important to realize that unittest can not actually test if your code is correct. They just check if for a few example your code gives the correct output. Therefore, you can never rely solely on unittest to check your work. Therefore, normal debug methods are still important.
-
-When an unittest succeeds, it does not print that much (or nothing) in the interpreter screen. However, when something does go wrong it prints out a lot. Important to note, that it will never tell you which line of code is wrong because it can only tell you if your output is wrong, unless there is an error. The screenshot below can help you understand what goes wrong. In the red box, you can find which unittest goes wrong (which is in our case always the name of the function that is wrong). In the green box, you can find which test case goes wrong. For this course we choose to give you several unittest per function. So, if there is an edge case that is wrong the other test are still right. In the yellow box, you can see of which test suite this unittest belongs. When running the test in PyCharm this will be a folder on the lower left hand side. Lastly, the green box tells you how your input is different from the expected input.
-
-![images](/LeidenITP/assets/images/unittest_debug.png)
-
-### Debug Tips
-
-Even though the unittest can help you with understanding what goes wrong in your code. They are not the only tool you have to check your work. One of the easiest way to check if one line of code works the way you think it works is to run python in an interpreter and run the line of code. Running python in the interpreter can be done by just typing `python` in the interpreter/terminal. See below for an example to see what `range` returns.
-
-![images](/LeidenITP/assets/images/use_terminal.png)
-
-Another option is to suppress the unittests and use print statements. This can be done by changing the `VERBOSE` at the beginning of the file to 0. Now, only the number of correct and incorrect test cases are shown and your print statements are easier to find/read. Important to note, that this will only work when running the file as a normal `.py` file and not as a unittest file as we previously configured. There are two ways to run it as a normal `.py` file. One run it in the terminal by typing `python fileName.py`. The other option is to redo the steps to run it as an unittest file and instead of unittest click **python** and by script choose the script you want to run.
-
-Lastly, you can copy the code you want to test to an empty file, at some print statements and run that file.
+This week we continue using PyCharm and running code in the terminal. In [lab 7](https://joshhug.github.io/LeidenITP/labs/lab7/) you can find information about: installing anaconda, opening projects, configuring unittests, reading unittests results, and debugging.
 
 ## Overview of This Lab
 
@@ -84,7 +32,7 @@ In addition to the warmup exercise earlier, this week we have 6 different exerci
  * Exercise 2: [Improving Shopping List](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-2-improving-shopping-list-standard) (standard)
  * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
  * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
- * Exercise 5: [Exercise 5: Declaring a Class](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-declaring-a-class-standard)(standard)
+ * Exercise 5: (standard)
  * Exercise 6: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-rotate-colors-challenge-hard)
  * Exercise 7: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-blurring-an-images-challenge-very-hard) (challenge, hard)
  * Exercise 8: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-8-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
