@@ -26,7 +26,7 @@ The exercises are divided per Topic, but also per Syntax that you can practise.
 
 # Opening Exercise
 
-Start by downloading the zip file from brightspace using [this link]. Unzip the files.
+Start by downloading the zip file from brightspace using [this link](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2672266). Unzip the files.
 
 Now open PyCharm, select open, and select the folder you just created (when unzipping). The folder contains folders for each topic. In the topic folders, you can find the Python files with the exercises.
 
