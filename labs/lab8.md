@@ -32,19 +32,19 @@ In addition to the warmup exercise earlier, this week we have ... different exer
    * Exercise 1b: [Use numpy](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1b-use-numpy-standard) (standard)
    * Exercise 1c: [The ambiguity of multiplying a list](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1c-the-ambiguity-of-multiplying-a-list-standard) (standard)
    * Exercise 1d: [How to make a 2D list](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1d-how-to-make-a-2d-list-challenge-medium) (challenge, medium)
- * Exercise 2: [Side effects]() (challenge, medium)
- * Exercise 3: [First ten digits]() (challenge, medium)
+ * Exercise 2: [Side effects](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-2-side-effects-challenge-medium) (challenge, medium)
+ * Exercise 3: [First ten digits](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-3-first-ten-digits-challenge-medium) (challenge, medium)
  * Exercise 4: (standard)
  * Exercise 5: (standard)
  * Exercise 6: 
  * Exercise 7:  (challenge, hard)
  * Exercise 8:  (challenge, very hard)
 
-All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
+All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
-The three exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge, which extends exercise 2 by making a pretty print.
+The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-For more advanced students, you might find the more difficult `Blurring an Images` and `Make an Image Criminal Friendly` exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging.
+For more advanced students, you might find the more difficult ... and ... exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
@@ -121,12 +121,12 @@ with open(file_name, file_mode) as f:
 ```
 As soon as you do not need the file anymore you can continue outside the `with` statement. This then closes the file.
 
-When you use `np.genfromtxt` the file is automatically closed after this line of code.
+When you use `np.loadtxt` the file is automatically closed after this line of code.
 
 Open exercise `first_ten_digits.py` and follow the instructions.
 
 ## exercise 4;
 
-
+classes vectors
 
 ![images](/LeidenITP/assets/images/lab7/rotate_colors.png)
