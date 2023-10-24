@@ -5,6 +5,9 @@ title: Introduction to Programming
 7 Nov
 : **Assignment 2 due**{: .label .label-red }
 
+23 Oct
+: **Lab**{: .label .label-purple }[Extra Exercises]({{ site.baseurl }}{% link labs/extra_exercises.md %})
+
 20 Oct
 : **Lab**{: .label .label-purple }[Arrays and Side effects]({{ site.baseurl }}{% link labs/lab7.md %})
 
@@ -13,6 +16,7 @@ title: Introduction to Programming
 
 13 Oct
 : **Lab**{: .label .label-purple }[Trickier Problems]({{ site.baseurl }}{% link labs/lab6.md %})
+  : [answers](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2672546)
 : **Assignment**{: .label .label-red }[Collecting moon stones]({{ site.baseurl }}{% link assignments/assignment2.md %})
 
 11 Oct
