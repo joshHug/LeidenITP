@@ -35,7 +35,7 @@ In addition to the warmup exercise earlier, this week we have ... different exer
  * Exercise 2: [Side effects](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-2-side-effects-challenge-medium) (challenge, medium)
  * Exercise 3: [First ten digits](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-3-first-ten-digits-challenge-medium) (challenge, medium)
  * Exercise 4: (standard)
- * Exercise 5: (standard)
+ * Exercise 5: [Power functions and classes]() (standard)
  * Exercise 6: 
  * Exercise 7:  (challenge, hard)
  * Exercise 8:  (challenge, very hard)
@@ -125,8 +125,22 @@ When you use `np.loadtxt` the file is automatically closed after this line of co
 
 Open exercise `first_ten_digits.py` and follow the instructions.
 
-## exercise 4;
+## exercise 4; 2Dvector classes (standard)
 
-classes vectors
+In this exercise, we continue learning about classes. Here, you will implement a 2Dvector class, that creates vector objects. A 2Dvector can for example be a coordinate with an x and y value. 
 
-![images](/LeidenITP/assets/images/lab7/rotate_colors.png)
+In this exercise, we will also have a look at how we can use the operators `+` and `-` with our own classes.
+
+Open exercise `vector2D.py` and follow the instructions.
+
+## exercise 5: Power functions and classes (standard)
+
+In this exercise, we will learn what it means if a variable is callable and we will make power functions.
+
+So far we only have seen callable objects when we made a function. An example of this is `def power():` this creates an object `power` that is callable and when called "()" it executes the function `__call__` and returns something. Calling a function means putting brackets "()" behind it. Typing `def power():` is just a way of making an object `power` with only the `__call__` function. Everything you type in a definition is in the `__call__` function.
+
+Tip: If you ever get the error `this function is not callable` then you probably put brackets "()" behind a non-callable variable.
+
+Open exercise `power.py` and follow the instructions.
+
+
