@@ -33,11 +33,11 @@ In addition to the warmup exercise earlier, this week we have ... different exer
    * Exercise 1c: [The ambiguity of multiplying a list](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1c-the-ambiguity-of-multiplying-a-list-standard) (standard)
    * Exercise 1d: [How to make a 2D list](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1d-how-to-make-a-2d-list-challenge-medium) (challenge, medium)
  * Exercise 2: [Side effects](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-2-side-effects-challenge-medium) (challenge, medium)
- * Exercise 3: [First ten digits](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-3-first-ten-digits-challenge-medium) (challenge, medium)
- * Exercise 4: [Shapes and classes]() (standard)
- * Exercise 5: [2Dvector classes]() (standard)
-   * Using 2Dvectors: shortest path (challenge, hard)
- * Exercise 6: [Power functions and classes]() (standard)
+ * Exercise 3: [First ten digits](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-3-first-ten-digits-standard) (challenge, medium)
+ * Exercise 4: [Shapes and classes](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-4-shapes-and-classes-standard) (standard)
+ * Exercise 5: [2Dvector classes](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-5-2dvector-classes-standard) (standard)
+   * [Using 2Dvectors: shortest path](https://joshhug.github.io/LeidenITP/labs/lab8/#using-2dvectors-shortest-path-challenge-hard) (challenge, hard)
+ * Exercise 6: [Power functions and classes](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-6-power-functions-and-classes-standard) (standard)
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
@@ -124,7 +124,7 @@ When you use `np.loadtxt` the file is automatically closed after this line of co
 
 Open exercise `first_ten_digits.py` and follow the instructions.
 
-## exercise 4: Shapes and classes (standard)
+## Exercise 4: Shapes and classes (standard)
 
 In this exercise, you will create a general 2D shape class that can calculate the circumference and area for several shapes. This is possible because most shapes have almost the same formula and if we ignore naming we can just say we have length1 and length2. These lengths can be radius, height, base, etc.
 
@@ -132,7 +132,7 @@ Open exercise `shape.py` and follow the instructions.
 
 Just a quick discussion note, if you do not understand polymorphisms please skip this note: <br /> Generally this exercise is used to explain and implement polymorphisms with a base class and for each shape a separate class. However, often due to polymorphisms links between classes is mist. In this exercise, we made one class that rules them all. This is possible because the calculations for area and circumference is very similar for all 2D shapes. If polymorphisms is not needed many believe nowadays that a single class is better.
 
-## exercise 5: 2Dvector classes (standard)
+## Exercise 5: 2Dvector classes (standard)
 
 In this exercise, we continue learning about classes. Here, you will implement a 2Dvector class, that creates vector objects. A 2Dvector can for example be a coordinate with an x and y value. 
 
@@ -148,7 +148,7 @@ In this exercise, you will find the shortest path between a series of coordinate
 
 Open exercise `vector2D.py` and complete main using the class `vector2D` that you made in the previous exercise.
 
-## exercise 6: Power functions and classes (standard)
+## Exercise 6: Power functions and classes (standard)
 
 In this exercise, we will learn what it means if a variable is callable and we will make power functions.
 
