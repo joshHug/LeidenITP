@@ -126,7 +126,11 @@ Open exercise `first_ten_digits.py` and follow the instructions.
 
 ## exercise 4: Shapes and classes (standard)
 
-In this exercise, you will create a general shape class that can calculate several shapes. 
+In this exercise, you will create a general 2D shape class that can calculate the circumference and area for several shapes. This is possible because most shapes have almost the same formula and if we ignore naming we can just say we have length1 and length2. These lengths can be radius, height, base, etc.
+
+Open exercise `shape.py` and follow the instructions.
+
+Just a quick discussion note, if you do not understand polymorphisms please skip this note: <br /> Generally this exercise is used to explain and implement polymorphisms with a base class and for each shape a separate class. However, often due to polymorphisms links between classes is mist. In this exercise, we made one class that rules them all. This is possible because the calculations for area and circumference is very similar for all 2D shapes. If polymorphisms is not needed many believe nowadays that a single class is better.
 
 ## exercise 5: 2Dvector classes (standard)
 
