@@ -26,7 +26,7 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 ## Overview of This Lab
 
-In addition to the warmup exercise earlier, this week we have ... different exercises that range in difficulty:
+This week we have 6 different exercises that range in difficulty:
  * Exercise 1: [Memory problems and 2D lists](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1-memory-problems-and-2d-lists-standard) (standard)
    * Exercise 1a: [Understand the problem](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1a-understand-the-problem-standard) (standard)
    * Exercise 1b: [Use numpy](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1b-use-numpy-standard) (standard)
@@ -39,11 +39,11 @@ In addition to the warmup exercise earlier, this week we have ... different exer
    * [Using 2Dvectors: shortest path](https://joshhug.github.io/LeidenITP/labs/lab8/#using-2dvectors-shortest-path-challenge-hard) (challenge, hard)
  * Exercise 6: [Power functions and classes](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-6-power-functions-and-classes-standard) (standard)
 
-All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
+All students, regardless of experience, should be able to complete the 4 standard exercises. Whether you complete all four is up to you.
 
-The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
+The 4 exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-For more advanced students, you might find the more difficult ... and ... exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging.
+For more advanced students, you might find the more difficult Using 2Dvectors: shortest path exercise to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
