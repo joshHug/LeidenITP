@@ -34,11 +34,10 @@ In addition to the warmup exercise earlier, this week we have ... different exer
    * Exercise 1d: [How to make a 2D list](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-1d-how-to-make-a-2d-list-challenge-medium) (challenge, medium)
  * Exercise 2: [Side effects](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-2-side-effects-challenge-medium) (challenge, medium)
  * Exercise 3: [First ten digits](https://joshhug.github.io/LeidenITP/labs/lab8/#exercise-3-first-ten-digits-challenge-medium) (challenge, medium)
- * Exercise 4: (standard)
- * Exercise 5: [Power functions and classes]() (standard)
- * Exercise 6: 
- * Exercise 7:  (challenge, hard)
- * Exercise 8:  (challenge, very hard)
+ * Exercise 4: [Shapes and classes]() (standard)
+ * Exercise 5: [2Dvector classes]() (standard)
+   * Using 2Dvectors: shortest path (challenge, hard)
+ * Exercise 6: [Power functions and classes]() (standard)
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
@@ -103,7 +102,7 @@ This exercise continues with exploring how side effects work and how to create o
 
 In this exercise you will no longer only complete one function, but you need to complete the `main` function that can use any number of functions. This is synonymous with writing small scripts. Open exercise `side_effects.py` and follow the instructions.
 
-## Exercise 3: First ten digits (challenge, medium)
+## Exercise 3: First ten digits (standard)
 In this exersice, we will work out the first ten digits of the sum of ninety-nine 50-digit numbers in the file `first_ten_digits.txt`. We will use two strategies to do this. First, we will open the file as a textfile and transform the strings into numbers. Second, we use numpy to read the file and continue with a numpy array.
 
 It is important to also close a file when you are opening it using code. This can be seen similarly as just opening a file in a program and not closing it. What happens if you open a file 50 times and you adjust one or if you want to delete the file but some program is using it (having it open). Therefore it is important to make sure that after your script has run all files are closed. Even if your program terminates unexpected due to for example a bug.
@@ -125,15 +124,27 @@ When you use `np.loadtxt` the file is automatically closed after this line of co
 
 Open exercise `first_ten_digits.py` and follow the instructions.
 
-## exercise 4; 2Dvector classes (standard)
+## exercise 4: Shapes and classes (standard)
+
+In this exercise, you will create a general shape class that can calculate several shapes. 
+
+## exercise 5: 2Dvector classes (standard)
 
 In this exercise, we continue learning about classes. Here, you will implement a 2Dvector class, that creates vector objects. A 2Dvector can for example be a coordinate with an x and y value. 
 
-In this exercise, we will also have a look at how we can use the operators `+` and `-` with our own classes.
+Start by implementing the `__init__`, `add`, `subtract` and `distance method`.
+
+In this exercise, we will also have a look at how we can use the operators `+` and `-` with our own classes. This is done by implementing the `__add__` and `__sub__` methods. Use the previous implemented function to complete these functions. Do not write how to add two 2Dvector again. 
 
 Open exercise `vector2D.py` and follow the instructions.
 
-## exercise 5: Power functions and classes (standard)
+### Using 2Dvectors: shortest path (challenge, hard)
+
+In this exercise, you will find the shortest path between a series of coordinates.
+
+Open exercise `vector2D.py` and complete main using the class `vector2D` that you made in the previous exercise.
+
+## exercise 6: Power functions and classes (standard)
 
 In this exercise, we will learn what it means if a variable is callable and we will make power functions.
 
