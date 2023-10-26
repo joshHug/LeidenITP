@@ -44,6 +44,8 @@ A more detailed description of each part should do can be found in the assignmen
 
 You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and the basic functionality is there.
 
+If you use the template we added some unittest to help you check if your functions `parse_text_file` and `make_ngram_model` work propperly. However, we only added some very basic tests and this does NOT guarantee that your functions are indeed correct.
+
 ## Grading
 
 Implementing the basic functionality will give you 6 points out of 10.
@@ -58,11 +60,19 @@ The remaining 4 points can be obtained by implementing additional functionality:
 
 **Dry code**: Dry code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up just so you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point.
 
-**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
+**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Another option would be to improve the parser such that less nonsense words are in the corpus. You can do this by changing the code in `parser.py`. This is not an easy challenge so make sure everything else works before you start on this. Also, if you change `parser.py` make sure you hand it in as well (zip the files). Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
 
 **New Coding Concepts**: This assignment lent itself for three programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. The last new coding concept you got the partial code for namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points.
 
 ## Tips
+
+Tips to for the function `make_ngram_model`:
+- Before making the dictionary with all probabilities, make a similar dictionary with the counts.
+- To make the code cleaner, you can use a `defaultdict` instead of a `dict`. This adds the benefit that if a key does not exist the value will be a default value and not throw the error KeyError. To make a defaultdict of defaultdicts with int values. You can use `defaultdict(create_defaultdict(int))`, where `create_defaultdict` is a function that returns a defaultdict. This defaultdict has as default the input of the function `create_defaultdict`.
+- If you want to loop over the keys of a dict you can type `for key in dict:`, If you want to loop over the values add .values() thus `for value in dict.values:` and for both you can use `for key, value in dict.items():`
+
+Tip for the function `predict_sentence`:
+- use np.random.choice check 
 
 
 ## Delivery
