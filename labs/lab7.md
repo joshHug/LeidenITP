@@ -85,7 +85,7 @@ In addition to the warmup exercise earlier, this week we have 6 different exerci
  * Exercise 3: [Basic Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-3-basic-numpy-standard) (standard)
  * Exercise 4: [Arithmetic With Numpy](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-4-arithmetic-with-numpy-standard) (standard)
  * Exercise 5: [Exercise 5: Declaring a Class](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-5-declaring-a-class-standard)(standard)
- * Exercise 6: [Rotate Colors (challenge, hard)](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-rotate-colors-challenge-hard)
+ * Exercise 6: [Rotate Colors](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-6-rotate-colors-challenge-hard) (challenge, hard)
  * Exercise 7: [Blurring an Images](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-7-blurring-an-images-challenge-very-hard) (challenge, hard)
  * Exercise 8: [Make an Image Criminal Friendly](https://joshhug.github.io/LeidenITP/labs/lab7/#exercise-8-make-an-image-criminal-friendly-challenge-very-hard) (challenge, very hard)
 
