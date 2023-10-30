@@ -14,12 +14,12 @@ grand_parent: Leiden ITP
 {: .no_toc .mb-2 }
 
 {{ page.description }}
-{: .fs-6 .fw-300 }
+{: .fs-6 .fw-400 }
 
 1. TOC
-   {:toc}
+{:toc}
 
-# Assignment 4: Recursive Merge Sort & Creating Class
+# Assignment 4: Recursive Merge Sort & Creating Classes
 
 **Deadline: ... 2023 23:59**
 
