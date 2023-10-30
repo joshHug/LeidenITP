@@ -68,26 +68,19 @@ For more information visited [this](https://nl.wikipedia.org/wiki/Mergesort) wik
 
 When storing data, you often want to store more than one datatype per object. For example, you want to store a persons name and age. Now, it would be possible to make two lists: one for the names and one for the ages. However, this is a very bad idea. One major problem is that this can easily lead to misaligned data e.g. the first name in list one does no longer corresponds to the first age in list two. Therefore, we need a different solution which is often a [tuple](https://www.geeksforgeeks.org/tuples-in-python/) or a [named tuple](https://www.geeksforgeeks.org/namedtuple-in-python/). Even though this is a good way to store data if we want to add special methods to such data we need our own class. In this assignment, you will create a class `Person` which has similar functionality to named tuples and more. For example, both are subscriptable meaning you can use square brackets `person_object[0]`. In the template and grading criteria you can find a list with all the functionality that this class needs.
 
-### Sorting Own Objects
-
-At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the `key` argument in merge sort. The ....
-
-Explain:
-- recursive merge sort
-- sort two list, explain both ways;
-   - remove elements from the list
-   - walk through the list
-- default arguments key, explain why it needs to be a function.
-- default argument reverse (explain that this is a function)
-- recursion
-- classes with magic methods
-
-
 Each `Person` object should be randomly initialized with:
 - A name from the global list `NAMES`.
 - An age between 18 and 100.
 - A height between 150 and 200 cm.
 - A weight between 45 and 100 kg.
+
+### Sorting Own Objects
+
+At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to a object an sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
+
+Another argument that most sorting algorithm have is the default `reverse` argument. This argument makes sure that the list is sorted in reverse order. 
+
+Lastly, your implementation of merge sort and the two default arguments should work in any combination.  
 
 ## Template
 
