@@ -108,7 +108,7 @@ In `load_names.py` you will write code to load the file **names.txt**. The funct
 
 ## Dry code (Don't repeat yourself)
 
-During this assignment it is important to write dry code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
+During this assignment it is important to write *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
 ```python
 if check_first_name(name):
    name = name.lower()

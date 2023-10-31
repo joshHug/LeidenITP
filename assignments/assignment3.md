@@ -40,11 +40,136 @@ In this assignment you will ask the user which model they want to train, how man
 
 ## Template
 
-A more detailed description of each part should do can be found in the assignment3.pt file, which als provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
+Each part can be found in the `assignment3.py` file, which also provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
 
 You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and the basic functionality is there.
 
-If you use the template we added some unittest to help you check if your functions `parse_text_file` and `make_ngram_model` work propperly. However, we only added some very basic tests and this does NOT guarantee that your functions are indeed correct.
+If you use the template we added some unittest to help you check if your functions `parse_text_file` and `make_ngram_model` work properly. However, we only added some very basic tests and this does NOT guarantee that your functions are indeed correct.
+
+For each part there is a function in the framework, see below for more details. However, it is up to you to write a script that makes use of these functions and completes the basic functionality described in the grading criteria.
+
+### Parse Text File
+
+In the `parse_text_file` function you will parse a file and return list of sentences. Parsing means reading a text file and converting it from one format to another. For this assignment, we will read the text file `abc_corpus` and extract the sentences from it into a list of sentences. A sentence consists of list of words and should start with a special word `"\<s>"` and end with `"</s>"`. The goal of parsing is to make from general written text or speach, a format that a computer can understand. While this sounds easy there are a few things to consider:
+- No matter if a word is written with upper or lower case letters it should be then same word.
+- We are only interested in letter and not special characters.
+- We need to find where a sentence ends.
+- Numbers should be ignored.
+
+ There are many more thing to consider, but to make it a bit easier we preprocessed the text for the most part. For now, each line in the document contains one sentence that needs to be split into words. Each sentence should start with a special word `"<s>"` and end with `"</s>"`. Also, all punctuation should be removed. If a line is empty it should be skipped.
+
+For example, the following `text.txt` file:
+```text
+
+This is a test sentence.
+
+
+```
+should be parsed into the following list:
+```python
+[["<s>", "this", "is", "a", "test", "sentence", "</s>"]]
+```
+
+### Make Ngram Model
+
+To create an n-gram model, we're essentially building a predictive model for words in a sentence. This model is represented as a model-dictionary, where the keys are "histories" and the values are word-dictionaries that map possible next words to their probabilities. Thus, a word-dictionary has as key a word and as value a change. A "history" of a word consists of a number of words preceding that word, depending on the *n* in n-gram this can be zero words to many words. In this assignment, we will implement three n-gram models. Let's break down how this works for each n-gram model.
+
+1. **Unigram Model**:
+   - In the unigram model, we don't consider any previous words. This mean that the history consists of no words. Therefore, each word's probability is independent of its position in the sentence.
+   - To make the model consistent with the other models, the model-dictionary has only one key which is a special `"<any>"` token that represents any word.
+   - The values in this word-dictionary are the probabilities for each word. 
+   - An unigram model does not have the start token `<s>` as key in the model-dictionary.
+
+   For example:
+   ``` python
+   {"<any>": {"house": 0.01, "dog": 0.04, "nice": 0.02, "red": 0.01, "</s>": 0.002, ...}}
+   ```
+
+2. **Bigram Model**:
+   - In the bigram model, the history consists of just the previous word in the sentence, and this previous word influences the next word.
+   - The model consists of a model-dictionary with as keys each unique previous word.
+   - Each previous word key has a word-dictionary of possible next words with their probabilities.
+   - A bigram model has the start token `<s>` as key in the model-dictionary.
+
+   For example:
+   ``` python
+   {"the": {"house": 0.01, "dog": 0.04 ...}, 
+    "is": {"nice": 0.02, "red": 0.01, "</s>": 0.001, ...},
+    "<s>": {"the": 0.01, "a": 0.004, ...}, 
+    ...}
+   ```
+
+3. **Trigram Model**:
+   - In the trigram model, the history consists of the previous two words, and these two previous words influence the next word.
+   - The model consists of a dictionary with each unique combination of the two previous words as a key.
+   - Each key has a dictionary of possible next words with their probabilities.
+   - A trigram model has the start token `<s>,<s>` as key in the model-dictionary and several keys consisting of the start token and a word `<s>,...`.
+
+   For example:
+   ``` python
+   {"the,house": {"is": 0.01, "has": 0.04 ...}, 
+    "is,a": {"book": 0.02, "house": 0.01, </s>: 0.003, ...} 
+    "<s>,the": {"house": 0.01, "chair": 0.004, ...}, 
+    ...}
+   ```
+
+4. **General Notes**:
+   - All models exclude the start token `"<s>"` from the key-dictionaries, as the start of sentence can not be in the middle of a sentence.
+   - The end token `</s>` is added as an option for a next word in all models, i.e., it can be a key in the word-dictionaries. However, it should not be added as a key model-dictionary, as it denotes the end of a sentence, which can not be in the middle of the sentence.
+   - To calculate the probability of each word in the n-gram model, you count how many times a specific word follows a particular history, denoted as `count(word | history)`, and then divide it by the total number of occurrences of that history, represented as `sum(history)`.
+   - Essentially, the probability calculation is: `count(word | history) / sum(history)`. This quantifies how frequently a specific word follows certain other words in the given corpus. This approach allows us to model the chance of specific words following certain history, enabling us to generate more meaningful text based on historical word usage patterns.
+      For example, for a bigram model, if the corpus counts a 100 times the word "has" and the word "a" occurred 5 times after "has" then "a" has a probability of 0.05 given the history "has".
+
+Note, while a "real" understanding of statistic is not required for this assignment to prevent future confusion, calculating probabilities/chances using count is also referred to [frequentist probability](https://en.wikipedia.org/wiki/Frequentist_probability#:~:text=Frequentist%20probability%20or%20frequentism%20is,thus%20ideally%20devoid%20of%20opinion). 
+
+### Predict Sentence
+
+In the `predict_sentence` function you will implement a sentence predictor. To generate a sentence using a n-gram model, follow these guidelines:
+
+1. Initialize the history by appending an appropriate number of start tokens `"<s>"`, see the model descriptions above. For the unigram model, you do not add the start token `"<s>"`. The history always begins with `"<any>"`.
+2. Now, you can use the history in the model-dictionary to get the word-dictionary. The keys of this word-dictionary are the possible next words and their values are the probability of that word. Hint: Just using `np.random.choice(word-dictionary.keys())` will not work as now each word has the same chance to get chosen. 
+3. When, you have your next word, update the history and go back to step 2, unless step 4 applies.
+4. The sentence prediction process will halt when it encounters the `"</s>"` token or reaches the maximum sentence length (given by `max_sentence_len`).
+5. Each generated sentence should conclude with a period ".".
+6. Once you have generated the desired number of sentences (given by `n_sentences`), save them to a text file named `"generated_{name}_sentences.txt"`, here name is the name of the model. Each sentence should occupy its own line in the text file.
+
+## Dry code (Don't repeat yourself)
+
+During this assignment, you will be graded on how well you wrote your code, in particular if your code is *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
+```python
+if check_first_name(name):
+   name = name.lower()
+   print(f"The first name of this person is {name}")
+else:
+   name = name.lower()
+   print(f"The last name of this person is {name}")
+```
+
+The dry code can be:
+```python
+name = name.lower()
+if check_first_name(name):
+   print(f"The first name of this person is {name}")
+else:
+   print(f"The last name of this person is {name}")
+```
+If `name = name.lower()` can not be placed outside the `if else`, a function can be used. Such that the code is still dry. Below an example for such case. 
+```python
+def clean_name(name):
+    return name.lower()
+
+if check_first_name(name):
+   print(f"The first name of this person before cleaning is {name}")
+   name = clean_name(name)
+   print(f"The first name of this person is {name}")
+else:
+   name = clean_name(name)
+   print(f"The last name of this person is {name}")
+```
+
+There are a few reasons why *dry* coding is important. Not only does it make your code shorter, often more readable, and it can save you time writing the same code over and over. Maybe the most important reason is your code is easier to update and to bugfix. Let's go through a scenario together. You find a bug in the code example above. This bug consists of a first name that has whitespace around it and you do not want extra spaces in your print statement. Now, you update your code by adding `.strip()` at line 2. This solves your problem. Two months later a co-worker comes to you saying your code prints extra white spaces. you are confused because you solved the problem. However, you only changed it for first names and not for last names. This is very common mistake in large code basis. However, if you had made the code *dry* this would not have happened because there is only one place where you reformat `name`.
+
+So, what you should learn about the example above is that *dry* coding not only means not typing the same line of code somewhere, but that it means not coding the same functionality twice. 
 
 ## Grading
 
@@ -72,7 +197,7 @@ Tips to for the function `make_ngram_model`:
 - If you want to loop over the keys of a dict you can type `for key in dict:`, If you want to loop over the values add .values() thus `for value in dict.values:` and for both you can use `for key, value in dict.items():`
 
 Tip for the function `predict_sentence`:
-- use np.random.choice check 
+- use np.random.choice, read the [documentation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html) for more ideas. 
 
 
 ## Delivery
