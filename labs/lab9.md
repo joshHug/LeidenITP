@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 9
-description: &desc 10 November, 2023 - classes and objects
+description: &desc 10 November, 2023 - Classes & Errors
 summary: *desc
 nav_order: 1
 parent: Labs
@@ -27,7 +27,13 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: 
+ * Exercise 1: [Fix the code]() (standard)
+ * Exercise 2: [Sequence iterators & generators]() (standard)
+ * Exercise 3: [Counting with dictionaries]() (standard)
+   * Exercise 3a: Counting with dictionaries (standard)
+   * Exercise 3b: Counting with defaultdicts (challenge, medium)
+ * Exercise 4: []()
+
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
@@ -39,9 +45,13 @@ If you feel that this week's challenges are too hard for you, feel free to do a 
 
 ## Exercise 1: Fix the code (standard)
 
-## Exercise 2: Sequence iterators & generators
+In this exercise the code is already coded. However, there is a problem it does not pass all unittests. It is up to you to make the code work. To do this you are only are allowed to use `try except` statements. 
 
-## Exercise 3: Counting with dictionaries
+Open exercise `fix_the_code.py` and fix the functions.
+
+## Exercise 2: Sequence iterators & generators (standard)
+
+## Exercise 3: Counting with dictionaries (standard)
 
 In this exercise, we will have a look how to construct a dictionary that counts objects. There are many ways to implement this, however, some are more clear or faster than others. Also, you can sometimes find some bad suggestions on forums where they suggest code that was used in python2 and later was deprecated in python3. For example, the `dict.has_key()` method does no longer exist. Here, we will go over four different (and most used) solutions when dynamically filling a dictionary with keys and values.  
 
@@ -95,11 +105,13 @@ Exercise 3b has the same purpose as 3a only now you are asked to use a `defaultd
 
 ### Exercise 3c: Displaying dictionaries with counts (challenge, hard)
 
-In this exercise, you will plot for each letter how many times it is used in the file `names.txt`. The plot should be in alphabetically order. Below you will find an image how it should look like. Open exercise `has_key.py` and complete the script or the main function. 
+In this exercise, you will plot for each letter how many times it is used in the file `names.txt`. The plot should be in alphabetically order. Below you will find an image how it should look like. Colors are not mandatory nor the colorbar is mandatory. Keep in mind that both add additional challenge. Open exercise `has_key.py` and complete the script or the main function.
 
-![images](/LeidenITP/assets/images/lab9/letters_used_in_names.png)
+![image](/LeidenITP/assets/images/lab9/letters_used_in_names.png)
 
+Hint: Use `plt.bar` from matplotlib.pyplot (this commonly import as `import matplotlib.pyplot as plt`). To get different colors, you can either add 26 colors or you can use a cmap (get_cmap) as function and use the values (counts) to calculate the colors. For the colorbar, you could use ScalarMappable in combination with `plt.colorbar`. Note, that there are probably many ways to create the plot.
 
+## Exercise 4:
 
 
 
