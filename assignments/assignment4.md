@@ -14,7 +14,7 @@ grand_parent: Leiden ITP
 {: .no_toc .mb-2 }
 
 {{ page.description }}
-{: .fs-6 .fw-400 }
+{: .fs-6 .fw-300 }
 
 1. TOC
 {:toc}
@@ -23,7 +23,7 @@ grand_parent: Leiden ITP
 
 **Deadline: ... 2023 23:59**
 
-Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
+Hand in your assignment via [Brightspace](...) TODO. See the "Delivery" section for instructions.
 
 
 ## Program

@@ -18,7 +18,7 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-Welcome to week 8!
+Welcome to week 9, lab 8!
 
 ## PyCharm recap
 
@@ -43,7 +43,7 @@ All students, regardless of experience, should be able to complete the 4 standar
 
 The 4 exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-For more advanced students, you might find the more difficult Using 2Dvectors: shortest path exercise to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
+For more advanced students, you might find the more difficult shortest path exercise using the 2DVectors to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
