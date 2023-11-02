@@ -30,10 +30,11 @@ This week we have ... different exercises that range in difficulty:
  * Exercise 1: [Fix the code]() (standard)
  * Exercise 2: [Sequence iterators & generators]() (standard)
  * Exercise 3: [Counting with dictionaries]() (standard)
-   * Exercise 3a: Counting with dictionaries (standard)
-   * Exercise 3b: Counting with defaultdicts (challenge, medium)
- * Exercise 4: []()
-
+   * Exercise 3a: [Counting with dictionaries]() (standard)
+   * Exercise 3b: [Counting with defaultdicts]() (challenge, medium)
+   * Exercise 3c: [Displaying dictionaries with counts]() (challenge, hard)
+ * Exercise 4: [ Two's Complement]() (challenge, very hard)
+   * Exercise 4 extra: [Additional Arithmetic]() (challenge, very hard+)
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
@@ -51,6 +52,22 @@ Open exercise `fix_the_code.py` and fix the functions.
 
 ## Exercise 2: Sequence iterators & generators (standard)
 
+In this exercise, you will implement the following sequences by making an iterable class:
+```text
+ - Padovan sequence (1 ,1 ,1 ,2 ,2 ,3 , 4, 5, 7, 9)  p(n) = p(n-2) + p(n-3)
+ - Powers of two    (1, 2, 4, 8, 16, 32, 64, 128)    p(n) = p(n-1) * 2
+ - Factorial        (1, 1, 2, 6, 24, 120, 720, 5040) p(n) = p(n-1) * n
+```
+And the following sequence by making a generator function:
+```text
+ - Triangular       (0, 1, 3, 6, 10, 15, 21, 28, 36) p(n) = p(n-1) + n
+```
+We will also practise with `raise StopIteration` to prevent infinite loops. Apply `raise StopIteration` to the power of two class. This is done by adding an extra initialization argument which determines the maximum value of the sequence. 
+
+At last, in this exercise we will look how we could combine iterable and getitem to return nth item. You will apply this to the Factorial class. Note: this is good when you need the nth number once, but if an index from a sequence is needed often, it would be better to store that sequence in a list and then use an index on that list. The reason is that otherwise you will recalculate the same values many times which is not efficient.
+
+Open exercise `sequence_iterators.py`, follow the instructions and complete the classes and functions.
+
 ## Exercise 3: Counting with dictionaries (standard)
 
 In this exercise, we will have a look how to construct a dictionary that counts objects. There are many ways to implement this, however, some are more clear or faster than others. Also, you can sometimes find some bad suggestions on forums where they suggest code that was used in python2 and later was deprecated in python3. For example, the `dict.has_key()` method does no longer exist. Here, we will go over four different (and most used) solutions when dynamically filling a dictionary with keys and values.  
@@ -63,7 +80,7 @@ dct["a"] += 1
 dct["d"] += 1
 ```
 
-The most used solution is to check with an `if` statement if the key exist or not. If it exist you just add one to the count, otherwise, you create the key and set in on one. The problem is that it is not immediatly clear what the intent of the code is. After all, after a `if` statement can be anything.
+The most used solution is to check with an `if` statement if the key exist or not. If it exists you just add one to the count, otherwise, you create the key and set in on one. The problem is that it is not immediately clear what the intent of the code is. After all, after a `if` statement can be anything.
 
 ```python
 if item not in dct:  # Test if the key "item" exists in the dictionary "dct".
@@ -111,14 +128,53 @@ In this exercise, you will plot for each letter how many times it is used in the
 
 Hint: Use `plt.bar` from matplotlib.pyplot (this commonly import as `import matplotlib.pyplot as plt`). To get different colors, you can either add 26 colors or you can use a cmap (get_cmap) as function and use the values (counts) to calculate the colors. For the colorbar, you could use ScalarMappable in combination with `plt.colorbar`. Note, that there are probably many ways to create the plot.
 
-## Exercise 4:
+## Exercise 4: Two's Complement (challenge, very hard)
 
+In this exercise, we will implement two's complement using a `Byte` class. This `Byte` class has one attribute `__binary` which consists of 8 `Bit` objects (8 bits). For information on two's complement see this [wiki](https://nl.wikipedia.org/wiki/Two%27s_complement). The idea of this exercise is that most functionality can be implemented using magic methods and have separate classes for executing bit level code and byte level code.
 
+The exercise is therefore built in two parts. 
 
+First, you will implement the `Bit` class that contains the attribute `__on` which is `True` or `False`. This class should handle everything related to changing bits. In other words, the attribute `__on` should not be used outside the class `Bit`. 
 
+The `Bit` class should contain the following functionality:
+ - A init method, which can has as input either a string (`"0"`/`"1"`) or a int (`0`/`1`).
+ - The addition of two bits, returning a carry over `Bit` and the outcome `Bit`
+ - A representation that is either `"0"` or `"1"`.
+ - A method to convert a `Bit` to an `int`
+ - The `__eq__` magic method is already implemented as it is needed for the unittests.
+ - (optional) A method to reverse/negate a `Bit`.
 
+Second, you will implement the `Byte` class that contains the attribute `__binary` which consists of a list of 8 `Bit` objects. This class should handle everything related to two's complement arithmetic. In other words, the attribute `__binary` should not be used outside the class `Byte`. 
 
+The `Byte` class should contain the following functionality:
+ - A init method, which can has as input either an int or a list of 8 `Bit` objects.
+ - The addition of two bytes, returning a new `Byte` object.
+ - (optional, but recommended) A method to negate a `Byte`.
+ - The subtraction of two bytes, returning a new `Byte` object.
+ - A representation that is a string of 8 zeros or ones.
+ - A method to convert a `Byte` to an `int`
+ - The `__eq__` magic method is already implemented as it is needed for the unittests.
+ - (optinal) A method for reversing a `Byte`.
+ - (optinal) A method for iterating over a `Byte`.
 
+Open exercise `twos_complement.py` and complete the classes.
+
+### Exercise 4 extra: Additional Arithmetic (challenge, very hard+)
+
+To really push yourself, you can implement additional arithmetic for the `Byte` class. For example, you could implement multiplication which is not to hard as you can just add multiple byte together: 
+
+```
+1110
+0111 
+--- *
+1110
+1100
+1000
+----+
+0010 = 2 = 98 modulo 8 
+```
+
+Division is generally a lot harder and requires more steps, but using long division you could make it work.
 
 
 
