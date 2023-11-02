@@ -5,11 +5,18 @@ title: Introduction to Programming
 7 Nov
 : **Assignment 2 due**{: .label .label-red }
 
+3 Nov
+: **Lab**{: .label .label-purple }[Classes and Objects]({{ site.baseurl }}{% link labs/lab8.md %})
+
+1 Nov
+: **Lecture**{: .label .label-blue }[NumPy and Magic Methods](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2682942)
+
 23 Oct
 : **Lab**{: .label .label-purple }[Extra Exercises]({{ site.baseurl }}{% link labs/extra_exercises.md %})
 
 20 Oct
 : **Lab**{: .label .label-purple }[Arrays and Side effects]({{ site.baseurl }}{% link labs/lab7.md %})
+  : [answers](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2675798)
 
 18 Oct
 : **Lecture**{: .label .label-blue }[Functions, Classes and NumPy](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2667226)
