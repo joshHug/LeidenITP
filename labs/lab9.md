@@ -27,16 +27,16 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: [Fix the code]() (standard)
- * Exercise 2: [Sequence iterators & generators]() (standard)
- * Exercise 3: [Counting with dictionaries]() (standard)
-   * Exercise 3a: [Counting with dictionaries]() (standard)
-   * Exercise 3b: [Counting with defaultdicts]() (challenge, medium)
-   * Exercise 3c: [Displaying dictionaries with counts]() (challenge, hard)
- * Exercise 4: [ Two's Complement]() (challenge, very hard)
-   * Exercise 4 extra: [Additional Arithmetic]() (challenge, very hard+)
- * Exercise 5: [Creating Logic Gates & inheritance]() (challenge, very hard)
-   * Exercise 5: [Adding Additional Components]() (challenge, very hard+)
+ * Exercise 1: [Fix the code](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-1-fix-the-code-standard) (standard)
+ * Exercise 2: [Sequence iterators & generators](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-2-sequence-iterators--generators-standard) (standard)
+ * Exercise 3: [Counting with dictionaries](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-3-counting-with-dictionaries-standard) (standard)
+   * Exercise 3a: [Counting with dictionaries](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-3a-counting-with-dictionaries-standard) (standard)
+   * Exercise 3b: [Counting with defaultdicts](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-3b-counting-with-defaultdicts-challenge-medium) (challenge, medium)
+   * Exercise 3c: [Displaying dictionaries with counts](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-3c-displaying-dictionaries-with-counts-challenge-hard) (challenge, hard)
+ * Exercise 4: [ Two's Complement](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-4-twos-complement-challenge-very-hard) (challenge, very hard)
+   * Exercise 4 extra: [Additional Arithmetic](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-4-extra-additional-arithmetic-challenge-very-hard) (challenge, very hard+)
+ * Exercise 5: [Creating Logic Gates & inheritance](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-5-creating-logic-gates--inheritance-challenge-very-hard) (challenge, very hard)
+   * Exercise 5: [Adding Additional Components](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-5-adding-additional-components-challenge-very-hard) (challenge, very hard+)
    
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 

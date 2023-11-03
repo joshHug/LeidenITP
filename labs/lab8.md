@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 8
-description: &desc 3 November, 2023 - classes and objects
+description: &desc 3 November, 2023 - Classes and Objects
 summary: *desc
 nav_order: 1
 parent: Labs
