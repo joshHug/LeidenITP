@@ -35,7 +35,9 @@ This week we have ... different exercises that range in difficulty:
    * Exercise 3c: [Displaying dictionaries with counts]() (challenge, hard)
  * Exercise 4: [ Two's Complement]() (challenge, very hard)
    * Exercise 4 extra: [Additional Arithmetic]() (challenge, very hard+)
-
+ * Exercise 5: [Creating Logic Gates & inheritance]() (challenge, very hard)
+   * Exercise 5: [Adding Additional Components]() (challenge, very hard+)
+   
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
 
 The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
@@ -176,7 +178,20 @@ To really push yourself, you can implement additional arithmetic for the `Byte` 
 
 Division is generally a lot harder and requires more steps, but using long division you could make it work.
 
+## Exercise 5: Creating Logic Gates & inheritance (challenge, very hard)
 
+In this exercise, we will practise with classes and inheritance. You will use a class gate as a parent class for making new classes. Here, the class gate functions like a template and provides general method. The upside of a class like gate is that you don't forgot to implement certain methods, but also some functionality can be inherited from the base class.
 
+While, this exercise is more of a toy example on how to use these kinds of base classes with a template. This format is often used in datascience and AI. 
+For example, implementing neural networks with pytorch work like this, where you only need to implement the __init__ and forward method. Another example that uses these kinds of bases classes would be sklearn, where you often only implement a fit and predict method.
 
+For this exercise, a base class is already implemented (instead of importing it). You only need to complete the child classes.
 
+First, create the NAND class then use this gate to create the other gates.
+This is possible because a NAND gate is a universal gate.
+
+Last, create a latch component (which can still be implemented as gate). The only difference is that you need to remember the internal memory. This is needed because some wires create feedback into the system itself.
+
+### Exercise 5: Adding Additional Components (challenge, very hard+)
+
+In the first part of exercise 5, you made some basic gates and you first component. This is very limited, but you can extend this framework to a complete computer. Try to implement some extra functionality. For example, 4 bit data storage or ALU components. 

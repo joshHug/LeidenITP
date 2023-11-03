@@ -21,9 +21,9 @@ grand_parent: Leiden ITP
 
 # THIS ASSIGNMENT IS STILL WORKED ON
 
-# Assignment 3: word n-grams, generating text
+# Assignment 3: word n-grams & generating text
 
-**Deadline: ... 2023 23:59**
+**Deadline: 28 November 2023 23:59**
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
@@ -177,7 +177,9 @@ So, what you should learn about the example above is that *dry* coding not only 
 
 Implementing the basic functionality will give you 6 points out of 10.
 
-**Basic functionality**: Your program does the three main parts, reading in the file, making the unigram and bigram model and generate sentences with each one. Use the user input do run the programming accordingly. In the template is a more detailed list what the basic functionality should be. (5.5 points)
+**Basic functionality**: Your program does the three main parts, reading in a file (at least the `abc_corpus.txt`), making the unigram and bigram model and generate sentences with each one. In the template is a more detailed list of what the basic functionality should be. (5 points)
+
+**User interface** The program should run according to the user input. This should consists at least of which file the ngram should be trained on, which ngram model to train and how many and how long the generated sentences should be. (0.5 points) 
 
 **Comments**: Include comments to explain the difficult parts of your code. (0.5 points)
 
@@ -187,7 +189,7 @@ The remaining 4 points can be obtained by implementing additional functionality:
 
 **Dry code**: Dry code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up just so you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point.
 
-**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Another option would be to improve the parser such that less nonsense words are in the corpus. You can do this by changing the code in `parser.py`. This is not an easy challenge so make sure everything else works before you start on this. Also, if you change `parser.py` make sure you hand it in as well (zip the files). Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
+**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Another option would be to improve the parser such that less nonsense words are in the corpus or such that it works on any corpus of your own. You can do this by changing the code in `parser.py`. This is not an easy challenge so make sure everything else works before you start on this. Also, if you change `parser.py` make sure you hand it in as well (zip the files). Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
 
 **New Coding Concepts**: This assignment lent itself for three programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. The last new coding concept you got the partial code for namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points.
 
@@ -208,4 +210,4 @@ Once you are sure about your program, save a copy of your `.py` file with your *
 
 If your program consists of multiple files, then compress these into a `.zip` file with the same naming scheme: `123456_3.zip`. Please make sure to **not** include your `venv` folder if you do this. Your submission should not be larger than 50kB.
 
-Next, upload your `.py` or `.zip` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322) under "Assignments" > Assignment 3 - ... .
+Next, upload your `.py` or `.zip` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322) under "Assignments" > Assignment 3 - word n-gram & generating text.

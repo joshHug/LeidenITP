@@ -23,9 +23,9 @@ grand_parent: Leiden ITP
 
 # Assignment 4: Recursive Merge Sort & Creating Classes
 
-**Deadline: ... 2023 23:59**
+**Deadline: 20 December 2023 23:59**
 
-Hand in your assignment via [Brightspace](...) TODO. See the "Delivery" section for instructions.
+Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
 
 ## Program
@@ -233,4 +233,4 @@ Once you are sure about your program, save a copy of your `.py` file with your *
 
 If your program consists of multiple files, then compress these into a `.zip` file with the same naming scheme: `123456_4.zip`. Please make sure to **not** include your `venv` folder if you do this. Your submission should not be larger than 50kB.
 
-Next, upload your `.py` or `.zip` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322) under "Assignments" > Assignment 4 - ... .
+Next, upload your `.py` or `.zip` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322) under "Assignments" > Assignment 4 - Recursive Merge Sort & Creating Classes.
