@@ -38,11 +38,11 @@ This week we have ... different exercises that range in difficulty:
  * Exercise 5: [Creating Logic Gates & inheritance](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-5-creating-logic-gates--inheritance-challenge-very-hard) (challenge, very hard)
    * Exercise 5: [Adding Additional Components](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-5-adding-additional-components-challenge-very-hard) (challenge, very hard+)
    
-All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all four is up to you.
+All students, regardless of experience, should be able to complete the three standard exercises. Whether you complete all three is up to you.
 
-The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
+The six exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-For more advanced students, you might find the more difficult ... . Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
+For more advanced students, you might find the more difficult Two's Complement and Creating logic gates & inheritance exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
