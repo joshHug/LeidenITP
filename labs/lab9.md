@@ -55,14 +55,14 @@ Open exercise `fix_the_code.py` and fix the functions.
 ## Exercise 2: Sequence iterators & generators (standard)
 
 In this exercise, you will implement the following sequences by making an iterable class:
-```text
- - Padovan sequence (1 ,1 ,1 ,2 ,2 ,3 , 4, 5, 7, 9)  p(n) = p(n-2) + p(n-3)
- - Powers of two    (1, 2, 4, 8, 16, 32, 64, 128)    p(n) = p(n-1) * 2
- - Factorial        (1, 1, 2, 6, 24, 120, 720, 5040) p(n) = p(n-1) * n
+``` markdown
+ - Padovan        (1 ,1 ,1 ,2 ,2 ,3 , 4, 5, 7, 9)  p(n) = p(n<sub>2</sub>) + p(n-3)
+ - Powers of two  (1, 2, 4, 8, 16, 32, 64, 128)    p(n) = p(n-1) * 2
+ - Factorial      (1, 1, 2, 6, 24, 120, 720, 5040) p(n) = p(n-1) * n
 ```
 And the following sequence by making a generator function:
 ```text
- - Triangular       (0, 1, 3, 6, 10, 15, 21, 28, 36) p(n) = p(n-1) + n
+ - Triangular     (0, 1, 3, 6, 10, 15, 21, 28, 36) p(n) = p(n-1) + n
 ```
 We will also practise with `raise StopIteration` to prevent infinite loops. Apply `raise StopIteration` to the power of two class. This is done by adding an extra initialization argument which determines the maximum value of the sequence. 
 
