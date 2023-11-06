@@ -39,11 +39,16 @@ For more advanced students, you might find the more difficult ... exercise(s) to
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
-## Exercise : Recursive Sum (standard)
-
 ## Exercise : Recursive Reverse (standard) 
 
 ## Exercise : Recursive Palindrome (standard) 
+
+## Exercise : Recursive Sum (standard)
+
+### Exercise : Recursive Unfold Sum (challenge, hard)
+
+
+
 
 ## Exercise : Recursive Sequences (standard)
 
