@@ -19,8 +19,6 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-# THIS ASSIGNMENT IS STILL WORKED ON
-
 # Assignment 3: word n-grams & generating text
 
 **Deadline: 28 November 2023 23:59**
@@ -119,10 +117,10 @@ To create an n-gram model, we're essentially building a predictive model for wor
    - All models exclude the start token `"<s>"` from the key-dictionaries, as the start of sentence can not be in the middle of a sentence.
    - The end token `</s>` is added as an option for a next word in all models, i.e., it can be a key in the word-dictionaries. However, it should not be added as a key model-dictionary, as it denotes the end of a sentence, which can not be in the middle of the sentence.
    - To calculate the probability of each word in the n-gram model, you count how many times a specific word follows a particular history, denoted as `count(word | history)`, and then divide it by the total number of occurrences of that history, represented as `sum(history)`.
-   - Essentially, the probability calculation is: `count(word | history) / sum(history)`. This quantifies how frequently a specific word follows certain other words in the given corpus. This approach allows us to model the chance of specific words following certain history, enabling us to generate more meaningful text based on historical word usage patterns.
+   - Essentially, the probability calculation is: `count(word | history) / sum(history)`. This quantifies how frequently a specific word follows certain other words in the given corpus. This approach allows us to model the chance of a specific word following certain history, which enabling us to generate more meaningful text based on historical word patterns.
       For example, for a bigram model, if the corpus counts a 100 times the word "has" and the word "a" occurred 5 times after "has" then "a" has a probability of 0.05 given the history "has".
 
-Note, while a "real" understanding of statistic is not required for this assignment to prevent future confusion, calculating probabilities/chances using count is also referred to [frequentist probability](https://en.wikipedia.org/wiki/Frequentist_probability#:~:text=Frequentist%20probability%20or%20frequentism%20is,thus%20ideally%20devoid%20of%20opinion). 
+Note, while a "real" understanding of statistic is not required for this assignment. To prevent future confusion, calculating probabilities/chances using count is also referred to [frequentist probability](https://en.wikipedia.org/wiki/Frequentist_probability#:~:text=Frequentist%20probability%20or%20frequentism%20is,thus%20ideally%20devoid%20of%20opinion). On another note, next year you will get statistics which will teach you that `p(word | history) = count(word | history) / sum(history)`, where `p(word | history)` means the probability of word given the history. For now, just follow the instructions given in the assignment. However, if you are really interested you can search for conditional probability, which is what we use here.
 
 ### Predict Sentence
 
