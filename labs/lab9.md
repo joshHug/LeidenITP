@@ -55,8 +55,8 @@ Open exercise `fix_the_code.py` and fix the functions.
 ## Exercise 2: Sequence iterators & generators (standard)
 
 In this exercise, you will implement the following sequences by making an iterable class:
-``` markdown
- - Padovan        (1 ,1 ,1 ,2 ,2 ,3 , 4, 5, 7, 9)  p(n) = p(n<sub>2</sub>) + p(n-3)
+``` text
+ - Padovan        (1, 1, 1, 2, 2, 3, 4, 5, 7, 9)   p(n) = p(n-2) + p(n-3)
  - Powers of two  (1, 2, 4, 8, 16, 32, 64, 128)    p(n) = p(n-1) * 2
  - Factorial      (1, 1, 2, 6, 24, 120, 720, 5040) p(n) = p(n-1) * n
 ```
