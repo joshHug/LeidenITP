@@ -20,11 +20,11 @@ grand_parent: Leiden ITP
 
 Welcome to week 11, lab 10!
 
-## PyCharm recap
+# PyCharm recap
 
 This week we continue using PyCharm and running code in the terminal. In [lab 7](https://joshhug.github.io/LeidenITP/labs/lab7/) you can find information about: installing anaconda, opening projects, configuring unittests, reading unittests results, and debugging.
 
-## Overview of This Lab
+# Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
  * Exercise 1: [Recursive Sequences]() (standard)
@@ -39,7 +39,19 @@ For more advanced students, you might find the more difficult ... exercise(s) to
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
+# Hashable Objects
+
+## Exercise : Hashable Number class (standard)
+
+# Recursive Functions
+
+Recursion is often an elegant way to write an algorithm. However, at one moment in time humans are often only capable of keeping track of a few recursive steps. For example, without practise people tent only to think a few steps a head in chess. Therefore, it is often hard to come up with a recursive algorithm. In A&DS, you will get a lot more practise with it but for now we want to give you some tips and tricks.
+
+The first step into making a recursive algorithm is te recognize if a problem can be recursively solved (or is suitable for it). A problem is most suitable for recursion if, at one point in the algorithm, the step can be calculated without knowing what the previous steps were and outside information. 
+
 ## Exercise : Recursive Reverse (standard) 
+
+In this exercise, we will recursively reverse a list.
 
 ## Exercise : Recursive Palindrome (standard) 
 
