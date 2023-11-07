@@ -170,11 +170,11 @@ So, what you should learn about the example above is that *dry* coding not only 
 
 ## Grading
 
-Implementing the basic functionality will give you 5 points out of 10.
+*Implementing the basic functionality will give you 5 points out of 10.*
 
 **Basic functionality**: Your program does the three main parts, reading in a file (at least the `abc_corpus.txt`), making the unigram and bigram model and generate sentences with each one. In the template is a more detailed list of what the basic functionality should be. (5 points)
 
-The remaining 5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 5 points, the grade is capped at a 10:
+*The remaining 5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 5 points, the grade is capped at a 10:*
 
 **User interface** The program should run according to the user input. This should consists at least of which file the ngram should be trained on, which ngram model to train and how many and how long the generated sentences should be. (1 point) 
 
