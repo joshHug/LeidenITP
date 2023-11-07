@@ -47,15 +47,65 @@ If you feel that this week's challenges are too hard for you, feel free to do a 
 
 Recursion is often an elegant way to write an algorithm. However, at one moment in time humans are often only capable of keeping track of a few recursive steps. For example, without practise people tent only to think a few steps a head in chess. Therefore, it is often hard to come up with a recursive algorithm. In A&DS, you will get a lot more practise with it but for now we want to give you some tips and tricks.
 
-The first step into making a recursive algorithm is te recognize if a problem can be recursively solved (or is suitable for it). A problem is most suitable for recursion if, at one point in the algorithm, the step can be calculated without knowing what the previous steps were and outside information. 
+The first step into making a recursive algorithm is te recognize if a problem can be recursively solved (or is suitable for it). A problem is most suitable for recursion if, at one point in the algorithm, the next step can be calculated without knowing what the previous steps were and any outside information. For example, in chess you don't need to know what happened before a certain move to do the next. Ofcourse most people use certain strategies which consists of previous moves, but technically each bord configuration has its optimal move which can be determined by just examining the bord. 
+
+The next step is to make the recursive algorithm which consists of a base case and a recursive step. Some people like to think about the base case first and vice versa. For now, let's start with the recursive step. 
+
+The best tip for coming up with a recursive step is to think about a small step you can do that needs the same algorithm to solve the step but makes it a little bit smaller. This is a bit cryptic so let's examine an example. Let's say we want to solve the problem of summing up the following list of numbers:
+
+```python
+numbers = [1, 4, 3, 6]
+```
+
+Think about a small step you can do, which result in the same problem. The easiest solution would be just do nothing and repeat the problem. However, this would lead to an endless loop of doing nothing. So, we need to make the problem smaller. One option for calculating the sum of a list would be to take the first number, repeat the problem with the rest of the list and added those numbers together. Thus:
+
+```python
+def recursive_sum(numbers):
+    ...
+    
+    first_number = numbers[0]
+    smaller_problem = recursive_sum(numbers[1:])
+    return first_number + smaller_problem
+```
+
+Note, that sometimes a recursive step splits into multiple smaller numbers. We could (needlessly) simulated this by splitting the list in two parts after taking the first number. This would create two smaller problems. *Just a note for more advanced programmers, the only upside of this approach would be to limit the recursive depth.*
+
+```python
+def recursive_sum(numbers):
+    ...
+    
+    first_number = numbers[0]
+    middle = len(numbers) // 2
+    smaller_problem1 = recursive_sum(numbers[1:middle])
+    smaller_problem2 = recursive_sum(numbers[middle:])
+    return first_number + smaller_problem1 + smaller_problem2
+```
+
+There is a reason that both function have dots because we did not add a base case. A base case is a moment in the recursive algorithm when you can't make the problem smaller or the problem is at its smallest. Another way to say this is the base case determines when the algorithm needs to stop. Often a base case is just an if statement to check for a certain condition. In our example, there are two possible base cases. Think for a moment what these base cases could be? In other words, ask yourself when should you stop the recursion? 
+
+Maybe the most natural base case would be when the input of the function is an empty list. The reason is very simpel the sum of an empty list is always zero. However, you could argue that when a list only contains one element you also know the sum. Below, you will find the final recursive algorithm. 
+
+```python
+def recursive_sum(numbers):
+    if not numbers:
+        return 0
+    
+    first_number = numbers[0]
+    smaller_problem = recursive_sum(numbers[1:])
+    return first_number + smaller_problem
+```
 
 ## Exercise : Recursive Reverse (standard) 
 
-In this exercise, we will recursively reverse a list.
+In this exercise, we will recursively reverse a sequence which is either a list or a string. Open exercise `reverse.py`, follow the instructions and complete the recursive function. Even though unittest are provided, check with a small script and print statements how your function works and if it works as expected. Often, this is easier to debug then understanding why an unittest fails.
+
+Tip: Try to think about how you could reverse one item in a list assuming the rest is already reversed.
 
 ## Exercise : Recursive Palindrome (standard) 
 
-## Exercise : Recursive Sum (standard)
+
+
+## Exercise : Recursive Product (standard)
 
 ### Exercise : Recursive Unfold Sum (challenge, hard)
 
@@ -135,5 +185,7 @@ Then, step 1 in the previous image can be solved as follows:
 Finally, step 3 of the first image can be solved like this:
 
 ![image](/LeidenITP/assets/images/lab10/Hanoi2b.png)
+
+Open exercise `tower_of_hanoi.py`, follow the instructions and complete the recursive function. 
 
 ## Exercise : Permutations (challenge, very hard)

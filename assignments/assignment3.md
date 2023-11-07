@@ -25,22 +25,21 @@ grand_parent: Leiden ITP
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
-
 ## Program
 
-In this assignment, you will program a family of langauge models called word n-grams, from now we will just call it a n-gram. This family of language models is able to *learn* from a corpus and afterwords is able to generate/*predicts* new sentences. A corpus is just a fancy word for a (set of) files(s) that contain text which is used to train langauge models. However, they often also contain other stuf like the grammer of each sentence. n-grams are one of the earliest language models of natural language processing (NLP) mainly do to there simplicity, but also do to there somewhat effectiveness and low need for data.
+In this assignment, you will program a family of langauge models called word n-grams, from now we will just call it a n-gram. This family of language models is able to *learn* from a corpus and afterwords is able to generate/*predicts* new sentences. A corpus is just a fancy word for a (set of) files(s) that contain text which is used to train langauge models. However, they often also contain other stuf like the grammar of each sentence. n-grams are one of the earliest language models of natural language processing (NLP) mainly do to there simplicity, but also do to there somewhat effectiveness and low need for data.
 
 The idea of an n-gram is that you create a huge lookup table where you can find for each history the probability that a certain word follows. Here, a history can be any number of previous words. Simply put it use the fact that words are commonly in a certain order. So, even though "and" is very common, most likely the chance of it being after word "the" is very small. This way words that are often together are generated together creating some from of sentences. The "*n*" in n-gram stands for how many words are connected. An unigram model consist of only one word, so no history. While a bigram model consists of a history of one word and one word that follows the history. Because n-grams are completely based on statistics and therefore the given corpus you can ask the question if they really *learn* or *predict* anything.
 
 This assignment consists of three parts: reading a text file, *training* the models, and generating sentences. You will also implement three models: a unigram model, a bigram model, and a trigram model. For the training we will use the *abc* corpus which can for instance be found in the **NLTK** library of python. 
 
-To make it a bit easier, we did some parsing of the corpus to make each sentence span exactly one line, remove all character that are not letters and made everything lower caes. Parsing raw text is an assignment on its own, therefore you can just use the text file "abc_corpus.txt".
+To make it a bit easier, we did some parsing of the corpus to make each sentence span exactly one line, remove all character that are not letters and made everything lower case. Parsing raw text is an assignment on its own, therefore you can just use the text file "abc_corpus.txt".
 
 In this assignment you will ask the user which model they want to train, how many sentences need to be generated with the learned model and how long each sentences can be at most.
 
 ## Template
 
-Each part can be found in the `assignment3.py` file, which also provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
+Each part can be found in the `assignment3.py` file on [brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322), which also provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
 
 You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and the basic functionality is there.
 
@@ -120,14 +119,12 @@ To create an n-gram model, we're essentially building a predictive model for wor
    - Essentially, the probability calculation is: `count(word | history) / sum(history)`. This quantifies how frequently a specific word follows certain other words in the given corpus. This approach allows us to model the chance of a specific word following certain history, which enabling us to generate more meaningful text based on historical word patterns.
       For example, for a bigram model, if the corpus counts a 100 times the word "has" and the word "a" occurred 5 times after "has" then "a" has a probability of 0.05 given the history "has".
 
-Note, while a "real" understanding of statistic is not required for this assignment. To prevent future confusion, calculating probabilities/chances using count is also referred to [frequentist probability](https://en.wikipedia.org/wiki/Frequentist_probability#:~:text=Frequentist%20probability%20or%20frequentism%20is,thus%20ideally%20devoid%20of%20opinion). On another note, next year you will get statistics which will teach you that `p(word | history) = count(word | history) / sum(history)`, where `p(word | history)` means the probability of word given the history. For now, just follow the instructions given in the assignment. However, if you are really interested you can search for conditional probability, which is what we use here.
-
 ### Predict Sentence
 
 In the `predict_sentence` function you will implement a sentence predictor. To generate a sentence using a n-gram model, follow these guidelines:
 
 1. Initialize the history by appending an appropriate number of start tokens `"<s>"`, see the model descriptions above. For the unigram model, you do not add the start token `"<s>"`. The history always begins with `"<any>"`.
-2. Now, you can use the history in the model-dictionary to get the word-dictionary. The keys of this word-dictionary are the possible next words and their values are the probability of that word. Hint: Just using `np.random.choice(word-dictionary.keys())` will not work as now each word has the same chance to get chosen. 
+2. Now, you can use the history in the model-dictionary to get the word-dictionary. The keys of this word-dictionary are the possible next words and their values are the probability of that word. Use a weighted random function to get a new word. Hint: Just using `np.random.choice(word-dictionary.keys())` will not work as now each word has the same chance to get chosen. Take a look at the [documentation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html) of np.random.choice. Here, you can find how to make a weighted random choice.
 3. When, you have your next word, update the history and go back to step 2, unless step 4 applies.
 4. The sentence prediction process will halt when it encounters the `"</s>"` token or reaches the maximum sentence length (given by `max_sentence_len`).
 5. Each generated sentence should conclude with a period ".".
@@ -173,23 +170,21 @@ So, what you should learn about the example above is that *dry* coding not only 
 
 ## Grading
 
-Implementing the basic functionality will give you 6 points out of 10.
+Implementing the basic functionality will give you 5 points out of 10.
 
 **Basic functionality**: Your program does the three main parts, reading in a file (at least the `abc_corpus.txt`), making the unigram and bigram model and generate sentences with each one. In the template is a more detailed list of what the basic functionality should be. (5 points)
 
-**User interface** The program should run according to the user input. This should consists at least of which file the ngram should be trained on, which ngram model to train and how many and how long the generated sentences should be. (0.5 points) 
+The remaining 5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 5 points, the grade is capped at a 10:
+
+**User interface** The program should run according to the user input. This should consists at least of which file the ngram should be trained on, which ngram model to train and how many and how long the generated sentences should be. (1 point) 
 
 **Comments**: Include comments to explain the difficult parts of your code. (0.5 points)
 
-The remaining 4 points can be obtained by implementing additional functionality:
+**Trigram model**: Also implementing the trigram model will earn you an additional point. (1 point) 
 
-**Trigram model**: Also implementing the trigram model will earn you an additional point.
+**Dry code**: Dry code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up just so you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point. (1.5 points) 
 
-**Dry code**: Dry code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up just so you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point.
-
-**Extra**: Try to make a quadragram, let the user choose the start of the sentences, or any other extra functionality. As a tip: You can read a bit more about n-grams to get ideas. Another option would be to improve the parser such that less nonsense words are in the corpus or such that it works on any corpus of your own. You can do this by changing the code in `parser.py`. This is not an easy challenge so make sure everything else works before you start on this. Also, if you change `parser.py` make sure you hand it in as well (zip the files). Depending on how elaborate the extra functionality is and how many you have you can get an additional point.
-
-**New Coding Concepts**: This assignment lent itself for three programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. The last new coding concept you got the partial code for namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points.
+**New Coding Concepts**: This assignment lent itself for three programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. The last new coding concept you got the partial code for namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points. (1.25 points) 
 
 ## Tips
 
