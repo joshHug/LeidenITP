@@ -95,6 +95,14 @@ def recursive_sum(numbers):
     return first_number + smaller_problem
 ```
 
+## Exercise : Recursive Product (standard)
+
+In the example above you saw how to implement `sum` recursively. Here, you will implement `product` recursively. The product of a list is all the number multiplied together. For example, the product of the list `[1, 2, 3]` is `6`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_multiply`.
+
+### Exercise extra: Recursive Unfold Product (challenge, hard)
+
+In this extra exercise, you will expand the previous implemented recursive product to be able to calculate the product of nested lists. In other words, if you would unfold a nested list into a one dimensional list and take the product over that list. For example, the product over the following nested list `[2, [[3, 1], 4]]` would be `24`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_unfold_multiply`.
+
 ## Exercise : Recursive Reverse (standard) 
 
 In this exercise, we will recursively reverse a sequence which is either a list or a string. Open exercise `reverse.py`, follow the instructions and complete the recursive function. Even though unittest are provided, check with a small script and print statements how your function works and if it works as expected. Often, this is easier to debug then understanding why an unittest fails.
@@ -103,14 +111,9 @@ Tip: Try to think about how you could reverse one item in a list assuming the re
 
 ## Exercise : Recursive Palindrome (standard) 
 
+In this exercise, we will reversely check if a sequence is a palindrome and create a palindrome from a given sequence. A palindrome is a sequence of words, letters or numbers that reads the same backwards as forwards. For example, *radar* is a palindrome because when you reverse the word it is the same. Another example would be the sequence `[0, 1, 1, 0]`. It does not matter if a sequence has an oneven or even length as long as it is the same backwards as forwards. For more information on palindromes you can visit the [wiki](https://en.wikipedia.org/wiki/Palindrome).
 
-
-## Exercise : Recursive Product (standard)
-
-### Exercise : Recursive Unfold Sum (challenge, hard)
-
-
-
+Open exercise `palindrome.py`, follow the instructions and complete the recursive functions.
 
 ## Exercise : Recursive Sequences (standard)
 
@@ -189,3 +192,18 @@ Finally, step 3 of the first image can be solved like this:
 Open exercise `tower_of_hanoi.py`, follow the instructions and complete the recursive function. 
 
 ## Exercise : Permutations (challenge, very hard)
+
+In [lab 8 Using 2Dvectors: shortest path](https://joshhug.github.io/LeidenITP/labs/lab8/#using-2dvectors-shortest-path-challenge-hard), you could have used `itertools.permutations` to find the shortest path by just trying all orders of the list with coordinates. In this exercise, we will make our own permutation function. Generating permutations is not any easy task but making them recursive is a bit easier. Think about what each step of the recursion should do and how to yield each permutation back. Tip: First, just try to print all the permutations.
+
+If you want you can open exercise `permutations.py`, follow the instructions and complete the recursive function. However, below we will give you some hints on how to do this.
+
+Hints: 
+ - Each recursive step, you reduce the size of the list by one.
+ - Till now, you could make the problem smaller by taking, for example, the first item. Here, you need to loop over all possible items in the list and remove that item to make the list smaller. Otherwise, you will only get the first permutation.
+ - If a function returns a generator, you can yield each item from that generator by looping through the generator and yield the item. For example, `range` returns a generator so, if my function should yield all values of `range` one by one, I can use:
+```python
+def test(n):
+    for value in range(n):
+        yield value
+```
+ - Think about memory and how you delete items from the list.
