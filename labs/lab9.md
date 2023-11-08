@@ -128,7 +128,7 @@ In this exercise, you will plot for each letter how many times it is used in the
 
 ![image](/LeidenITP/assets/images/lab9/letters_used_in_names.png)
 
-Hint: Use `plt.bar` from matplotlib.pyplot (this commonly import as `import matplotlib.pyplot as plt`). To get different colors, you can either add 26 colors or you can use a cmap (get_cmap) as function and use the values (counts) to calculate the colors. For the colorbar, you could use ScalarMappable in combination with `plt.colorbar`. Note, that there are probably many ways to create the plot.
+Hint: Use `plt.bar` from matplotlib.pyplot (this is commonly imported as `import matplotlib.pyplot as plt`). To get different colors, you can either add 26 colors or you can use a cmap (get_cmap) as function and use the values (counts) to calculate the colors. For the colorbar, you could use ScalarMappable in combination with `plt.colorbar`. Note, that there are probably many ways to create the plot.
 
 ## Exercise 4: Two's Complement (challenge, very hard)
 
