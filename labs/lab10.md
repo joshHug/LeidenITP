@@ -27,9 +27,17 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: [Recursive Sequences]() (standard)
-   * Exercise 1a: Standard implementation (standard)
-   * Exercise 1b: Fast implementation (challenge, hard)
+ * Exercise 1: [Hashable Number class]() (standard)
+ * Exercise 2: [Recursive Product]() (standard)
+   * Exercise 2 extra: [Recursive Unfold Product]() (challenge, hard)
+ * Exercise 3: [Recursive Reverse]() (standard) 
+ * Exercise 4: [Recursive Palindrome]() (standard) 
+ * Exercise 5: [Recursive Sequences]() (standard)
+   * Exercise 5a: [Standard implementation]() (standard)
+   * Exercise 5b: [Fast implementation]() (challenge, hard)
+ * Exercise 6: [Tower of Hanoi]() (challenge, hard or very hard)
+   * Tower of Hanoi: [Recursive Algorithm Explanation]() (challenge, hard)
+ * Exercise 7: [Permutations]() (challenge, very hard)
    
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
 
@@ -41,7 +49,30 @@ If you feel that this week's challenges are too hard for you, feel free to do a 
 
 ## Hashable Objects
 
-## Exercise : Hashable Number class (standard)
+Dictionaries and sets are very useful datastructures. Sets can be used to store objects you have already seen (in a search algorithm) or create a list with unique objects. Sets are faster than normal lists if you want to know if an object is in either one of them. We already used dictionaries several times and one of their advantages is the fast lookup. Both sets and dictionaries achieve their speed by using hash functions. 
+
+Hash functions work by mapping a certain object to a place in memory. This way you do not have to search where the objects is in for example a dictionary, but you can calculate the location. 
+
+The downside of hash functions is that they need an immutable object as input because otherwise the location will change each time the object changes. This is the reason that string work as dictionary keys but list do not. A way to make any object work with sets and dictionaries is to make it hashable. This means that two magic methods are needed: `__hash__` and `__eq__`. The magic method `__hash__` contains the hash function and `__eq__` is needed to determine when to objects are the same. Often the simplest way to make a hash function is to use an immutable attribute of your class and use the `hash()` function. Below, you find an example for a `Person` class.
+
+```python
+class Person():
+    def __init__(self, name):
+        self.name = name
+        
+    def __hash__(self):
+        return hash(self.name)
+    
+    def __eq__(self, other):
+        return self.name == self.other
+    
+    def __repr__(self):
+        return f"The name is {self.name}"
+```
+
+## Exercise 1: Hashable Number class (standard)
+
+In this exercise, you will create a hashable class "Number". Open exercise `number.py`, follow the instructions and complete the class. Also, try to test how an object of your own class works when using it in a dictionary or set.
 
 ## Recursive Functions
 
@@ -95,27 +126,27 @@ def recursive_sum(numbers):
     return first_number + smaller_problem
 ```
 
-## Exercise : Recursive Product (standard)
+## Exercise 2: Recursive Product (standard)
 
 In the example above you saw how to implement `sum` recursively. Here, you will implement `product` recursively. The product of a list is all the number multiplied together. For example, the product of the list `[1, 2, 3]` is `6`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_multiply`.
 
-### Exercise extra: Recursive Unfold Product (challenge, hard)
+### Exercise 2 extra: Recursive Unfold Product (challenge, hard)
 
 In this extra exercise, you will expand the previous implemented recursive product to be able to calculate the product of nested lists. In other words, if you would unfold a nested list into a one dimensional list and take the product over that list. For example, the product over the following nested list `[2, [[3, 1], 4]]` would be `24`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_unfold_multiply`.
 
-## Exercise : Recursive Reverse (standard) 
+## Exercise 3: Recursive Reverse (standard) 
 
 In this exercise, we will recursively reverse a sequence which is either a list or a string. Open exercise `reverse.py`, follow the instructions and complete the recursive function. Even though unittest are provided, check with a small script and print statements how your function works and if it works as expected. Often, this is easier to debug then understanding why an unittest fails.
 
 Tip: Try to think about how you could reverse one item in a list assuming the rest is already reversed.
 
-## Exercise : Recursive Palindrome (standard) 
+## Exercise 4: Recursive Palindrome (standard) 
 
 In this exercise, we will reversely check if a sequence is a palindrome and create a palindrome from a given sequence. A palindrome is a sequence of words, letters or numbers that reads the same backwards as forwards. For example, *radar* is a palindrome because when you reverse the word it is the same. Another example would be the sequence `[0, 1, 1, 0]`. It does not matter if a sequence has an oneven or even length as long as it is the same backwards as forwards. For more information on palindromes you can visit the [wiki](https://en.wikipedia.org/wiki/Palindrome).
 
 Open exercise `palindrome.py`, follow the instructions and complete the recursive functions.
 
-## Exercise : Recursive Sequences (standard)
+## Exercise 5: Recursive Sequences (standard)
 
 Last week, you made iterable classes for several integer sequences. In this week's exercise, you will make a recursive function to calculate a specific index in the sequence. In this exercise, we will use the following sequences:
 
@@ -126,11 +157,11 @@ Last week, you made iterable classes for several integer sequences. In this week
  - factorial        (1, 1, 2, 6, 24, 120, 720, 5040)  p(n) = p(n-1) * n
 ```
 
-### Exercise a: Standard implementation (standard)
+### Exercise 5a: Standard implementation (standard)
 
 Open exercise `recursive_sequences.py`, follow the instructions and complete the recursive functions.
 
-### Exercise b: Fast implementation (challenge, hard)
+### Exercise 5b: Fast implementation (challenge, hard)
 
 Even though recursive function are very elegant solutions in a lot of situations, often they are not very fast in their basic form. Let's investigate what behind the scenes is needed to calculate the 8th fibonacci number. Open this [link](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+recursive_fibo(n)%3A%0A++++if+n+%3C%3D+1%3A%0A++++++++return+n%0A++++n_1+%3D+recursive_fibo(n-1)%0A++++n_2+%3D+recursive_fibo(n-2)%0A++++return+n_1+%2B+n_2+%0A%0A%0Aa+%3D+f%22The+8th+fibonacci+number+is+%7Brecursive_fibo(7)%7D!%22%0Aprint(a)&mode=display&raw_input=&curInstr=0) and in frames you can see the stack of recursions. Note, how many steps it takes to calculate the 8th fibonacci number. Think about why it takes so many steps?
 
@@ -155,7 +186,7 @@ Open exercise `recursive_sequences_memory.py`, follow the instructions and compl
 
 A final educational note, coding a recursive function where you remember previous calculation is often called dynamic programming. In your next course, A&DS, you will learn more about this.
 
-## Exercise: Tower of Hanoi (challenge, hard or very hard)
+## Exercise 6: Tower of Hanoi (challenge, hard or very hard)
 
 In this exercise, you will implement the fastest solution to solve the tower of hanoi problem for any number of blocks. The tower of hanoi is a well known toy/problem where you need to move a tower from rod **A** to rod **C**. The tower exist of several disks with different size. While, this problem seems trivial, it is not when you need to follow the following rules: 
 * Only one disk can be moved at any point.
@@ -191,7 +222,7 @@ Finally, step 3 of the first image can be solved like this:
 
 Open exercise `tower_of_hanoi.py`, follow the instructions and complete the recursive function. 
 
-## Exercise : Permutations (challenge, very hard)
+## Exercise 7: Permutations (challenge, very hard)
 
 In [lab 8 Using 2Dvectors: shortest path](https://joshhug.github.io/LeidenITP/labs/lab8/#using-2dvectors-shortest-path-challenge-hard), you could have used `itertools.permutations` to find the shortest path by just trying all orders of the list with coordinates. In this exercise, we will make our own permutation function. Generating permutations is not any easy task but making them recursive is a bit easier. Think about what each step of the recursion should do and how to yield each permutation back. Tip: First, just try to print all the permutations.
 
