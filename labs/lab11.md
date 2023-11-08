@@ -1,7 +1,7 @@
 ---
 layout: minimal
-title: Lab 10
-description: &desc 17 November, 2023 - Recursion & Hashable Objects
+title: Lab 11
+description: &desc 24 November, 2023 - Comprehensions & Visualization
 summary: *desc
 nav_order: 1
 parent: Labs
@@ -18,7 +18,7 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-Welcome to week 11, lab 10!
+Welcome to week 12, lab 11!
 
 ## PyCharm recap
 
@@ -68,18 +68,19 @@ The concept of a filter is a bit self-explanatory, it filters which items from a
 Filters are connected to list comprehensions because you can also filter lists with list comprehensions. When you want to use a list comprehension to filter you can use an if statement after the for loop part. Thus:
 
 ```python
-filtered_lst = [v for v in original_lst if "some condition"]
+filtered = [v for v in original if ...]
 ```
 
 This is comparable with the following code:
 
 ```python
-filtered_lst = []
-for v in original_lst:
-    if "some condition":
-        filtered_lst.append(v)
+filtered = []
+for v in original:
+    if ...:
+        filtered.append(v)
 ```
 
+![image](/LeidenITP/assets/images/lab11/comprehension_f.png)
 
 Now, open `filter.py` and follow the instructions. In this exercise, we will start implementing a filter behavior using for loops and new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly to using the `filter` function.
 
