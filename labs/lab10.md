@@ -27,23 +27,23 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: [Hashable Number class]() (standard)
- * Exercise 2: [Recursive Product]() (standard)
-   * Exercise 2 extra: [Recursive Unfold Product]() (challenge, hard)
- * Exercise 3: [Recursive Reverse]() (standard) 
- * Exercise 4: [Recursive Palindrome]() (standard) 
- * Exercise 5: [Recursive Sequences]() (standard)
-   * Exercise 5a: [Standard implementation]() (standard)
-   * Exercise 5b: [Fast implementation]() (challenge, hard)
- * Exercise 6: [Tower of Hanoi]() (challenge, hard or very hard)
-   * Tower of Hanoi: [Recursive Algorithm Explanation]() (challenge, hard)
- * Exercise 7: [Permutations]() (challenge, very hard)
+ * Exercise 1: [Hashable Number class](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-1-hashable-number-class-standard) (standard)
+ * Exercise 2: [Recursive Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-2-recursive-product-standard) (standard)
+   * Exercise 2 extra: [Recursive Unfold Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-2-extra-recursive-unfold-product-challenge-hard) (challenge, hard)
+ * Exercise 3: [Recursive Reverse](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-recursive-reverse-standard) (standard) 
+ * Exercise 4: [Recursive Palindrome](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-4-recursive-palindrome-standard) (standard) 
+ * Exercise 5: [Recursive Sequences](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5-recursive-sequences-challenge-medium) (challenge, medium)
+   * Exercise 5a: [Standard implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5a-standard-implementation-challenge-medium) (challenge, medium)
+   * Exercise 5b: [Fast implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5b-fast-implementation-challenge-hard) (challenge, hard)
+ * Exercise 6: [Tower of Hanoi](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-6-tower-of-hanoi-challenge-hard-or-very-hard) (challenge, hard or very hard)
+   * Tower of Hanoi: [Recursive Algorithm Explanation](https://joshhug.github.io/LeidenITP/labs/lab10/#tower-of-hanoi-recursive-algorithm-explanation-challenge-hard) (challenge, hard)
+ * Exercise 7: [Permutations](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-7-permutations-challenge-very-hard) (challenge, very hard)
    
-All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
+All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
 
-The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
+The five exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-For more advanced students, you might find the more difficult ... exercise(s) to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
+For more advanced students, you might find the more difficult tower of hanoi and permutation exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
