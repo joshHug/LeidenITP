@@ -28,8 +28,8 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 This week we have ... different exercises that range in difficulty:
  * Exercise 1: [Hashable Number class](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-1-hashable-number-class-standard) (standard)
- * Exercise 2: [Sets]() (standard)
- * Exercise 23: [Recursive Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-recursive-product-standard) (standard)
+ * Exercise 2: [Sets](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-2-sets-standard) (standard)
+ * Exercise 3: [Recursive Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-recursive-product-standard) (standard)
    * Exercise 3 extra: [Recursive Unfold Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-extra-recursive-unfold-product-challenge-hard) (challenge, hard)
  * Exercise 4: [Recursive Reverse](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-4-recursive-reverse-standard) (standard) 
  * Exercise 5: [Recursive Palindrome](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5-recursive-palindrome-standard) (standard) 
