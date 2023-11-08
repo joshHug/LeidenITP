@@ -74,6 +74,10 @@ class Person():
 
 In this exercise, you will create a hashable class "Number". Open exercise `number.py`, follow the instructions and complete the class. Also, try to test how an object of your own class works when using it in a dictionary or set.
 
+## Exercise 2: Sets (standard)
+
+In this exercise, you will practise with the use of sets. Open exercise `sets.py`, follow the instructions and complete the functions. 
+
 ## Recursive Functions
 
 Recursion is often an elegant way to write an algorithm. However, at one moment in time humans are often only capable of keeping track of a few recursive steps. For example, without practise people tent only to think a few steps a head in chess. Therefore, it is often hard to come up with a recursive algorithm. In A&DS, you will get a lot more practise with it but for now we want to give you some tips and tricks.
