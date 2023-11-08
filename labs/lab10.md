@@ -28,18 +28,19 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 This week we have ... different exercises that range in difficulty:
  * Exercise 1: [Hashable Number class](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-1-hashable-number-class-standard) (standard)
- * Exercise 2: [Recursive Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-2-recursive-product-standard) (standard)
-   * Exercise 2 extra: [Recursive Unfold Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-2-extra-recursive-unfold-product-challenge-hard) (challenge, hard)
- * Exercise 3: [Recursive Reverse](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-recursive-reverse-standard) (standard) 
- * Exercise 4: [Recursive Palindrome](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-4-recursive-palindrome-standard) (standard) 
- * Exercise 5: [Recursive Sequences](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5-recursive-sequences-challenge-medium) (challenge, medium)
-   * Exercise 5a: [Standard implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5a-standard-implementation-challenge-medium) (challenge, medium)
-   * Exercise 5b: [Fast implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5b-fast-implementation-challenge-hard) (challenge, hard)
- * Exercise 6: [Tower of Hanoi](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-6-tower-of-hanoi-challenge-hard-or-very-hard) (challenge, hard or very hard)
+ * Exercise 2: [Sets]() (standard)
+ * Exercise 23: [Recursive Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-recursive-product-standard) (standard)
+   * Exercise 3 extra: [Recursive Unfold Product](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-3-extra-recursive-unfold-product-challenge-hard) (challenge, hard)
+ * Exercise 4: [Recursive Reverse](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-4-recursive-reverse-standard) (standard) 
+ * Exercise 5: [Recursive Palindrome](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-5-recursive-palindrome-standard) (standard) 
+ * Exercise 6: [Recursive Sequences](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-6-recursive-sequences-challenge-medium) (challenge, medium)
+   * Exercise 6a: [Standard implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-6a-standard-implementation-challenge-medium) (challenge, medium)
+   * Exercise 6b: [Fast implementation](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-6b-fast-implementation-challenge-hard) (challenge, hard)
+ * Exercise 7: [Tower of Hanoi](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-7-tower-of-hanoi-challenge-hard-or-very-hard) (challenge, hard or very hard)
    * Tower of Hanoi: [Recursive Algorithm Explanation](https://joshhug.github.io/LeidenITP/labs/lab10/#tower-of-hanoi-recursive-algorithm-explanation-challenge-hard) (challenge, hard)
- * Exercise 7: [Permutations](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-7-permutations-challenge-very-hard) (challenge, very hard)
+ * Exercise 8: [Permutations](https://joshhug.github.io/LeidenITP/labs/lab10/#exercise-8-permutations-challenge-very-hard) (challenge, very hard)
    
-All students, regardless of experience, should be able to complete the four standard exercises. Whether you complete all four is up to you.
+All students, regardless of experience, should be able to complete the five standard exercises. Whether you complete all five is up to you.
 
 The five exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
@@ -130,27 +131,27 @@ def recursive_sum(numbers):
     return first_number + smaller_problem
 ```
 
-## Exercise 2: Recursive Product (standard)
+## Exercise 3: Recursive Product (standard)
 
 In the example above you saw how to implement `sum` recursively. Here, you will implement `product` recursively. The product of a list is all the number multiplied together. For example, the product of the list `[1, 2, 3]` is `6`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_multiply`.
 
-### Exercise 2 extra: Recursive Unfold Product (challenge, hard)
+### Exercise 3 extra: Recursive Unfold Product (challenge, hard)
 
 In this extra exercise, you will expand the previous implemented recursive product to be able to calculate the product of nested lists. In other words, if you would unfold a nested list into a one dimensional list and take the product over that list. For example, the product over the following nested list `[2, [[3, 1], 4]]` would be `24`. Open exercise `product.py`, follow the instructions and complete the recursive function `recursive_unfold_multiply`.
 
-## Exercise 3: Recursive Reverse (standard) 
+## Exercise 4: Recursive Reverse (standard) 
 
 In this exercise, we will recursively reverse a sequence which is either a list or a string. Open exercise `reverse.py`, follow the instructions and complete the recursive function. Even though unittest are provided, check with a small script and print statements how your function works and if it works as expected. Often, this is easier to debug then understanding why an unittest fails.
 
 Tip: Try to think about how you could reverse one item in a list assuming the rest is already reversed.
 
-## Exercise 4: Recursive Palindrome (standard) 
+## Exercise 5: Recursive Palindrome (standard) 
 
 In this exercise, we will reversely check if a sequence is a palindrome and create a palindrome from a given sequence. A palindrome is a sequence of words, letters or numbers that reads the same backwards as forwards. For example, *radar* is a palindrome because when you reverse the word it is the same. Another example would be the sequence `[0, 1, 1, 0]`. It does not matter if a sequence has an oneven or even length as long as it is the same backwards as forwards. For more information on palindromes you can visit the [wiki](https://en.wikipedia.org/wiki/Palindrome).
 
 Open exercise `palindrome.py`, follow the instructions and complete the recursive functions.
 
-## Exercise 5: Recursive Sequences (standard)
+## Exercise 6: Recursive Sequences (standard)
 
 Last week, you made iterable classes for several integer sequences. In this week's exercise, you will make a recursive function to calculate a specific index in the sequence. In this exercise, we will use the following sequences:
 
@@ -161,11 +162,11 @@ Last week, you made iterable classes for several integer sequences. In this week
  - factorial        (1, 1, 2, 6, 24, 120, 720, 5040)  p(n) = p(n-1) * n
 ```
 
-### Exercise 5a: Standard implementation (standard)
+### Exercise 6a: Standard implementation (standard)
 
 Open exercise `recursive_sequences.py`, follow the instructions and complete the recursive functions.
 
-### Exercise 5b: Fast implementation (challenge, hard)
+### Exercise 6b: Fast implementation (challenge, hard)
 
 Even though recursive function are very elegant solutions in a lot of situations, often they are not very fast in their basic form. Let's investigate what behind the scenes is needed to calculate the 8th fibonacci number. Open this [link](https://cscircles.cemc.uwaterloo.ca/visualize#code=def+recursive_fibo(n)%3A%0A++++if+n+%3C%3D+1%3A%0A++++++++return+n%0A++++n_1+%3D+recursive_fibo(n-1)%0A++++n_2+%3D+recursive_fibo(n-2)%0A++++return+n_1+%2B+n_2+%0A%0A%0Aa+%3D+f%22The+8th+fibonacci+number+is+%7Brecursive_fibo(7)%7D!%22%0Aprint(a)&mode=display&raw_input=&curInstr=0) and in frames you can see the stack of recursions. Note, how many steps it takes to calculate the 8th fibonacci number. Think about why it takes so many steps?
 
@@ -190,7 +191,7 @@ Open exercise `recursive_sequences_memory.py`, follow the instructions and compl
 
 A final educational note, coding a recursive function where you remember previous calculation is often called dynamic programming. In your next course, A&DS, you will learn more about this.
 
-## Exercise 6: Tower of Hanoi (challenge, hard or very hard)
+## Exercise 7: Tower of Hanoi (challenge, hard or very hard)
 
 In this exercise, you will implement the fastest solution to solve the tower of hanoi problem for any number of blocks. The tower of hanoi is a well known toy/problem where you need to move a tower from rod **A** to rod **C**. The tower exist of several disks with different size. While, this problem seems trivial, it is not when you need to follow the following rules: 
 * Only one disk can be moved at any point.
@@ -226,7 +227,7 @@ Finally, step 3 of the first image can be solved like this:
 
 Open exercise `tower_of_hanoi.py`, follow the instructions and complete the recursive function. 
 
-## Exercise 7: Permutations (challenge, very hard)
+## Exercise 8: Permutations (challenge, very hard)
 
 In [lab 8 Using 2Dvectors: shortest path](https://joshhug.github.io/LeidenITP/labs/lab8/#using-2dvectors-shortest-path-challenge-hard), you could have used `itertools.permutations` to find the shortest path by just trying all orders of the list with coordinates. In this exercise, we will make our own permutation function. Generating permutations is not any easy task but making them recursive is a bit easier. Think about what each step of the recursion should do and how to yield each permutation back. Tip: First, just try to print all the permutations.
 
