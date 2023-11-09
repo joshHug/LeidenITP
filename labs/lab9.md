@@ -54,6 +54,27 @@ Open exercise `fix_the_code.py` and fix the functions.
 
 ## Exercise 2: Sequence iterators & generators (standard)
 
+To get you started with iterators, we've provided an example iterator called Natural_numbers (all positive integers). This example can be found in both the exercise file `sequence_iterators.py` and below.
+
+```python
+class Natural_numbers():
+    """
+    This example class creates iterable objects that give the natural numbers.
+    (1, 2, 3, 4, 5, 6)    p(n) = p(n-1) + 1
+    """
+    def __init__(self):
+        self.number = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        next_output = self.number
+        self.number += 1
+        return next_output
+```
+
+
 In this exercise, you will implement the following sequences by making an iterable class:
 ``` text
  - Powers of five (1, 5, 25, 125, 625, 3125)       p(n) = p(n-1) * 5
@@ -70,8 +91,6 @@ We will also practise with `raise StopIteration` to prevent infinite loops. Appl
 At last, in this exercise we will look how we could combine iterable and getitem to return nth item. You will apply this to the Factorial class. Note: this is good when you need the nth number once, but if an index from a sequence is needed often, it would be better to store that sequence in a list and then use an index on that list. The reason is that otherwise you will recalculate the same values many times which is not efficient.
 
 Open exercise `sequence_iterators.py`, follow the instructions and complete the classes and functions.
-
-To get you started, we've provided an example iterator called Natural_numbers.
 
 ## Exercise 3: Counting with dictionaries (standard)
 
