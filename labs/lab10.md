@@ -77,7 +77,7 @@ In this exercise, you will create a hashable class "Number". Open exercise `numb
 
 ## Exercise 2: Sets (standard)
 
-In this exercise, you will practise with the use of sets. Open exercise `sets.py`, follow the instructions and complete the functions. 
+In this exercise, you will practise with the use of sets. A set can be created the same way as a list only using curly brackets `{...}` instead of square brackets `[...]`. For example, the set with the integers 1 and 2 can be created as follows: `{1, 2}`. **Important note**, an empty set can not be created with curly brackets `{}` as that syntax is already reserved for empty dictionaries. However, similar to other datastructures such as lists and dictionaries it can be created using `set()` with no argument. Open exercise `sets.py`, follow the instructions and complete the functions. 
 
 ## Recursive Functions
 

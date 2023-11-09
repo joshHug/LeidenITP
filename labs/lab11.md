@@ -27,9 +27,12 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: 
-
- * comprehensions (filter, map, combo, others)
+ * Exercise 1: Filter, Map & List Comprehensions (standard)
+   * Exercise 1a: Filter (standard)
+   * Exercise 1b: Map (standard)
+   * Exercise 1c: Combining filters & maps
+ * Exercise 2: Other Comprehensions (challenge: medium)
+ 
  * matplotlib (plt.plot, plt.bar, plt.hist, plt.imshow)
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
@@ -40,7 +43,7 @@ For more advanced students, you might find the more difficult ... exercises to b
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
-## Exercise 1: Filter, Map & Comprehensions
+## Exercise 1: Filter, Map & List Comprehensions (standard)
 
 Before, we explain what filters, maps, and list comprehensions are it is important to understand why we use them. The functionality of all three can be achieved by initializing a new list and while looping the original list adding elements to it. This would look something like:
 
@@ -61,7 +64,7 @@ List comprehensions are a general way to signal that you want to create a new li
 
 Before, we go in to detail how to construct a list comprehension that does more than create the same list, let's go over what filter and map do and how they are connected to a list comprehension. This will also answer the question: how to use list comprehensions.
 
-### Exercise 1a: Filter
+### Exercise 1a: Filter (standard)
 
 The concept of a filter is a bit self-explanatory, it filters which items from an iterable are kept and which are discarded. Filters keep items based on a function applied to the item, if it returns True the item is kept otherwise it is discarded. This means that `filter` need two inputs: a function and an iterable. They return an iterator that return the filtered object one by one.
 
@@ -86,7 +89,7 @@ for v in original_lst:
 
 Now, open `filter.py` and follow the instructions. In this exercise, we will start implementing a filter behavior using for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the `filter` function.
 
-### Exercise 1b: Map
+### Exercise 1b: Map (standard)
 
 The concept of a map is less self-explanatory but in the context of the course foundations of computer science a map is similar to a function, where it maps one set of value/objects to another. In other words, map takes each item in a list and applies a function to that object which creates a new list of equal length. Therefore, `map` needs the same inputs as filter: a function and a iterable. The only difference is how the function is used.
 
@@ -188,6 +191,22 @@ Again, here the `if else` statement can better be written as a ternary statement
 ![image](/LeidenITP/assets/images/lab11/comprehension_m_f2.png)
 
 Now, open `combine_map_and_filter.py` and follow the instructions. In this exercise, we will start implementing a map and filter behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the combination of `filter` and `map` function.
+
+## Exercise 2: Other Comprehensions (challenge: medium)
+
+List comprehensions are probably the most used comprehension, however, in this exercise, we will look at other comprehensions. There are three other types of comprehensions: sets, dictionaries, generators. There are no tuple nor string comprehensions because of their immutable nature. Later, we will discuss how to use effectively make them. 
+
+#### *Set comprehensions*
+
+Set comprehensions are maybe the most similar to list comprehension, where the only difference is that a set comprehension generates a set and has therefore unique items. Similar as creating a new set (with items) a set comprehension can be recognized and created with curly brackets `{...}`. **Important note**, an empty set can not be created with curly brackets `{}` as that syntax is already reserved for empty dictionaries. However, similar to other datastructures such as lists and dictionaries it can be created using `set()` with no argument. Below, you can find an example of a set comprehension. 
+
+```python
+new_set = {v for v in iterable}
+```
+
+Set comprehensions work similar to list comprehensions in th way that they also have a filter and map option: 
+
+![image](/LeidenITP/assets/images/lab11/comprehension_set.png)
 
 
 
