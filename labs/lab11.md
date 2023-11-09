@@ -196,7 +196,7 @@ Now, open `combine_map_and_filter.py` and follow the instructions. In this exerc
 
 List comprehensions are probably the most used comprehension, however, in this exercise, we will look at other comprehensions. There are three other types of comprehensions: sets, dictionaries, generators. There are no tuple nor string comprehensions because of their immutable nature. Later, we will discuss how to use effectively make them. 
 
-#### *Set comprehensions*
+#### *Set Comprehensions*
 
 Set comprehensions are maybe the most similar to list comprehension, where the only difference is that a set comprehension generates a set and has therefore unique items. Similar as creating a new set (with items) a set comprehension can be recognized and created with curly brackets `{...}`. **Important note**, an empty set can not be created with curly brackets `{}` as that syntax is already reserved for empty dictionaries. However, similar to other datastructures such as lists and dictionaries it can be created using `set()` with no argument. Below, you can find an example of a set comprehension. 
 
@@ -208,7 +208,7 @@ Set comprehensions work similar to list comprehensions in th way that they also 
 
 ![image](/LeidenITP/assets/images/lab11/comprehension_set.png)
 
-#### *dictionary comprehensions*
+#### *Dictionary Comprehensions*
 
 Similar to set comprehensions, dictionary comprehensions are created using curly brackets `{}`. The difference is that a dictionary comprehension needs a key value pair, similar to creating a dictionary like `{"A": 1, "B" : 2}`. Below, you can find an example of a dictionary comprehension. Note, that for simplicity we used key value pairs that are the same, but in "real" code you either walk over two iterables with for example `zip` or you apply a function to value or key.
 
@@ -220,11 +220,42 @@ Unsurprisingly, dictionary comprehensions also have a filter and map function, h
 
 ![image](/LeidenITP/assets/images/lab11/comprehension_dict.png)
 
+#### *Generator Comprehensions*
 
+The most versatile comprehensions of all is the generator comprehension. It can also be seen as the "mother" of all comprehensions that do and do not exist. First, lets have a look at how to construct one and how they work. A generator comprehensions is created similar to a list comprehension but with round brackets `()`. For example:
 
+```python
+new_generator = (v for v in iterable)
+```
 
+Ofcourse a generator comprehension has also a map and filter functionality. Fun side note, `filter` and `map` are generators. Thus, the following code are identical:
 
+```python
+new_generator1 = map(map_func, filter(filter_func, iterable)) 
+new_generator2 = (map_func(v) for v in iterable if filter_func(v))
+list(new_generator1) == list(new_generator2)  # This is true, list is needed as generators can not be compared.
+```
 
+While, a generator comprehension looks similar to the other comprehensions there is one major difference, generators are not a data structure, but more a function as we have seen before when making them. Their use is therefore similar to other generators, which makes them good for use in for loops or to create datastructures. For example, the generator `range` is often used for this purpose. This means that we can create a list, dictionary, set, string, tuple, etc. by just using a generator comprehension and convert it to specified type. Note, less general code is better, so if you want a list and you can use a list comprehension use that and not a generator comprehension. Below, you can find some example on how a generator comprehension can be used. Note, that the round brackets can be removed if used directly in a function.
+
+```python
+new_lst    = list(v for v in iterable) 
+new_tuple  = tuple(v for v in iterable)   
+new_string = ''.join(v for v in iterable)  # iterable must contain strings
+new_set    = set(v for v in iterable)
+new_dict   = dict((v,v) for v in iterable) # This creates a dict equal to {v: v for v in iterable}
+
+# Ofcourse this does not make any sense, unless you also apply a filter or map.
+for item in (v for v in iterable):
+    ...
+
+# Do not use this unless necessary, but the point is you can EFFICIENTLY make anything using a generator comprehension.
+new_array  = np.fromiter((v for v in iterable), float)  # You must know the type
+```
+
+Now, open `other_comprehensions.py` and follow the instructions. 
+
+## Exercise 3: 
 
 
 
