@@ -173,7 +173,7 @@ Again, a visualization can be made where each part in the for loop goes in the l
 
 ```python
 new_lst = []
-for v in new_lst:
+for v in original_lst:
     if condition1:
         continue
 
@@ -185,10 +185,7 @@ for v in new_lst:
 
 Again, here the `if else` statement can better be written as a ternary statement or a separate function, in other words a mapping, while the `if continue` statement must be seen as a reverse filter. This leads to the following list comprehension:
 
-```python
-new_lst = [func(v) if condi ]
-```
-
+![image](/LeidenITP/assets/images/lab11/comprehension_m_f2.png)
 
 Now, open `combine_map_and_filter.py` and follow the instructions. In this exercise, we will start implementing a map and filter behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the combination of `filter` and `map` function.
 
