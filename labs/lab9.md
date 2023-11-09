@@ -56,6 +56,7 @@ Open exercise `fix_the_code.py` and fix the functions.
 
 In this exercise, you will implement the following sequences by making an iterable class:
 ``` text
+ - Powers of five (1, 5, 25, 125, 625, 3125)       p(n) = p(n-1) * 5
  - Padovan        (1, 1, 1, 2, 2, 3, 4, 5, 7, 9)   p(n) = p(n-2) + p(n-3)
  - Powers of two  (1, 2, 4, 8, 16, 32, 64, 128)    p(n) = p(n-1) * 2
  - Factorial      (1, 1, 2, 6, 24, 120, 720, 5040) p(n) = p(n-1) * n
@@ -69,6 +70,8 @@ We will also practise with `raise StopIteration` to prevent infinite loops. Appl
 At last, in this exercise we will look how we could combine iterable and getitem to return nth item. You will apply this to the Factorial class. Note: this is good when you need the nth number once, but if an index from a sequence is needed often, it would be better to store that sequence in a list and then use an index on that list. The reason is that otherwise you will recalculate the same values many times which is not efficient.
 
 Open exercise `sequence_iterators.py`, follow the instructions and complete the classes and functions.
+
+To get you started, we've provided an example iterator called Natural_numbers.
 
 ## Exercise 3: Counting with dictionaries (standard)
 
