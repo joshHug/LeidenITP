@@ -129,6 +129,12 @@ Exercise 3b has the same purpose as 3a only now you are asked to use a `defaultd
 
 In this exercise, you will plot for each letter how many times it is used in the file `names.txt`. The plot should be in alphabetically order. Below you will find an image how it should look like. Colors are not mandatory nor the colorbar is mandatory. Keep in mind that both add additional challenge. Open exercise `has_key.py` and complete the script or the main function.
 
+Below, you can find a solution for the basic exercise. 
+
+![image](/LeidenITP/assets/images/lab9/letters_used_in_names_simple.png)
+
+The image below is the result of adding colorbar and colors using cmap.
+
 ![image](/LeidenITP/assets/images/lab9/letters_used_in_names.png)
 
 Hint: Use `plt.bar` from matplotlib.pyplot (this is commonly imported as `import matplotlib.pyplot as plt`). To get different colors, you can either add 26 colors or you can use a cmap (get_cmap) as function and use the values (counts) to calculate the colors. For the colorbar, you could use ScalarMappable in combination with `plt.colorbar`. Note, that there are probably many ways to create the plot.
