@@ -208,7 +208,17 @@ Set comprehensions work similar to list comprehensions in th way that they also 
 
 ![image](/LeidenITP/assets/images/lab11/comprehension_set.png)
 
+#### *dictionary comprehensions*
 
+Similar to set comprehensions, dictionary comprehensions are created using curly brackets `{}`. The difference is that a dictionary comprehension needs a key value pair, similar to creating a dictionary like `{"A": 1, "B" : 2}`. Below, you can find an example of a dictionary comprehension. Note, that for simplicity we used key value pairs that are the same, but in "real" code you either walk over two iterables with for example `zip` or you apply a function to value or key.
+
+```python
+new_dict = {v: v for v in iterable}
+```
+
+Unsurprisingly, dictionary comprehensions also have a filter and map function, however, because we need a key and value, there are actually two map functions: one for the key and one for the value. Below, an example where we loop over two iterables, one for the keys and one for the values.
+
+![image](/LeidenITP/assets/images/lab11/comprehension_dict.png)
 
 
 
