@@ -27,13 +27,12 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 ## Overview of This Lab
 
 This week we have ... different exercises that range in difficulty:
- * Exercise 1: Filter, Map & List Comprehensions (standard)
-   * Exercise 1a: Filter (standard)
-   * Exercise 1b: Map (standard)
-   * Exercise 1c: Combining filters & maps
- * Exercise 2: Other Comprehensions (challenge: medium)
- 
- * matplotlib (plt.plot, plt.bar, plt.hist, plt.imshow)
+ * Exercise 1: [Filter, Map & List Comprehensions]() (standard)
+   * Exercise 1a: [Filter]() (standard)
+   * Exercise 1b: [Map]() (standard)
+   * Exercise 1c: [Combining filters & maps]() (challenge: medium)
+ * Exercise 2: [Other Comprehensions]() (challenge: medium)
+ * Exercise 3:
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
 
@@ -151,7 +150,7 @@ new_lst = [func1(v) if ... else func2(v) for v in original_lst]
 
 Now, open `map.py` and follow the instructions. In this exercise, we will start implementing a map behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the `map` function.
 
-### Exercise 1c: Combining filters & maps
+### Exercise 1c: Combining filters & maps (challenge: medium)
 
 Now, that we have seen both filters and maps, we can also combine them in a list comprehension. There, is no equivalent python function to do this but you could chain filter and map as follows `map(func1, filter(func2, lst))`. Here, we first filter and then map which is more efficient but the other way around would also work. An example of a list comprehension that is a filter and map at the same time would be:
 
@@ -257,10 +256,32 @@ Now, open `other_comprehensions.py` and follow the instructions.
 
 ## Exercise 3: 
 
+Explain:
+ * The plots:
+   * plot
+   * bar
+   * hist
+   * scatter
+   * imshow
+ * matplotlib features:
+   * xlim, ylim
+   * legend
+   * xticks
+ * loading and saving data with numpy
+
+Make the following images:
+
+![image](/LeidenITP/assets/images/lab11/programming_time.png)
 
 
 
 
+matplotlib (plt.plot, plt.bar, plt.hist, plt.scatter, plt.imshow)
 
+* line plot: fill-in between lines, language trough time https://pypl.github.io/PYPL.html
+* bar plot: most popular programming langauge https://pypl.github.io/PYPL.html, lab 9 Exercise 3c: Displaying dictionaries with counts
+* scatter plot: random noise x,y;  sklearn.datasets.load_iris
+* histogram: alcohol, in wine sklearn
+* imshow: MNIST
 
 
