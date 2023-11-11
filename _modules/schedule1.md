@@ -2,11 +2,18 @@
 title: Introduction to Programming
 ---
 
+10 Nov
+: **Lab**{: .label .label-purple }[Classes and Errors]({{ site.baseurl }}{% link labs/lab9.md %})
+
+8 Nov
+: **Lecture**{: .label .label-blue }[Exercises, Iterators & Generators, and Exceptions](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2690341)
+
 7 Nov
 : **Assignment 2 due**{: .label .label-red }
 
 3 Nov
 : **Lab**{: .label .label-purple }[Classes and Objects]({{ site.baseurl }}{% link labs/lab8.md %})
+  : [answers](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2692100)
 
 1 Nov
 : **Lecture**{: .label .label-blue }[NumPy and Magic Methods](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2682942)
