@@ -271,16 +271,14 @@ Explain:
  * The plots:
    * plot / fill_between
    * bar/barh
-   * hist
    * scatter
+   * subplots (make a note that some function are named differently)
    * imshow
  * matplotlib features:
-   * subplots (make a note that some function are named differently)
    * xlim, ylim
    * legend
-   * xticks
+   * xticks. yticks
    * axline
-   * xticks
    * colors (reference to all colors)
    * xlabel/ylabel
  * loading and saving data with numpy
@@ -325,7 +323,7 @@ In this exercise, you will practise using scatter plots. All the functions to be
 
 Try to recreate the plot below. In this plot, you will visualize 2D random noise using a scatter plot. In the code the `x,y` values are already given. However, it is good to know that `np.random.random()` will become deprecated code and new code should use `rng = np.random.default_rng(seed=42)` followed by `rng.random()`.
 
-Now, open `random_noise.py` and follow the instructions.
+For this plot, you only need to make sure that you set the limits for the x and y axis correctly. Now, open `random_noise.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/scatter_plot.png)
 
@@ -333,19 +331,19 @@ Now, open `random_noise.py` and follow the instructions.
 
 Try to recreate the plot below. In this exercise, we will use the iris (flower) dataset. This dataset contains data about 150 iris flowers from three different subtypes: Setosa, Versicolor, Verginica. Therefore, we need three scatter plots in one figure to plot the data of each subtype. Give each scatter plot its own label and color. The data is loaded into a new object of class `SklearnData` to make working with it easier. As a side note, this data is commonly used when learning about various machine learning algorithms.
 
-For this exercise, you will need the following named variables form iris:
+For this exercise, you will need the following attributes form iris:
  - data: This contains four measurements/features from each flower petals.
  - target: This contains a value to which subgroup the data belongs (0,1 or 2).
  - target_names: This contains the names of each subgroup.
  - feature_names: This contains the names of the four measurements (needs to be used for the axes labels).
  
-You can choose which features to plot. Now, open `iris_dataset.py` and follow the instructions.
+You can choose which features to plot. Don't forget to add a legend and axes labels. Now, open `iris_dataset.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/iris.png)
 
 ### Exercise 4c: Iris Flower Subplots (challenge, hard)
 
-Try to recreate the plot below. Here, we will extend the previous exercise by making a subplot. This enables us to show all four features at the same time in two plots.
+Try to recreate the plot below. Here, we will extend the previous exercise by making a subplot. This enables us to show all four features at the same time in two plots. Don't forget to give all axes a label and both plots need a legend.
 
 Now, continue working on `iris_dataset.py` and follow the instructions. 
 
@@ -359,17 +357,36 @@ In this exercise, you will practise using bar plots. All the functions to be abl
 
 ### Exercise 5a: Programming Language Percentage (standard)
 
+Try to recreate the plot below. In this plot, you will visualize how much each programming language is currently used according to PYPL. In this exercise, we will work again with real data which can be found at [pypl](https://pypl.github.io/PYPL.htmlhttps://pypl.github.io/PYPL.html). The data can also be loaded from `programming_now_data.npy` and `programming_now_language.npy` located in the data folder. 
+
+While making the plot make sure that the data is sorted and don't forget to add a x-axis label. Now, open `random_noise.py` and follow the instructions.
+
 ![image](/LeidenITP/assets/images/lab11/barplot.png)
 
+### Exercise 5b: Programming Language Percentage Extended (challenge, very hard)
 
-### Exercise 5b: Programming Language Percentage Extended (standard)
+Try to recreate the plot below. Here, we will extend the previous exercise by colouring the previous plot. This can be done by adding enough colors to the `color` argument or to automatically create the colors using `plt.get_cmap("cmap_color")`. When using `get_cmap` a callable object is returned. This object, given input values between 0 and 1, can create colors on the color map (cmap). The plot below is just one possibility what you could do with such a cmap approach.
+
+Now, continue working on `iris_dataset.py` and follow the instructions. 
 
 ![image](/LeidenITP/assets/images/lab11/barplot_extended.png)
 
+## Exercise 6: Show an Image (standard)
 
-matplotlib (plt.plot, plt.bar, plt.hist, plt.scatter, plt.imshow)
-* bar plot: most popular programming langauge https://pypl.github.io/PYPL.html, lab 9 Exercise 3c: Displaying dictionaries with counts
-* histogram: alcohol, in wine sklearn
-* imshow: MNIST
+In this exercise, you will practise showing images. All the functions to be able to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib](https://joshhug.github.io/LeidenITP/labs/lab11/#plotting-with-matplotlib-).
 
+### Exercise 6a: MNIST (standard)
 
+MNIST is one of the most popular datasets used in computer vision and consists of 60000 images, the dataset can be found at [source](http://yann.lecun.com/exdb/mnist/). Each image is a handwritten number between 0 and 9. We have given in "MNIST_examples.npy" an example for each handwritten number. The saved array in "MNIST_examples.npy" is of shape (10,28,28), thus (image_number, x, y). Notice, that they are not colored as each x,y position only contains one value. In this exercise, you will show one gray image containing a handwritten number. An example of such an image can be found below. Don't forget to remove all ticks from the image.
+
+Now, open `MNIST.py` and follow the instructions.
+
+![image](/LeidenITP/assets/images/lab11/MNIST_1.png)
+
+### Exercise 6b: MNIST Subplots (challenge, hard)
+
+Try to recreate the plot below. Here, we will extend the previous exercise by making a subplot. This enables us to show all ten images at the same time. Don't forget to remove all ticks.
+
+Now, continue working on `MNIST.py` and follow the instructions.
+
+![image](/LeidenITP/assets/images/lab11/MNIST_all.png)
