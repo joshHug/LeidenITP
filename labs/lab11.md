@@ -26,12 +26,12 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 ## Overview of This Lab
 
-This week we have ... different exercises that range in difficulty:
+This week we have fourteen different exercises that range in difficulty:
  * Exercise 1: [Filter, Map & List Comprehensions]() (standard)
    * Exercise 1a: [Filter]() (standard)
    * Exercise 1b: [Map]() (standard)
    * Exercise 1c: [Combining filters & maps]() (challenge, medium)
- * Exercise 2: [Other Comprehensions]() (challenge, medium)
+ * Exercise 2: [Other Comprehensions]() (challenge, hard)
  * Exercise 3: [Line plots]() (standard)
    * Exercise 3a: [Sine & Cosine Plot]() (standard)
    * Exercise 3b: [Sine & Cosine Extended Plot]() (challenge, hard)
@@ -43,13 +43,15 @@ This week we have ... different exercises that range in difficulty:
  * Exercise 5: [Bar Plots]() (standard)
    * Exercise 5a: [Programming Language Percentage]() (standard)
    * Exercise 5b: [Programming Language Percentage Extended]() (challenge, very hard)
+ * Exercise 6: [Show an Image]() (standard)
+   * Exercise 6a: [MNIST]() (standard) 
+   * Exercise 6b: [MNIST Subplots]() (challenge, hard) 
 
+All students, regardless of experience, should be able to complete the six standard exercises. Whether you complete all six is up to you.
 
-All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
+The eight exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
 
-The ... exercises marked as "challenge" provide additional practice for interested students. We believe that any student in this class who completes the standard exercises should be able to complete the "medium" difficulty challenge.
-
-For more advanced students, you might find the more difficult ... exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
+For more advanced students, you might find the more difficult Iris Flower Subplots or Other Comprehensions exercises to be more interesting. Feel free to skip the standard exercises if you think they are insufficiently challenging. You can also look at previous labs for challenging exercises.
 
 If you feel that this week's challenges are too hard for you, feel free to do a challenging exercise from last week which should be easier now that you know more.
 
@@ -202,7 +204,7 @@ Again, here the `if else` statement can better be written as a ternary statement
 
 Now, open `combine_map_and_filter.py` and follow the instructions. In this exercise, we will start implementing a map and filter behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the combination of `filter` and `map` function.
 
-## Exercise 2: Other Comprehensions (challenge, medium)
+## Exercise 2: Other Comprehensions (challenge, hard)
 
 List comprehensions are probably the most used comprehension, however, in this exercise, we will look at other comprehensions. There are three other types of comprehensions: sets, dictionaries, generators. There are no tuple nor string comprehensions because of their immutable nature. Later, we will discuss how to use effectively make them. 
 
