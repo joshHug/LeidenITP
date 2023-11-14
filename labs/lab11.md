@@ -37,6 +37,10 @@ This week we have ... different exercises that range in difficulty:
    * Exercise 3b: [Sine & Cosine Extended Plot]() (challenge, hard)
    * Exercise 3c: [Programming Languages Through Time]() (challenge, hard)
  * Exercise 4: [Scatter Plots]() (standard)
+   * Exercise 4a: [Random 2D noise]() (standard)
+   * Exercise 4b: [Iris Flower]() (challenge, hard)
+   * Exercise 4c: [Iris Flower Subplots]() (challenge, very hard)
+
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
 
@@ -268,12 +272,14 @@ Explain:
    * scatter
    * imshow
  * matplotlib features:
+   * subplots (make a note that some function are named differently)
    * xlim, ylim
    * legend
    * xticks
    * axline
    * xticks
    * colors (reference to all colors)
+   * xlabel/ylabel
  * loading and saving data with numpy
  * combining f-strings, r-strings and using (la)tex in matplotlib
 
@@ -312,17 +318,45 @@ Now, open `programming_history.py` and follow the instructions.
 
 In this exercise, you will practise using scatter plots. All the functions to be able to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib](https://joshhug.github.io/LeidenITP/labs/lab11/#plotting-with-matplotlib-).
 
-## Exercise 4a: Random 2D noise (standard)
+### Exercise 4a: Random 2D noise (standard)
 
+Try to recreate the plot below. In this plot, you will visualize 2D random noise using a scatter plot. In the code the `x,y` values are already given. However, it is good to know that `np.random.random()` will become deprecated code and new code should use `rng = np.random.default_rng(seed=42)` followed by `rng.random()`.
+
+Now, open `random_noise.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/scatter_plot.png)
+
+### Exercise 4b: Iris Flower (challenge, hard)
+
+Try to recreate the plot below. In this exercise, we will use the iris (flower) dataset. This dataset contains data about 150 iris flowers from three different subtypes: Setosa, Versicolor, Verginica. Therefore, we need three scatter plots in one figure to plot the data of each subtype. Give each scatter plot its own label and color. The data is loaded into a new object of class `SklearnData` to make working with it easier. As a side note, this data is commonly used when learning about various machine learning algorithms.
+
+For this exercise, you will need the following named variables form iris:
+ - data: This contains four measurements/features from each flower petals.
+ - target: This contains a value to which subgroup the data belongs (0,1 or 2).
+ - target_names: This contains the names of each subgroup.
+ - feature_names: This contains the names of the four measurements (needs to be used for the axes labels).
+ 
+You can choose which features to plot. Now, open `iris_dataset.py` and follow the instructions.
+
+![image](/LeidenITP/assets/images/lab11/iris.png)
+
+### Exercise 4c: Iris Flower Subplots (challenge, hard)
+
+Try to recreate the plot below. Here, we will extend the previous exercise by making a subplot. This enables us to show all four features at the same time in two plots.
+
+Now, continue working on `iris_dataset.py` and follow the instructions. 
+
+![image](/LeidenITP/assets/images/lab11/iris_subplot.png)
+
+
+
+
 
 
 
 
 matplotlib (plt.plot, plt.bar, plt.hist, plt.scatter, plt.imshow)
 * bar plot: most popular programming langauge https://pypl.github.io/PYPL.html, lab 9 Exercise 3c: Displaying dictionaries with counts
-* scatter plot: random noise x,y;  sklearn.datasets.load_iris
 * histogram: alcohol, in wine sklearn
 * imshow: MNIST
 
