@@ -32,7 +32,11 @@ This week we have ... different exercises that range in difficulty:
    * Exercise 1b: [Map]() (standard)
    * Exercise 1c: [Combining filters & maps]() (challenge: medium)
  * Exercise 2: [Other Comprehensions]() (challenge: medium)
- * Exercise 3:
+ * Exercise 3: [Line plots]() (standard)
+   * Exercise 3a: [Sine & Cosine Plot]() (standard)
+   * Exercise 3b: [Sine & Cosine Extended Plot]() (challenge: hard)
+   * Exercise 3c: [Programming Languages Through Time]() (standard)
+ * Exercise 4: 
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
 
@@ -254,11 +258,11 @@ new_array  = np.fromiter((v for v in iterable), float)  # You must know the type
 
 Now, open `other_comprehensions.py` and follow the instructions. 
 
-## Exercise 3: 
+## Plotting With Matplotlib (standard)
 
 Explain:
  * The plots:
-   * plot
+   * plot / fill_between
    * bar
    * hist
    * scatter
@@ -267,9 +271,38 @@ Explain:
    * xlim, ylim
    * legend
    * xticks
+   * axline
+   * xticks
+   * colors (reference to all colors)
  * loading and saving data with numpy
+ * linspace
 
-Make the following images:
+
+## Exercise 3: Line plots (standard)
+
+In this exercise, you will practise with plotting lines and several things related to plotting lines, such as, labeling data, coloring space between lines and changing axis labels. All the functions to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib]().
+
+### Exercise 3a: Sine & Cosine Plot (standard)
+
+Try to recreate the plot below. Here, the cosine and sine function are plotted between 0 and 2pi. Make sure each line has its own label and a legend is shown. Also, show only the relevant part of the plot. Thus, for the x-axis show the value between 0 and 2pi and for the y-axis show the values between -1 and 1. 
+
+Now, open `fill_between_lines.py` and follow the instructions.
+
+![image](/LeidenITP/assets/images/lab11/lineplot.png)
+
+### Exercise 3b: Sine & Cosine Extended Plot (challenge: hard)
+
+Try to recreate the plot below. Here, we will add a colored surface between the sine and cosine function, which is colored orange. Also, we set the x-axis labels to fractions of pi and finally create a visible x-axis.
+
+Now, continue working on `fill_between_lines.py` and follow the instructions.
+
+![image](/LeidenITP/assets/images/lab11/lineplot_extra.png)
+
+### Exercise 3c: Programming Languages Through Time (standard)
+
+Try to recreate the plot below. ....
+
+Now, open `programming_history.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/programming_time.png)
 
