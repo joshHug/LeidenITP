@@ -288,7 +288,7 @@ Try to recreate the plot below. Here, the cosine and sine function are plotted b
 
 Now, open `fill_between_lines.py` and follow the instructions.
 
-![image](/LeidenITP/assets/images/lab11/lineplot.png)
+![image](/LeidenITP/assets/images/lab11/lineplot.png =250x)
 
 ### Exercise 3b: Sine & Cosine Extended Plot (challenge: hard)
 
@@ -296,11 +296,11 @@ Try to recreate the plot below. Here, we will add a colored surface between the 
 
 Now, continue working on `fill_between_lines.py` and follow the instructions.
 
-![image](/LeidenITP/assets/images/lab11/lineplot_extra.png)
+![image](/LeidenITP/assets/images/lab11/lineplot_extra.png =250x)
 
 ### Exercise 3c: Programming Languages Through Time (standard)
 
-Try to recreate the plot below. ....
+Try to recreate the plot below. Here, we will make a plot containing the percentages for the five most used programming languages throughout the last two decades.  
 
 Now, open `programming_history.py` and follow the instructions.
 
