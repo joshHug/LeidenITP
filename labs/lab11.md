@@ -40,6 +40,9 @@ This week we have ... different exercises that range in difficulty:
    * Exercise 4a: [Random 2D noise]() (standard)
    * Exercise 4b: [Iris Flower]() (challenge, hard)
    * Exercise 4c: [Iris Flower Subplots]() (challenge, very hard)
+ * Exercise 5: [Bar Plots]() (standard)
+   * Exercise 5a: [Programming Language Percentage]() (standard)
+   * Exercise 5b: [Programming Language Percentage Extended]() (challenge, very hard)
 
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
@@ -267,7 +270,7 @@ Now, open `other_comprehensions.py` and follow the instructions.
 Explain:
  * The plots:
    * plot / fill_between
-   * bar
+   * bar/barh
    * hist
    * scatter
    * imshow
@@ -349,10 +352,19 @@ Now, continue working on `iris_dataset.py` and follow the instructions.
 ![image](/LeidenITP/assets/images/lab11/iris_subplot.png)
 
 
+## Exercise 5: Bar Plots (standard)
+
+In this exercise, you will practise using bar plots. All the functions to be able to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib](https://joshhug.github.io/LeidenITP/labs/lab11/#plotting-with-matplotlib-). Exercise 5, only contains an exercise of making a horizontal bar plot. However, lab 9 [Exercise 3c: Displaying dictionaries with counts](https://joshhug.github.io/LeidenITP/labs/lab9/#exercise-3c-displaying-dictionaries-with-counts-challenge-hard) is an exercise where you can practise making a vertical bar plot.
 
 
+### Exercise 5a: Programming Language Percentage (standard)
+
+![image](/LeidenITP/assets/images/lab11/barplot.png)
 
 
+### Exercise 5b: Programming Language Percentage Extended (standard)
+
+![image](/LeidenITP/assets/images/lab11/barplot_extended.png)
 
 
 matplotlib (plt.plot, plt.bar, plt.hist, plt.scatter, plt.imshow)
