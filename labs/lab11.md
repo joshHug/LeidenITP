@@ -30,13 +30,13 @@ This week we have ... different exercises that range in difficulty:
  * Exercise 1: [Filter, Map & List Comprehensions]() (standard)
    * Exercise 1a: [Filter]() (standard)
    * Exercise 1b: [Map]() (standard)
-   * Exercise 1c: [Combining filters & maps]() (challenge: medium)
- * Exercise 2: [Other Comprehensions]() (challenge: medium)
+   * Exercise 1c: [Combining filters & maps]() (challenge, medium)
+ * Exercise 2: [Other Comprehensions]() (challenge, medium)
  * Exercise 3: [Line plots]() (standard)
    * Exercise 3a: [Sine & Cosine Plot]() (standard)
-   * Exercise 3b: [Sine & Cosine Extended Plot]() (challenge: hard)
-   * Exercise 3c: [Programming Languages Through Time]() (standard)
- * Exercise 4: 
+   * Exercise 3b: [Sine & Cosine Extended Plot]() (challenge, hard)
+   * Exercise 3c: [Programming Languages Through Time]() (challenge, hard)
+ * Exercise 4: [Scatter Plots]() (standard)
 
 All students, regardless of experience, should be able to complete the ... standard exercises. Whether you complete all ... is up to you.
 
@@ -154,7 +154,7 @@ new_lst = [func1(v) if ... else func2(v) for v in original_lst]
 
 Now, open `map.py` and follow the instructions. In this exercise, we will start implementing a map behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the `map` function.
 
-### Exercise 1c: Combining filters & maps (challenge: medium)
+### Exercise 1c: Combining filters & maps (challenge, medium)
 
 Now, that we have seen both filters and maps, we can also combine them in a list comprehension. There, is no equivalent python function to do this but you could chain filter and map as follows `map(func1, filter(func2, lst))`. Here, we first filter and then map which is more efficient but the other way around would also work. An example of a list comprehension that is a filter and map at the same time would be:
 
@@ -195,7 +195,7 @@ Again, here the `if else` statement can better be written as a ternary statement
 
 Now, open `combine_map_and_filter.py` and follow the instructions. In this exercise, we will start implementing a map and filter behavior using a for loops and a new lists. Each successive function has the same behavior but asks you to code it a bit different to work slowly towards using the combination of `filter` and `map` function.
 
-## Exercise 2: Other Comprehensions (challenge: medium)
+## Exercise 2: Other Comprehensions (challenge, medium)
 
 List comprehensions are probably the most used comprehension, however, in this exercise, we will look at other comprehensions. There are three other types of comprehensions: sets, dictionaries, generators. There are no tuple nor string comprehensions because of their immutable nature. Later, we will discuss how to use effectively make them. 
 
@@ -258,7 +258,7 @@ new_array  = np.fromiter((v for v in iterable), float)  # You must know the type
 
 Now, open `other_comprehensions.py` and follow the instructions. 
 
-## Plotting With Matplotlib (standard)
+## Plotting With Matplotlib
 
 Explain:
  * The plots:
@@ -275,12 +275,12 @@ Explain:
    * xticks
    * colors (reference to all colors)
  * loading and saving data with numpy
- * linspace
+ * combining f-strings, r-strings and using (la)tex in matplotlib
 
 
-## Exercise 3: Line plots (standard)
+## Exercise 3: Line Plots (standard)
 
-In this exercise, you will practise with plotting lines and several things related to plotting lines, such as, labeling data, coloring space between lines and changing axis labels. All the functions to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib]().
+In this exercise, you will practise with plotting lines and several things related to plotting lines, such as, labeling data, coloring space between lines and changing axis labels. All the functions to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib](https://joshhug.github.io/LeidenITP/labs/lab11/#plotting-with-matplotlib-).
 
 ### Exercise 3a: Sine & Cosine Plot (standard)
 
@@ -290,7 +290,7 @@ Now, open `fill_between_lines.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/lineplot.png)
 
-### Exercise 3b: Sine & Cosine Extended Plot (challenge: hard)
+### Exercise 3b: Sine & Cosine Extended Plot (challenge, hard)
 
 Try to recreate the plot below. Here, we will add a colored surface between the sine and cosine function, which is colored orange. Also, we set the x-axis labels to fractions of pi and finally create a visible x-axis.
 
@@ -298,20 +298,29 @@ Now, continue working on `fill_between_lines.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/lineplot_extra.png)
 
-### Exercise 3c: Programming Languages Through Time (standard)
+### Exercise 3c: Programming Languages Through Time (challenge, hard)
 
-Try to recreate the plot below. Here, we will make a plot containing the percentages for the five most used programming languages throughout the last two decades.  
+Try to recreate the plot below. Here, we will make a plot containing the percentages for the five most used programming languages throughout the last two decades. In this exercise, we will work with real data which can be found at [pypl](https://pypl.github.io/PYPL.htmlhttps://pypl.github.io/PYPL.html). The data can also be loaded from `programming_time_data.npy` located in the data folder. 
+
+For this plot, we will continue creating our own x-axis labels which are also rotated 45 degrees to make them more readable. Similar to the previous plots, make sure that the lines stop and start at the border of the images and that the y values start at zero. Also, give the y-axis a label as well as each line a label and color. Lastly, you can try to plot all lines using one `plt.plot` function. This can be done by giving a matrix (2D array) as input instead of a vector (1D array).
 
 Now, open `programming_history.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/programming_time.png)
 
+## Exercise 4: Scatter Plots (standard)
+
+In this exercise, you will practise using scatter plots. All the functions to be able to do this are explained in the general section about matplotlib, see [Plotting With Matplotlib](https://joshhug.github.io/LeidenITP/labs/lab11/#plotting-with-matplotlib-).
+
+## Exercise 4a: Random 2D noise (standard)
+
+
+![image](/LeidenITP/assets/images/lab11/scatter_plot.png)
+
 
 
 
 matplotlib (plt.plot, plt.bar, plt.hist, plt.scatter, plt.imshow)
-
-* line plot: fill-in between lines, language trough time https://pypl.github.io/PYPL.html
 * bar plot: most popular programming langauge https://pypl.github.io/PYPL.html, lab 9 Exercise 3c: Displaying dictionaries with counts
 * scatter plot: random noise x,y;  sklearn.datasets.load_iris
 * histogram: alcohol, in wine sklearn
