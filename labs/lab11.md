@@ -269,22 +269,55 @@ Now, open `other_comprehensions.py` and follow the instructions.
 
 ## Plotting With Matplotlib
 
-Explain:
- * The plots:
-   * plot / fill_between
-   * bar/barh
-   * scatter
-   * subplots (make a note that some function are named differently)
-   * imshow
- * matplotlib features:
-   * xlim, ylim
-   * legend
-   * xticks. yticks
-   * axline
-   * colors (reference to all colors)
-   * xlabel/ylabel
+Let's go through some functionality of matplotlib before starting the plotting exercise. There are many plotting functions and input arguments that can be used with matplotlib and often google is your best friend if you want something specific. Here, we will go briefly through everything you need for the standard exercises. First, we will go through some basic plotting functions and how to make subplots. Second, we will go through some common input arguments. Third, we will explain some other basic matplotlib functionality related to your plot configurations. Fourth, we discuss some extra functions you will need for the exercise which are: loading and saving numpy array and combining f-strings and raw-strings.
+
+***IMPORTANT NOTE***, while matplotlib is the most common plotting library for python and probably also the most documented, it is notoriously weird to use. There are many ways to achieve the same result and there are many many arguments that work is mysterious ways. So, if you want to make something complex there is always a way to do it and probably someone asked it on stackoverflow, but it might not be logical or simple to code. However, the exercise in this lab should be straight forward. As a final note, the explanations provided below explain the general behavior of the functions, however, there may be many exceptions where the functions work just a little bit different.
+
+In general, we mostly use the module pyplot of package matplotlib. This is commonly important as follows:
+
+```python
+import matplotlib.pyplot as plt
+```
+
+Therefore, in the following text we will rever to the module as `plt`.
+
+#### *Plotting Functions*
+
+There are many plotting function that generate graphs, but the following four categories are a good basis, additionally two basic configuration tools are discussed:
+ * Line graphs/plots, these plots can be made with `plt.plot` for a line ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html)) or `plt.fill_between` for coloring the area between two lines ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html)). `plt.plot` needs y-values and optionally x-values. `plt.fill_between` needs two set of y-values of equal length and optionally x-values.
+ * Bar graphs can be made in two flavours with `plt.bar` for vertical bar plots ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html)) and `plt.barh` for horizontal bar plots ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html)). Bar plots needs two inputs the position/name of each bar and the height/value of each bar.
+ * Scatter graphs can be made with `plt.scatter` and need both x and y-values ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)).
+ * Image can be shown with `plt.imshow` which needs a 2D array of x,y values or a 3D array with x,y and color values, where a color can consists of a 3D (R, G, B) or 4D (R, G, B, alpha) vector ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html)). 
+ * To make a plot a certain size or have a certain dpi (sort of resolution) you can use `plt.figure(figsize=(width, height), dpi=100)` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html)). Though, generally you do not need this unless you need the output which is figure.
+ * When you want multiple plots/graphs in one figure (screen), you can use `plt.subplots` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html)). It takes at least two inputs number of rows and number of columns. However, the important part is the return which is `fig`, `axs`. `fig` is similar to the output of `plt.figure`, but `axs` is new. `axs` contains a 2D or 1D array, see documentation, which contains the axes of each plot but simply put it contains the figures. Now, if you want to plot a line plot on the left upper plot (plot 0), you need the following code `axs[0,0].plot()`. Thus, instead of using `plt` we use the axes that we want. For a lot of features, that we will discuss later, the name of the functions changes as well by adding `set_` in front of the name. For example, `plt.xlim()` becomes `axs[0,0].set_xlim()`.  
+
+#### *Plotting Arguments*
+
+Many of the above graphs support additional arguments. Here, we will discuss the most used ones:
+ * `label` is a very useful tool if you want to make an automated legend. It can be added as an argument to a 
+ * `color` is an argument that can often be used to change the color of a graph. This is either a 3D or 4D vector/array, containing the colors red, green, blue and optionally alpha. However, many times it is easier to just provide a name or letter. For example, `color="r"` is the code for the color red. There are many predefined colors which can be found [here](https://matplotlib.org/stable/gallery/color/named_colors.html). Hint: A weird color name is the letter for black namely `k`. Lastly, it is sometimes possible to plot multiple graphs with one function call. For example, `plt.plot(x, Y)`, where `Y` is a 2D array, plots multiple line graphs where each line consists of `Y.shape[0]` points and there are `Y.shape[1]` lines. In this case, color can be a 2D array (number of lines x color) to give each line a separate color. 
+ * `cmap` means color map and is similar to color but instead of giving something a single color, the color depends on a value which can change. Each `plt` function that plots something has either `color` or `cmap` as argument. An example of when `cmap` is used is with `imshow` when you want a heat map. You can make your own heatmap, but it is easier to use one of the many predefined heatmaps which can be found [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html).
+ * `alpha` can be used to give somthing an alpha value, i.e., an opacity value. `alpha` can be used in combination with `color` or on its own.
+
+#### *Plotting Features*
+
+
+  * xlim, ylim
+  * legend
+  * xticks. yticks
+  * axline
+  * colors (reference to all colors)
+  * xlabel/ylabel
+
+#### *Loading & Saving Data Using Numpy*
+
+
  * loading and saving data with numpy
+
+#### *f-sting & raw strings*
+
  * combining f-strings, r-strings and using (la)tex in matplotlib
+([documentation]())
 
 
 ## Exercise 3: Line Plots (standard)
@@ -295,7 +328,7 @@ In this exercise, you will practise with plotting lines and several things relat
 
 Try to recreate the plot below. Here, the cosine and sine function are plotted between 0 and 2pi. Make sure each line has its own label and a legend is shown. Also, show only the relevant part of the plot. Thus, for the x-axis show the value between 0 and 2pi and for the y-axis show the values between -1 and 1. 
 
-Now, open `fill_between_lines.py` and follow the instructions.
+Now, open `sine_cosine.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/lineplot.png)
 
@@ -303,7 +336,7 @@ Now, open `fill_between_lines.py` and follow the instructions.
 
 Try to recreate the plot below. Here, we will add a colored surface between the sine and cosine function, which is colored orange. Also, we set the x-axis labels to fractions of pi and finally create a visible x-axis.
 
-Now, continue working on `fill_between_lines.py` and follow the instructions.
+Now, continue working on `sine_cosine.py` and follow the instructions.
 
 ![image](/LeidenITP/assets/images/lab11/lineplot_extra.png)
 
