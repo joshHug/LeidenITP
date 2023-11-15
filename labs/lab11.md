@@ -294,31 +294,48 @@ There are many plotting function that generate graphs, but the following four ca
 #### *Plotting Arguments*
 
 Many of the above graphs support additional arguments. Here, we will discuss the most used ones:
- * `label` is a very useful tool if you want to make an automated legend. It can be added as an argument to a 
  * `color` is an argument that can often be used to change the color of a graph. This is either a 3D or 4D vector/array, containing the colors red, green, blue and optionally alpha. However, many times it is easier to just provide a name or letter. For example, `color="r"` is the code for the color red. There are many predefined colors which can be found [here](https://matplotlib.org/stable/gallery/color/named_colors.html). Hint: A weird color name is the letter for black namely `k`. Lastly, it is sometimes possible to plot multiple graphs with one function call. For example, `plt.plot(x, Y)`, where `Y` is a 2D array, plots multiple line graphs where each line consists of `Y.shape[0]` points and there are `Y.shape[1]` lines. In this case, color can be a 2D array (number of lines x color) to give each line a separate color. 
  * `cmap` means color map and is similar to color but instead of giving something a single color, the color depends on a value which can change. Each `plt` function that plots something has either `color` or `cmap` as argument. An example of when `cmap` is used is with `imshow` when you want a heat map. You can make your own heatmap, but it is easier to use one of the many predefined heatmaps which can be found [here](https://matplotlib.org/stable/users/explain/colors/colormaps.html).
  * `alpha` can be used to give somthing an alpha value, i.e., an opacity value. `alpha` can be used in combination with `color` or on its own.
+ * `label` is a very useful tool if you want to make an automated legend. It can be added as an argument to most functions that make a graph. This gives a name to the graph. Note, that raw string can be used to use (la)tex format, later more on that. Similar to color, when multiple graphs are created at ones it can also be a list of strings where each string corresponds to a single graph.
 
 #### *Plotting Features*
 
+Making the graph is usually only have the work. For scientific papers, plots need axes labels, correct ticks, a legend, and potentially more. Here, we will show some helpful functions to achieve that:
+  * `plt.legend` creates a legend in your plot ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html)). This is automatically done when using labels. However, you can also manually add the labels and graphs that need to be displayed. Furthermore, the `loc` argument lets you place the legend at a preferred location. The defaults value for `loc` is `best` which places the legend at the best place, i.e., most empty.
+  * `plt.grid` can be used to display the mayor or minor axes for both the x and y axes ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html)). The default is displaying both mayor axes.  
+  * `plt.xlim` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html)), `plt.ylim` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html)) are useful to choose what part of the axes need to be displayed in the plot. If you not use these function the axes for the plot contain all data plus a little bit more space. The input can be one argument (minimum) or two arguments (minimum and maximum).
+  * `plt.xticks` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html)), `plt.yticks` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html)) can be used to change the ticks. Ticks are responsible for displaying values beneath or to the left of an axis. You can set either the mayor or minor ticks. The input is at least the argument `ticks` which sets the location of the ticks. If you want to change the value for the ticks you can use `labels`. For example, you can set ticks for each pi value with `plt.ticks(np.linspace(0, 2*np.pi, 3))`, however, now they are still displayed as `3.1416` and not as the symbol pi. To do this you need the `labels`, thus: `plt.ticks(ticks = np.linspace(0, 2*np.pi, 3), labels = ["0", r"$\pi$", r"$2\pi$"])`. Here, raw string are used to display (la)tex code, more on that later.
+  * `plt.axline` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axline.html)), `plt.axhline` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axhline.html)), and `plt.axvline` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axvline.html)) can be used to create a straight line. This can be very helpful if you want to create the axes lines (instead of the whole grid) or want to make a visual aid line. For example, to display an asymptote. `plt.axline` can create any line, while `plt.axhline` and `plt.axvline` create respectively a horizontal and vertical line.
+  * `plt.xlabel` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html)),`plt.ylabel` ([documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html)) can be used to give an axis a name/label.
 
-  * xlim, ylim
-  * legend
-  * xticks. yticks
-  * axline
-  * colors (reference to all colors)
-  * xlabel/ylabel
-
-#### *Loading & Saving Data Using Numpy*
-
-
- * loading and saving data with numpy
 
 #### *f-sting & raw strings*
 
- * combining f-strings, r-strings and using (la)tex in matplotlib
-([documentation]())
+f-strings are very useful when creating strings that contains variable. When working with `plt` combining a list comprehension with f-strings can be a handy tool to created labels. For example, the following code create ticks labels round to two decimal `[f"{v:.2f}" for v in np.linspace(0, 1, 10)]`. 
 
+Another tool you can use to create nice labels is raw strings. They enable you to use (la)tex code inside labels/strings. Note the parentheses around (la)tex, this is because technically you do not use latex but MathText which are both tex instances. However, they work 99.9% of the time the same. Raw strings can be made similar to f-strings by adding an r in front of the quotes. For example, `r"$2\pi$` creates a label in your plot that looks like  2&pi;.
+
+Now, sometimes it would be great if we can combine raw string and f-strings. This is possible but a bit clunky. To create a combination you can just add `rf` in front of a string like this `rf""`.  However, it can get a bit confusing because tex and f-string both use curly brackets. Therefore, here a guide how to work with curly brackets when working with rf-strings:
+ - One curly bracket is for the f-string. For example, `rf"${count}\pi$"` place the variable `count` in front of the symbol &pi;.
+ - Two curly brackets between dollar signs are for (la)tex input. For example, `rf"$\frac{{1}}{{2}}$"` creates the nicely formatted fraction 1/2.
+ - Three curly brackets between dollar signs are for python variables inside (la)tex input. For example, `[rf"$\frac{{1}}{{{n}}}$" for n in range(2,10)]` creates a list with all the fraction nicely formatted from 1/2 to 1/9.
+
+#### *Loading & Saving Data Using Numpy*
+
+To make the exercises a bit more fun than displaying random values, we downloaded and cleaned some data from the web. This data consists of numpy arrays and to make it more accessible and easy to work with we also stored it as numpy arrays. The code will be given in the exercises but for the curious minds here is a quick explanation how it works.
+
+You can save any numpy array with the following code:
+
+```python
+np.save(filepath, data)  # where filepath is a string and data a numpy array.
+```
+
+This can then be loaded with the following code:
+
+```python
+data = np.load(filepath)  # where filepath is a string and data a numpy array.
+```
 
 ## Exercise 3: Line Plots (standard)
 
