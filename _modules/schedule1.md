@@ -2,6 +2,9 @@
 title: Introduction to Programming
 ---
 
+28 Nov
+: **Assignment 3 due**{: .label .label-red }
+
 17 Nov
 : **Lab**{: .label .label-purple }[Recursion and Hashable Objects]({{ site.baseurl }}{% link labs/lab10.md %})
 
@@ -11,6 +14,7 @@ title: Introduction to Programming
 
 10 Nov
 : **Lab**{: .label .label-purple }[Classes and Errors]({{ site.baseurl }}{% link labs/lab9.md %})
+: **Assignment**{: .label .label-red }[n-grams]({{ site.baseurl }}{% link assignments/assignment3.md %})
 
 8 Nov
 : **Lecture**{: .label .label-blue }[Exercises, Iterators & Generators, and Exceptions](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2690341)
