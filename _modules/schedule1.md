@@ -14,6 +14,7 @@ title: Introduction to Programming
 
 10 Nov
 : **Lab**{: .label .label-purple }[Classes and Errors]({{ site.baseurl }}{% link labs/lab9.md %})
+  : [answers](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2692935)
 : **Assignment**{: .label .label-red }[n-grams]({{ site.baseurl }}{% link assignments/assignment3.md %})
 
 8 Nov
