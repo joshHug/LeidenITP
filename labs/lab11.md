@@ -317,9 +317,9 @@ f-strings are very useful when creating strings that contains variable. When wor
 Another tool you can use to create nice labels is raw strings. They enable you to use (la)tex code inside labels/strings. Note the parentheses around (la)tex, this is because technically you do not use latex but MathText which are both tex instances. However, they work 99.9% of the time the same. Raw strings can be made similar to f-strings by adding an r in front of the quotes. For example, `r"$2\pi$` creates a label in your plot that looks like  2&pi;.
 
 Now, sometimes it would be great if we can combine raw string and f-strings. This is possible but a bit clunky. To create a combination you can just add `rf` in front of a string like this `rf""`.  However, it can get a bit confusing because tex and f-string both use curly brackets. Therefore, here a guide how to work with curly brackets when working with rf-strings:
- - One curly bracket is for the f-string. For example, `rf"${count}\pi$"` place the variable `count` in front of the symbol &pi;.
- - Two curly brackets between dollar signs are for (la)tex input. For example, `rf"$\frac{{1}}{{2}}$"` creates the nicely formatted fraction 1/2.
- - Three curly brackets between dollar signs are for python variables inside (la)tex input. For example, `[rf"$\frac{{1}}{{{n}}}$" for n in range(2,10)]` creates a list with all the fraction nicely formatted from 1/2 to 1/9.
+ - One curly bracket is for the f-string. For example, ```rf"${count}\pi$"``` place the variable `count` in front of the symbol &pi;.
+ - Two curly brackets between dollar signs are for (la)tex input. For example, ```rf"$\frac {{1}}{{2}}$"``` creates the nicely formatted fraction 1/2.
+ - Three curly brackets between dollar signs are for python variables inside (la)tex input. For example, ```[rf"$\frac {{1}}{{{n}}}$" for n in range(2,10)]``` creates a list with all the fraction nicely formatted from 1/2 to 1/9.
 
 #### *Loading & Saving Data Using Numpy*
 
