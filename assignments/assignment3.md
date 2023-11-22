@@ -107,13 +107,14 @@ To create an n-gram model, we're essentially building a predictive model for wor
    For example:
    ``` python
    {"the,house": {"is": 0.01, "has": 0.04 ...}, 
-    "is,a": {"book": 0.02, "house": 0.01, </s>: 0.003, ...} 
+    "is,a": {"book": 0.02, "house": 0.01, "</s>": 0.003, ...} 
     "<s>,the": {"house": 0.01, "chair": 0.004, ...}, 
+    "<s>,<s>": {"<s>,the": 0.01, "<s>,a": 0.012, ...},
     ...}
    ```
 
 4. **General Notes**:
-   - All models exclude the start token `"<s>"` from the key-dictionaries, as the start of a sentence can not be in the middle of a sentence.
+   - All models exclude the start token `"<s>"` from the word-dictionaries, as the start of a sentence can not be in the middle of a sentence. Important note, this does not mean that for some models (trigrams or higher n-grams) a combination of start tokens and words is excluded from the word-dictionaries.
    - The end token `</s>` is added as an option for a next word in all models, i.e., it can be a key in the word-dictionaries. However, it should not be added as a key to the model-dictionary, as it denotes the end of a sentence which can not be in the middle of the sentence.
    - To calculate the probability of each word in the n-gram model, you count how many times a specific word follows a particular history, denoted as `count(word | history)`, and then divide it by the total number of occurrences of that history, represented as `sum(history)`.
    - Essentially, the probability calculation is: `count(word | history) / sum(history)`. This quantifies how frequently a specific word follows certain other words in the given corpus. This approach allows us to model the chance of a specific word following a certain history, which enables us to generate more meaningful text based on historical word patterns.
