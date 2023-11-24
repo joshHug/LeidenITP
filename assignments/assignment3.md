@@ -21,11 +21,7 @@ grand_parent: Leiden ITP
 
 # Assignment 3: word n-grams & generating text
 
-<<<<<<< HEAD
-**Deadline: 31 November 2023 23:59**
-=======
 **Deadline: 1 December 2023 23:59**
->>>>>>> f43f9d6648cebac6b8eddb6a6936b4121a31c33d
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
