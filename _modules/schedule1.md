@@ -19,6 +19,7 @@ title: Introduction to Programming
 
 17 Nov
 : **Lab**{: .label .label-purple }[Recursion and Hashable Objects]({{ site.baseurl }}{% link labs/lab10.md %})
+  : [answers](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2697100)
 
 15 Nov
 : **Lecture**{: .label .label-blue }[Errors, Hashable Objects and Recursion](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2696898)
