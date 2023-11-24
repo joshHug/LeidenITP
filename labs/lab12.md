@@ -29,10 +29,15 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 This week, the structure of the lab is a bit different. In the last 11 labs, we have covered the basic programming principles and the ways to use them in Python. It is important that you take the time to finish the previous labs and practice with each programming concept. Therefore, this week will contain only one, hopefully fun, challenge exercise. This exercise will focus on the concept of control flow and how to interact with class objects. Also below, you can find an overview where you can practice certain programming concepts.
 
 Overview programming concept and exercise:
- * Numpy: 
- * Visualization:
- * Recursion:
- * Classes
+ * Numpy: [Lab 7](https://joshhug.github.io/LeidenITP/labs/lab7/#lab-7)
+ * Dictionaries: [Lab 9](https://joshhug.github.io/LeidenITP/labs/lab9/)
+ * Classes: [Lab 8](https://joshhug.github.io/LeidenITP/labs/lab8/), [Lab 9](https://joshhug.github.io/LeidenITP/labs/lab9/), and [lab 10](https://joshhug.github.io/LeidenITP/labs/lab10/)
+ * Iterators & Generators: [Lab 9](https://joshhug.github.io/LeidenITP/labs/lab9/)
+ * Recursion: [lab 10](https://joshhug.github.io/LeidenITP/labs/lab10/)
+ * Visualization: [lab 11](https://joshhug.github.io/LeidenITP/labs/lab11/)
+ * Comprehensions: [lab 11](https://joshhug.github.io/LeidenITP/labs/lab11/)
+
+[In extra exercises](https://joshhug.github.io/LeidenITP/labs/extra_exercises/), you can find useful python functions and practice implementing them yourself.
 
 ## Theoretical Background
 
@@ -149,7 +154,9 @@ As said before, this is maybe too much of one function one purpose, but it is a 
 
 ### Classes and Interacting With Them
 
-To continue the topic of control flow and where you need to do what. There are certain guidelines on how to work with classes and make them. One of these guidelines is that you do not change the attributes of an object outside the class. So, your class should contain all the methods needed to work with it. This is because the problem with classes and methods is that often a method relies on certain attributes of an object. Changing these attributes can easily lead to error or bugs. Therefore, classes often contain methods to change the value of an attribute (setters) or methods to get the value of an attribute (getters). This is also where methods differ from functions. A function only uses variables that it gets as an argument or made in the function itself. A method uses the attributes of the object and the arguments only contain variables from outside the object. 
+To continue the topic of control flow and where you need to do what. There are certain guidelines on how to work with classes and make them. One of these guidelines is that you do not change the attributes of an object outside the class. So, your class should contain all the methods needed to work with it. This is because the problem with classes and methods is that often a method relies on certain attributes of an object. Changing these attributes can easily lead to error or bugs. Therefore, classes often contain methods to change the value of an attribute (setters) or methods to get the value of an attribute (getters). To make clear to other programmers that certain attributes or methods should not be used outside the class you can add an underscore in front of your variable name. In other language, you can actually make a variable private (instead of public) to enforce this behavior, in python this is not possible. 
+
+That methods use variables/attributes that are not given as input arguments is also where methods differ from functions. A function only uses variables that it gets as an argument or made in the function itself. A method uses the attributes of the object and the arguments only contain variables from outside the object. 
 
 This ties needly in with our discussion about control flow, where you can change or get information about an object, but you do not write code that actually does it. An example that is common in machine learning is that you have a certain model that needs to learn something and then predict it. In these case the code looks often something like:
 
@@ -212,7 +219,66 @@ for func in func_lst:
 
 ## The Bomb Lab
 
-In this exercise, you will help to dismantling a fictional bomb under the LIACS building. The bomb is build by an 
+In this exercise, you will help a robot to dismantling a fictional bomb under the LIACS building. The bomb is build by an overly careful programmer that tried to make sure that nobody could temper with his bomb object. This results in some very bad code, but it also makes it near impossible to use or change any attributes of the bomb object. Luckily for us, he also left a way to dismantle the bomb by executing a precise sequence of methods for the robot.
+
+There are multiple bombs with different difficulties to make the challenge more accessible. After importing `bomb`, you can set the difficulty by calling it and use the `level` argument as show below:
+
+```python
+bomb(level=1)
+```
+
+There are 6 levels each adding additional complexity to the dismantling. We already completed dismantling the zeroth level and started on the first level. In the `bomb_dismanteling.py` file you can see how that works. The levels add the following steps to the bomb dismantling: 
+0. Starting the bomb dismantling program already dismantles the bomb. This can be done by typing the correct string in the bomb console, which can be done with `bomb.console(sentence)`. 
+1. In this level, the robot also needs to cut different colors of wires. Each wire color can be cut using its own method using the following code: `bomb.cut_COLOR_wire()`, where COLOR can be any color. For example, the red wire can be cut using `bomb.cur_red_wire()`. You can  either use trial and error to find all colored wires or try to find the most common colors for plotting.
+2. The second level brings new functionality to the console. When the bomb gives you a sequence of integers, you need to type them one by one into the console using the following code: `bomb.console(number)`.
+3. Now, the bomb can also give you a nested list of integers to type into the console. The order of the integers would be the order of printing.
+4. For level 4 you need to use two new functionality for the robot. The first one is removing parts of the bomb which can be done with the code: `bomb.remove_part()`. However, before you can remove a part you need to remove the screws which can be done with `screw.remove()`.
+5. To be able to complete the last level the robot needs to enter a secret password. This can be done with `bomb.insert_password(password)`. The password can be found be decrypting the encrypted password that the bomb gives you. The password can be decrypted by applying one of four sequence, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the fibonacci sequence is the correct one than the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. You know what sequence it is because the robot can give you a clue containing what the first index is and the small part of the sequence. For example the clue good be `2, [1, 2, 3, 5, 8]` which points to the fibonacci sequence.
+
+Above, you can find what the robot can do. However, it can also ask the bomb several questions which can either results in an `BombStartsBeeping` error (which can be caught) or:
+- `bomb.get_wires()` can result in a sequence of colors that need to be cut in that order.
+- `bomb.get_cipher()` can result in a sequence of numbers that need to be typed in the console.
+- `bomb.get_part()` can result in part object.
+- `get_encrypted_password()` can result in a encrypted password.
+
+In each step of the dismantling process only one of the above function will give you a result and not an `BombStartsBeeping` error. With each bomb level the number of steps increases but it is always random. 
+
+There is also two extra question you can ask the bomb to help the robot which are `bomb.get_screws()` and `bomb.get_clue()`.
+
+To help you structure you approach we have already started dismantling a level one bomb. This can be found in the `bomb_dismanteling.py`. Below, you can also find a part of the code for extra information how it works.
+
+```python
+def cut_wires(colors): 
+    """
+    You can structure you code by handling each possible dismantling task in a separate function.
+    Here, we already made a function where you can program the control flow for cutting wires.
+    """
+    pass
+
+def find_next_step(bomb):
+    """
+    This function Loops through the possible dismantling steps.
+    When a step is done, the function calls itself to perform another step.
+    """
+    for bomb_func, dismantle_func in BOMB_DISMANTLED_STEP.items():  
+        feedback = bomb_func()  # Ask the bomb for info
+        print("new code:", feedback)
+
+        dismantle_func(feedback)  # Dismantle a step, depending on what function the bomb did not give a BombStartsBeeping error.
+
+        find_next_step(bomb)
+
+"""
+This global dictionary can be used to connect a question that can be asked to the bomb with a function that dismantles that task. 
+We already filled it in for a level one bomb, where bomb.get_wires gives us the wires to cut and cut_wires handles the control flow to cut those wires.
+"""
+BOMB_DISMANTLED_STEP = {bomb.get_wires: cut_wires}
+
+bomb(level=1)
+bomb.console("Start dismantle bomb program.")  # Step one in the bomb dismantling process
+
+find_next_step(bomb)  # A recursive function to dismantle all steps
+```
 
 
 
