@@ -2,8 +2,20 @@
 title: Introduction to Programming
 ---
 
-28 Nov
+22 Dec
+: **Assignment 4 due**{: .label .label-red }
+
+1 Dec
 : **Assignment 3 due**{: .label .label-red }
+
+1 Dec
+: **Lab**{: .label .label-purple }[Bomb Lab]({{ site.baseurl }}{% link labs/lab12.md %})
+
+24 Nov
+: **Lab**{: .label .label-purple }[Comprehensions & Visualization]({{ site.baseurl }}{% link labs/lab11.md %})
+
+22 Nov
+: **Lecture**{: .label .label-blue }[Comprehensions & Visualization](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2703125)
 
 17 Nov
 : **Lab**{: .label .label-purple }[Recursion and Hashable Objects]({{ site.baseurl }}{% link labs/lab10.md %})
