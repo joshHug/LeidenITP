@@ -118,7 +118,9 @@ In `person.py`, your task is to construct the `Person` class along with a functi
 
 The `create_persons_list` function is expected to yield a list consisting of `Person` objects initialized randomly in accordance with the description given in the program section.
 
-### Load Names
+### Load Names 
+
+# [TODO: CONTINUE FROM HERE]
 
 In `load_names.py` you will write code to load the file **names.txt**. The function `load_names` should return a 1D list or array with the names.
 
