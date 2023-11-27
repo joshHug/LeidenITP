@@ -19,8 +19,6 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-# THIS ASSIGNMENT IS STILL WORKED ON
-
 # Assignment 4: Recursive Merge Sort & Creating Classes
 
 **Deadline: 22 December 2023 23:59**
@@ -120,13 +118,11 @@ The `create_persons_list` function is expected to yield a list consisting of `Pe
 
 ### Load Names 
 
-# [TODO: CONTINUE FROM HERE]
-
-In `load_names.py` you will write code to load the file **names.txt**. The function `load_names` should return a 1D list or array with the names.
+In `load_names.py` you will write code to load the file `names.txt`. The function `load_names` should return a 1D list or array with the names.
 
 ## Dry code (Don't repeat yourself)
 
-During this assignment it is important to write *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
+During this assignment it is important to write *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not *dry*. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
 ```python
 if check_first_name(name):
    name = name.lower()
@@ -136,7 +132,7 @@ else:
    print(f"The last name of this person is {name}")
 ```
 
-The dry code can be:
+The *dry* code can be:
 ```python
 name = name.lower()
 if check_first_name(name):
@@ -186,33 +182,39 @@ class Binary():
 
 ## Grading
 
-The first 5 points are given for:
-- merge sort should be implemented recursive. (2 points)
-- Default merge sort should be done by comparing objects e.g. `Person` objects (not attributes of objects or the return of methods). When objects are equal the original order should be preserved. (1 point)
-- You should be able to reverse sort using the default key. (1 point)
+*Implementing the basic functionality will give you 5.5 points out of 10.*
+**Basic functionality**, this can be split in the following items:
+- Merge sort should be implemented recursive. (2 points)
+- Default merge sort should be done by comparing objects e.g. `Person` objects (not attributes of objects or the return of methods). When objects are equal the original order should be preserved. `Person` class objects should be compared/sorted on default on their height. (1 point)
+- You should be able to reverse sort using the default argument `reverse`. (1 point)
 - When a `Person` class object is printed it should show you the information of the object in a readable way. Thus, it should mention the name, weight, height, and age. (0.5 points)
-- The file **names.txt** should be loaded in correctly. (0.5 points)
+- The file `names.txt` should be loaded in correctly. (0.5 points)
+- Include comments to explain the difficult parts of your code. It is generally good practice to write a comment for each code block. (0.5 points)
 
-If the first 5 points are not implemented, no further points can be given.
-- You should sort the list using the key argument in merge sort based on the: (1.5 points)
-   - age
-   - weight
-   - height
-   - name
-   - indices 0, 1, 2, and 3
-   - tuple or list representation of a `Person` object
-   - An index of the tuple or list representation
-- You should be able to reverse sort in combination with any key argument. (0.5 points)
-- A `Person` object should also contain the following: (1.5 points)
-  - The string representation of `Person` objects should be the name.
-  - The int and float representation of `Person` objects should be the age.
-  - It should be possible to get a tuple or list representation of `Person` objects. When this is done the order should be: name, age, weight, height.
-  - Similarly, a `Person` object should be subscriptable in the same order. For example, `person1[0]` should give the name of the object `person1`.
-- Dry coding. (1.5 points)
+*The remaining 4.5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 4.5 points, the grade is capped at a 10. Note, that completing the basic functionality does not mean flawless implementation. If you make a mistake in the basic functionality, you can still get additional points.*
+
+**Sorting with key arguments**: You should sort the list using the key argument in merge sort based on the following attributes of the `Person` class: (1 point)
+- age
+- weight
+- height
+- name
+- indices 0, 1, 2, and 3
+- tuple or list representation of a `Person` object
+- an index of the tuple or list representation
+
+**Person Class**: A `Person` object should also contain the following: (1 point)
+- The string representation of `Person` objects should be the name.
+- The int and float representation of `Person` objects should be the age.
+- It should be possible to get a tuple or list representation of `Person` objects. When this is done the order should be: name, age, weight, height.
+- Similarly, a `Person` object should be subscriptable in the same order. For example, `person1[0]` should give the name of the object `person1`.
+
+**Combining key and reverse** You should be able to reverse sort in combination with any key argument. (1 point)
+
+**Dry code**: For example, each functionality in you class should only be implemented once. Another example would be, there should only be one sorting algorithm. The two arguments `key` and `reverse` can be handled in a separate helper function. (1.5 points)
 
 ## Tips
 
-This assignment is structured such that everything is connected and you only have to implement each functionality once. Making sure your code is dry can help you significantly to make the assignment easier and more structured.
+This assignment is structured such that everything is connected and you only have to implement each functionality once. Making sure your code is *dry* can help you significantly to make the assignment easier and more structured.
 
 When working on `load_names.py` think about how to correctly open and close a file or load in files using other libraries.
 
