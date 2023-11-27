@@ -270,9 +270,9 @@ Same as level 2, except that:
 
 Level 4 has these four new functions.
 
- - `bomb.get_screws()` - gets a list of screws that must be removed.
- - `screw.remove()` - removes a given screw. Note that this is a function of the screw object, not the bomb.
  - `bomb.get_part()` - gets a part to be removed.
+ - `bomb.get_screws()` - gets a list of screws that must be removed. This must be called immediately AFTER `get_part`, but before `remove_part`.
+ - `screw.remove()` - removes a given screw. Note that this is a function of the screw object, not the bomb.
  - `bomb.remove_part(part)` - removes the given part.
 
 Note that for this part, there are now four different functions you may need to call in order to dismantle the bomb: `get_wires`, `get_cipher`, `get_screws`, and `get_part`. You'll need to come up with some way to iterate over these four functions. Hint: To avoid a messy solution with lots of `try`/`except` statements, keep in mind that you can make lists or even dictionaries of functions.
@@ -288,4 +288,8 @@ The new attributes for this part are:
 
 The password can be decrypted by applying one of four sequences, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the fibonacci sequence is the correct one, than the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. 
 
-The `get_clue` function gives you a clue containing what the first index is and the first few elements of the sequence. For example the clue might be `2, [1, 2, 3, 5, 8]` which points to the fibonacci sequence.
+The `get_clue` function gives you a clue that you must use to determine which sequence is correct. `get_clue` returns a tuple where the first element is n (the starting index), and the second element is a list of integers. 
+
+For example the clue might be `2, [1, 2, 3, 5, 8]`. This means the correct sequence is the sequence where starting from n = 2, the values are `[1, 2, 3, 5, 8]`. This means the correct sequence is the fibonacci sequence. 
+
+Another clue might be `(3, [6, 10, 15, 21, 28, 36])`. This means the correct sequence is the sequence where starting from n = 3, the values are `[6, 10, 15, 21, 28, 36]`. This time, this is the triangular sequence, since the triangular sequence is `[1, 3, 6, 10, 15, 21, 28, 36...]`, note that starting from n = 3, the values begin with 6.
