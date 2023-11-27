@@ -27,48 +27,50 @@ grand_parent: Leiden ITP
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
-
 ## Program
 
 In this assignment, you will implemented merge sort and create your own `Person` class. 
 
 ### Merge sort
 
-Merge sort is a common sorting algorithm known for its recursive algorithm. The idea of mergesort is to split a "long" unsorted list into two equal parts and sort those list separately. The question: "how do you sort those smaller lists" can be answered with: "apply mergesort again". This is possible as the input for merge sort is an unsorted list and the output a sorted list. This first step of merge sort stops when the list is sorted. This happens when it only contains 1 item. The first step of the algorithm will look something like:
+Merge sort is a common sorting algorithm known to be implemented recursively. The concept of mergesort involves dividing an "unsorted" list into two equal parts and sorting them individually. When pondering how to sort these smaller lists, the answer lies in applying mergesort again. This works because merge sort takes an unsorted list as input and produces a sorted list as output. The algorithm consists of two steps: a recursive phase that splits the lists into smaller lists and sorts them, and a merging phase that merges the sorted lists together. The initial step of merge sort stops when the list is sorted, which occurs when it contains only one item. An illustration of this first step of the algorithm might look something like this:
+
 ```
 [0, 8, 3, 2] # this list becomes
-[0, 8] and [3, 2] which is again split into
-[0], [8], [3], [2] which are four sorted lists.
+[0, 8] and [3, 2] which is then split into
+[0], [8], [3], [2] – which are four sorted lists.
 ```
-The second step is combining the list in such a way that they stay sorted. Just adding them back together would not work as this will just create the input list again. Even though, it looks like we did not make much progress as we now have to combine two list in sorted order. We actually made the sorting much easier as we know that those list themselves are sorted. Firstly, let's look at how combing would look like in an example. Secondly, we will discuss potential algorithm to achieve this.
+
+The subsequent step involves combining the lists in a manner that maintains their sorted order. Simply rejoining them wouldn't work, as it would recreate the input list. However, despite the appearance of minimal progress because we're combining two lists in sorted order, this actually makes sorting much simpler due to our knowledge that these lists themselves are sorted. First, let's examine how combining would appear in an example. Then, we'll discuss potential algorithms to achieve this.
+
 ```
 Combine [0] and [8]
-0 is smaller thus the new list becomes: [0, 8]
+0 is smaller, so the new list becomes: [0, 8]
 Next, combine [3] and [2]
-2 is smaller thus the new list becomes: [2, 3]
+2 is smaller, so the new list becomes: [2, 3]
 Now, combine the newly created lists:
-The first items of both lists are 0 and 2, 0 is smaller then 2 thus add zero: [0]
-The next item of the first list is 8 which is larger then 2 thus add two: [0, 2]
-The next item of the second list is 3 which is smaller then 8 thus add three: [0, 2, 3]
-There are no items left in the second list, 
-therefore add all remaining items from the first list: [0, 2, 3, 8]
+The first items of both lists are 0 and 2. As 0 is smaller than 2, add zero: [0]
+The next item in the first list is 8, which is larger than 2. Thus, add two: [0, 2]
+The next item in the second list is 3, which is smaller than 8. So, add three: [0, 2, 3]
+No items are left in the second list, 
+so add all remaining items from the first list: [0, 2, 3, 8]
 Note, this is possible because both lists were ordered.
-There are no more lists to combine thus merge sort is complete. 
+There are no more lists to combine, thus merge sort is complete. 
 ```
 
-The example shows a hint of how the algorithm works. In one sentence it can best be described as zipping the list together based on which item is smaller. In this assignment, you will implement this second step in the function `merge`. Here, you have two options. 
+This example offers insight into how the algorithm operates. In brief, it could be described as zipping the lists together based on which item is smaller. In this assignment, your task is to implement this second step in the function merge. You'll have two options:
 
-Algorithm 1, you loop through the lists using two indices e.g. `i` and `j`. Then each step you look if the first list with index `i` is smaller than the second list index `j`. If so add the value of the first list index `i` and increment `i` by one. Else, you do the opposite, add the value of the second list index `j` and increment `j` by one. When either `i` or `j` is out of bounds of their respective list, you can stop and add the rest of the remaining list to the new list.
+Algorithm 1 involves looping through the lists using two indices, e.g. `i` and `j`. At each step you check if the element at index `i` in the first list is smaller than the element at index `j` in the second list. If so, add the value of the first list's index `i` to the new list and increment `i` by one. Otherwise, add the value of the second list's index `j` to the new list and increment `j` by one. When either `i` or `j` exceeds the bounds of their respective lists, stop and add the remaining list elements to the new list.
 
-Algorithm 2, you take always the first item of each list. Then compare the values and add the smallest value to the new list. From the lists that you took the value (with the smalles value) you will remove the first index. Keep going until one list is empty. Now, you can stop and add the rest of the remaining list to the new list.
+Algorithm 2 always selects the first item of each list, compares their values, and adds the smallest value to the new list. Then, it removes the first index from the list that contributed the smallest value. This continues until one list is empty. At that point, stop and add the remaining elements from the non-empty list to the new list.
 
-In the next course, algorithms and data structures you will learn all about when which algorithm is better and why. For this assignment, you only have to implement a working solution.
+In your upcoming course on algorithms and data structures, you'll learn about the contexts in which each algorithm performs better and why. However, for this assignment, your main objective is to implement a functional solution.
 
-For more information visited [this](https://nl.wikipedia.org/wiki/Mergesort) wikipedia page. Hint: try to implement the algorithm yourself and not look at the provided code. Copying code from anywhere is not allowed and it is hard to create your own code if you have seen the solution.
+For more information visited [this wiki page](https://nl.wikipedia.org/wiki/Mergesort). Hint: Try to implement the algorithm yourself and do not look at the provided code. Copying code from any source is not permitted and could hinder your ability to create your own solution.
 
 ### Person class
 
-When storing data, you often want to store more than one datatype per object. For example, you want to store a persons name and age. Now, it would be possible to make two lists: one for the names and one for the ages. However, this is a very bad idea. One major problem is that this can easily lead to misaligned data e.g. the first name in list one does no longer corresponds to the first age in list two. Therefore, we need a different solution which is often a [tuple](https://www.geeksforgeeks.org/tuples-in-python/) or a [named tuple](https://www.geeksforgeeks.org/namedtuple-in-python/). Even though this is a good way to store data if we want to add special methods to such data we need our own class. In this assignment, you will create a class `Person` which has similar functionality to named tuples and more. For example, both are subscriptable meaning you can use square brackets `person_object[0]`. In the template and grading criteria you can find a list with all the functionality that this class needs.
+When managing data, there's often a need to store multiple data types within a single object. For instance, you might want to retain a person's name and age. While one might consider using two separate lists – one for names and another for ages – this approach isn't advisable. An inherent issue is the potential for misalignment in data. For instance, the first name in list "one" may no longer correspond to the first age in list "two". Hence, an alternative solution is required, often in the form of a [tuple](https://www.geeksforgeeks.org/tuples-in-python/) or a [named tuple](https://www.geeksforgeeks.org/namedtuple-in-python/). Although these structures are efficient for storing data, having our own class allows us to incorporate (magic) methods. In this task, you will create a Person class that mirrors the functionalities of named tuples and extends further. Both named tuples and the Person class are subscriptable, allowing the use of square brackets like person_object[0]. The template and grading criteria contain a comprehensive list of the functionalities required for this class.
 
 Each `Person` object should be randomly initialized with:
 - A name from the global list `NAMES`.
@@ -76,13 +78,21 @@ Each `Person` object should be randomly initialized with:
 - A height between 150 and 200 cm.
 - A weight between 45 and 100 kg.
 
+Note, if you are not familiar with named tuples have a look at this [link](https://www.geeksforgeeks.org/namedtuple-in-python/). However, they are simply tuples that are not only subscriptable but also accessible by attribute name. This makes them effectively a class with only an `__ini__`  and `__getitem__` method.
+
 ### Sorting Own Objects
 
 At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to a object an sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
 
-Another argument that most sorting algorithm have is the default `reverse` argument. This argument makes sure that the list is sorted in reverse order. 
+Another argument that most sorting algorithm have is the default argument `reverse`. This argument ensures that the list is sorted in reverse order.
 
 Lastly, your implementation of merge sort and the two default arguments should work in any combination.  
+
+At this point, we understand how to sort a list of integers and grasp the necessity of a class. However, when making an application it is often required that this new data class is also sortable. In this assignment, you'll achieve this in two ways. The initial approach involves making the object itself sortable. This implies that the sorting algorithm's code remains unchanged when compared to sorting integers. An alternative method involves utilizing the default `key` argument in merge sort. This `key` argument facilitates sorting objects differently by applying a function to an object and sorting based on the function's return. For instance, this allows sorting based on the second item in a list or sorting based on a specific attribute (one that is sortable) of an object. In this assignment, you'll sort the person objects, for instance, based on their name using the `key` argument.
+
+Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
+
+To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration.
 
 ## Template
 
@@ -90,19 +100,23 @@ The template for this assignment consists of 3 files: `merge_sort.py`, `person.p
 
 In this assignment, it is not allowed to use any hidden/private object attributes. A hidden/private object attribute in python can be recognized by a dubbel underscore e.g. `object.__height`. In many programming languages it is not possible to access these attributes outside the class. The reason for this is that the unspoken agreement is that class method should not change (get/set), but how a class internally works can be changed completely. This means that if you use hidden/private variables and the class gets updated, your code is likely to break. While it is possible in python to use any attribute of any object, it is not recommended for the same reason.
 
+In this assignment, the use of any hidden/private object attributes is prohibited. In Python, such attributes are identified by a double underscore or single underscore (which is preferred), for instance, `object._height`. Many programming languages restrict access to these attributes outside the class. Python does not have such a restriction, but an implicit agreement to not use underscore attributes. The idea of private variables comes from the unspoken agreement that class methods should not change (get/set), although the internal functionality of a class can undergo complete changes, i.e, the private varaible names can change when the software is updated. Therefore, using hidden/private variables might lead to code breakage if the class undergoes updates. When you use public methods (not private methods) each update should retain all the public methods such that your code does not break. While Python allows access to any attribute of any object, it's not recommended for similar reasons. Therefore, the use of any hidden/private object attributes/methods is prohibited.
+
 ### Merge Sort
 
-In `merge_sort.py`, you will implement recursive merge sort and you will write a small script where you sort a list with `Person` objects in the following ways:
-- Without default arguments, for the `Person` class this means that the list is ordered from the shortest person to the tallest person. In other words, they are sorted in their default order.
-- Reversed by using the default argument reverse.
-- With the default argument key, which should make sure you can sort a `Person` object any way you like and at least using all possibilities described in the grading criteria.
-- A combination of reverse and key default arguments.
+In `merge_sort.py`, your task involves implementing the recursive merge sort. Additionally, you'll create a small script to sort a list containing `Person` objects in various ways:
+- Sorting without default arguments, meaning the list will be ordered from the shortest person to the tallest person, representing their default order.
+- Sorting in reverse by utilizing the default argument `reverse`.
+- Employing the default argument `key` to enable sorting `Person` objects any way you like, but at least according to various options which are mentioned in the grading criteria.
+- Creating a combination of `reverse` and `key` default arguments for sorting.
 
-The script should print the list at least sorted in all possible ways listed in the grading specification. Make sure when you print the list sorted in a certain way that it is clear which way it is sorted. This script can either be added in `merge_sort.py` below all classes and functions or you can use a `main` function and add `if __name__ == "__main__": main()` at the bottom of the file.
+The script should print the list at least sorted in all possible ways listed in the grading specification. Make sure when you print the list, sorted in a certain way, that it is clear which way it is sorted. For example, you first print: `Below you can find the list sorted on weight:` and then you print the list sorted on weight. This script can either be added in `merge_sort.py` below all classes and functions or you can use a `main` function and add `if __name__ == "__main__": main()` at the bottom of the file.
 
 ### Person class
 
-In `person.py`, you will implement the `Person` class and a create person list function. The `Person` class should contain at least the functionalities described in the grading criteria. The `__init__` method is already given and it is not allowed to create any other new object attributes e.g. `self.some_name = ...`. The `create_persons_list` function should return a list of `Person` objects randomly initialized as described in the program section.
+In `person.py`, your task is to construct the `Person` class along with a function, `create_persons_list`. The Person class should encompass functionalities outlined in the grading criteria. It's important to note that the `__init__` method is already provided, and the creation of any new object attributes like s`elf.some_name = ...` is prohibited.
+
+The `create_persons_list` function is expected to yield a list consisting of `Person` objects initialized randomly in accordance with the description given in the program section.
 
 ### Load Names
 
