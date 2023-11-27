@@ -48,8 +48,8 @@ For each part there is a function in this framework, see below for more details.
 
 ### Parse Text File
 
-In the `parse_text_file` function you will parse a file and return a list of sentences. Parsing means reading a text file and converting it from one format to another. For this assignment, we will read the text file `abc_corpus` and extract the sentences from it into a list of sentences. A sentence consists of a list of words and should start with a special word token `"<s>"` and end with `"</s>"`. The goal of parsing is to make from a general written text or speech, a format that a computer can understand. While this sounds easy, there are a few things to consider:
-- No matter if a word is written with upper or lower case letters it should be the same word.
+In the `parse_text_file` function, you will parse a file and return a list of sentences. Parsing means reading a text file and converting it from one format to another. For this assignment, we will read the text file `abc_corpus` and extract the sentences from it into a list of sentences. A sentence consists of a list of words and should start with a special word token `"<s>"` and end with `"</s>"`. The goal of parsing is to make from a general written text or speech, a format that a computer can understand. While this sounds easy, there are a few things to consider:
+- No matter if a word is written with upper- or lowercase letters it should be the same word.
 - We are only interested in letters and not special characters.
 - We need to find where a sentence ends.
 - Numbers should be ignored.
@@ -125,10 +125,10 @@ To create an n-gram model, we're essentially building a predictive model for wor
 
 ### Predict Sentence
 
-In the `predict_sentence` function you will implement a sentence predictor. To generate a sentence using a n-gram model, follow these guidelines:
+In the `predict_sentence` function, you will implement a sentence predictor. To generate a sentence using a n-gram model, follow these guidelines:
 
 1. Initialize the history by appending an appropriate number of start tokens `"<s>"`, see the model descriptions above. For the unigram model, you do not add the start token `"<s>"`. The history always begins with `"<any>"`.
-2. Now, you can use the history in the model-dictionary to get the word-dictionary. The keys of this word-dictionary are the possible next words and their values are the probability of that word. Use a weighted random function to get a new word. Hint: Just using `rng.choice(word-dictionary.keys())` will not work as now each word has the same chance to get chosen. Take a look at the [documentation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.choice.html#numpy.random.Generator.choice) of rng.choice. Here, you can find how to make a weighted random choice. `rng` stands for random generator and needs to be created before using it. This can be done with the code `rng = np.random.default_rng(seed=42).`
+2. Now, you can use the history in the model-dictionary to get the word-dictionary. The keys of this word-dictionary are the possible next words and their values are the probability of that word. Use a weighted random function to get a new word. Hint: Just using `rng.choice(word-dictionary.keys())` will not work because this results in each word having the same chance to get chosen. Take a look at the [documentation](https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.choice.html#numpy.random.Generator.choice) of rng.choice. Here, you can find how to make a weighted random choice. `rng` stands for random generator and needs to be created before using it. This can be done with the code `rng = np.random.default_rng(seed=42).`
 3. When you have your next word, update the history and go back to step 2, unless step 4 applies.
 4. The sentence prediction process will halt when it encounters the `"</s>"` token or reaches the maximum sentence length (given by `max_sentence_len`).
 5. Each generated sentence should conclude with a period ".".
