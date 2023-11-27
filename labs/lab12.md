@@ -26,7 +26,11 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 ## Overview of This Lab
 
-This week, the structure of the lab is a bit different. In the last 11 labs, we have covered the basic programming principles and the ways to use them in Python. It is important that you take the time to finish the previous labs and practice with each programming concept. Therefore, this week will contain only one, hopefully fun, challenge exercise. This exercise will focus on the concept of control flow and how to interact with class objects. Also below, you can find an overview where you can practice certain programming concepts.
+This week, the structure of the lab is a bit different. In the last 11 labs, we have covered the basic programming principles and the ways to use them in Python. It is important that you take the time to finish the previous labs and practice with each programming concept. You should only attempt this lab once you have finished all eleven of the previous labs. 
+
+This lab is an extra special very difficult challenge which contains only one, hopefully fun, challenge exercise. This exercise will focus on the concept of control flow and how to interact with class objects. It uses a lot of very strange concepts, and solving the puzzles inside would be challenging even for a veteran programmer.
+
+Also below, you can find an overview where you can practice certain programming concepts.
 
 Overview programming concept and exercise:
  * Numpy: [Lab 7](https://joshhug.github.io/LeidenITP/labs/lab7/#lab-7)
