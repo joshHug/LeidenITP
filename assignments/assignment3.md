@@ -26,22 +26,21 @@ grand_parent: Leiden ITP
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
 ## Program
+In this assignment, you need to program a family of language models called word n-grams. From this point, we will just call it an n-gram. This family of language models is able to *learn* from a corpus and afterward is able to generate/*predicts* new sentences. A corpus is just a fancy word for a (set of) file(s) that contains text used to train language models. However, they often also contain other stuff like the grammar for each sentence. N-grams are one of the earliest language models of natural language processing (NLP), mainly due to their simplicity, but also due to their somewhat effectiveness and low need for data.
 
-In this assignment, you need to program a family of langauge models called word n-grams, from now we will just call it a n-gram. This family of language models is able to *learn* from a corpus and afterwords is able to generate/*predicts* new sentences. A corpus is just a fancy word for a (set of) file(s) that contain text which is used to train language models. However, they often also contain other stuff like the grammar for each sentence. N-grams are one of the earliest language models of natural language processing (NLP), mainly due to their simplicity, but also due to their somewhat effectiveness and low need for data.
+The idea of an n-gram is that you create a huge lookup table that contains all the probabilities that any word comes after any history. Here, a history can be any number of previous words. Simply said, it uses the fact, that words are commonly in a certain order. So, even though "and" is very common, most likely the chance of it being after the word "the" is very small. This way words that are often together are generated together creating some form of sentences. The "*n*" in n-gram stands for how many words are connected. A unigram model consists of only one word, so no history, while a bigram model consists of a history of one word and one word that follows the history. Because n-grams are completely based on statistics, and therefore the given corpus, you can ask the question if they really *learn* or *predict* anything.
 
-The idea of an n-gram is that you create a huge lookup table that contains all the probabilities that any word comes after any history. Here, a history can be any number of previous words. Simply said, it uses the fact, that words are commonly in a certain order. So, even though "and" is very common, most likely the chance of it being after the word "the" is very small. This way words that are often together are generated together creating some form of sentences. The "*n*" in n-gram stands for how many words are connected. A unigram model consist of only one word, so no history, while a bigram model consists of a history of one word and one word that follows the history. Because n-grams are completely based on statistics, and therefore the given corpus, you can ask the question if they really *learn* or *predict* anything.
+This assignment consists of three parts: reading a text file, *training* the models, and generating sentences. You will also implement three models: a unigram model, a bigram model, and a trigram model. For the training, we will use the *abc* corpus which can for instance be found in the **NLTK** library of Python. 
 
-This assignment consists of three parts: reading a text file, *training* the models, and generating sentences. You will also implement three models: a unigram model, a bigram model, and a trigram model. For the training we will use the *abc* corpus which can for instance be found in the **NLTK** library of python. 
+To make it a bit easier, we did some parsing of the corpus to make each sentence span exactly one line, removed all characters that are not letters and made everything lowercase. Parsing a raw text is an assignment on its own, therefore you can just use the text file "abc_corpus.txt".
 
-To make it a bit easier, we did some parsing of the corpus to make each sentence span exactly one line, removed all characters that are not letters and made everything lower case. Parsing a raw text is an assignment on its own, therefore you can just use the text file "abc_corpus.txt".
-
-In this assignment you will ask the user which model they want to train, how many sentences need to be generated with the learned model and how long each sentences can be at most.
+In this assignment, you will ask the user which model they want to train, how many sentences need to be generated with the learned model, and how long each sentence can be at most.
 
 ## Template
 
 Each part can be found in the `assignment3.py` file on [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322), which also provides a template. While it is not mandatory to use this file, it is highly recommended. You are allowed to add more functions and/or split the current functions into several functions.
 
-You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and the basic functionality is included.
+You are also free to add functionality or give the program your "personal touch", but make sure that the program remains understandable to us and that the basic functionality is included.
 
 If you use the template, we added some unittest to help you check if your functions `parse_text_file` and `make_ngram_model` work properly. However, we only added some very basic tests and this does NOT guarantee that your functions are indeed correct.
 
@@ -49,18 +48,22 @@ For each part there is a function in this framework, see below for more details.
 
 ### Parse Text File
 
-In the `parse_text_file` function you will parse a file and return a list of sentences. Parsing means reading a text file and converting it from one format to another. For this assignment, we will read the text file `abc_corpus` and extract the sentences from it into a list of sentences. A sentence consists of a list of words and should start with a special word token `"\<s>"` and end with `"</s>"`. The goal of parsing is to make from a general written text or speach, a format that a computer can understand. While this sounds easy, there are a few things to consider:
+In the `parse_text_file` function you will parse a file and return a list of sentences. Parsing means reading a text file and converting it from one format to another. For this assignment, we will read the text file `abc_corpus` and extract the sentences from it into a list of sentences. A sentence consists of a list of words and should start with a special word token `"<s>"` and end with `"</s>"`. The goal of parsing is to make from a general written text or speech, a format that a computer can understand. While this sounds easy, there are a few things to consider:
 - No matter if a word is written with upper or lower case letters it should be the same word.
 - We are only interested in letters and not special characters.
 - We need to find where a sentence ends.
 - Numbers should be ignored.
 
- There are many more things to consider, but to make it a bit easier we preprocessed the text for the most part. For now, each line in the document contains one sentence that needs to be split into words. Each sentence should start with a special word `"<s>"` and end with `"</s>"`. Also, all punctuation should be removed. If a line is empty it should be skipped.
+ There are many more things to consider, but to make it a bit easier we preprocessed the text for the most part. This preprocessed text can be found in the `abc_corpus.txt`. In this assignment, you **ONLY** have to implement the following:
+  - Each line in the document contains one sentence that needs to be split into words.
+  - Each sentence should start with a special word `"<s>"` and end with `"</s>"`.
+  - All punctuation should be removed. 
+  - Lastly, if a line is empty it should be skipped.
 
 For example, the following `text.txt` file:
 ```text
 
-This is a test sentence.
+this is a test sentence.
 
 
 ```
@@ -133,7 +136,7 @@ In the `predict_sentence` function you will implement a sentence predictor. To g
 
 ## Dry code (Don't repeat yourself)
 
-During this assignment, you will be graded on how well you wrote your code, in particular if your code is *dry*. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow. In other option would be to write a function that executes the similar code, and call the function in the `if` and `else` statement. Not dry code could look like this:
+During this assignment, you will be graded on how well you wrote your code, in particular if your code is *dry*. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not dry. This could be solved by removing the similar code outside the `if` `else` control-flow. Another option would be to write a function that executes the similar code, and call the function in the `if` and `else` statement. Not dry code could look like this:
 ```python
 if check_first_name(name):
    name = name.lower()
@@ -180,13 +183,13 @@ So, what you should have learned about the example above is that writing *dry* c
 
 *The remaining 5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 5 points, the grade is capped at a 10:*
 
-**User interface** The program should run according to the user input. This should consist at least of which file the n-gram should be trained on, which n-gram model to train and how many and how long the generated sentences should be. (1 point) 
+**User interface** The program should run according to the user input. This should consist at least of which n-gram model to train on and how many and how long the generated sentences should be. (1 point) 
 
 **Comments**: Include comments to explain the difficult parts of your code. It is generally good practice to write a comment for each code block. (0.5 points)
 
 **Trigram model**: Also implementing the trigram model will earn you an additional point. (1 point) 
 
-**Dry code**: *Dry* code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up in such a way that you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Another half a point is awarded if the rest of your code is also *dry*. Note, that if you expend the codebase with additional functionality you can use extra functions and still get the point. (1.5 points) 
+**Dry code**: *Dry* code means that you do not repeat code. So, if you wrote code to make an unigram model, then that same code should also be able to make the other models. The assignment is set up in such a way that you only need the four definitions and only in the `set_history` function you have to make a distinction between the models. If you adhere to this concept you will get an additional point. Another half a point is awarded if the rest of your code is also *dry*. Note, that if you expand the codebase with additional functionality you can use extra functions and still get the point. (1.5 points) 
 
 **New Coding Concepts**: This assignment lent itself for five programming concepts that we do not have seen yet in the lectures. These are `match cases` as a replacement for `if elif elif elif ...`, `defaultdict` as a replacement for `dict`, and `lambda` functions that replace a named function e.g. `def namefunction(): return`. For the fourth new coding concept you got the partial code namely `create_defaultdict`. Find out what the name is of this concept and how it works and what it does. You can write your answer in the docstring after *EXPLANATION:*. Lastly, you can use a callable `class` object to replace `create_defaultdict`. All five concepts earn you +0.25 points. To get all points make sure your `create_defaultdict` code is correct including the explanation, but you do not need to use it anywhere in the code (because the lambda and callable class are used for the same purpose). (1.25 points) 
 
