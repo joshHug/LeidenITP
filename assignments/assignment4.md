@@ -19,6 +19,8 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
+# THIS ASSIGNMENT IS STILL UNDER CONSTRUCTION
+
 # Assignment 4: Recursive Merge Sort & Creating Classes
 
 **Deadline: 22 December 2023 23:59**
@@ -72,35 +74,31 @@ Each `Person` object should be randomly initialized with:
 - A height between 150 and 200 cm.
 - A weight between 45 and 100 kg.
 
-Note, if you are not familiar with named tuples have a look at this [link](https://www.geeksforgeeks.org/namedtuple-in-python/). However, they are simply tuples that are not only subscriptable but also accessible by attribute name. This makes them effectively a class with only an `__init__`  and `__getitem__` method.
-
 ### Sorting Own Objects
 
-At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared such that it is known if they are equal or one is smaller than the other
+At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared. This can be done by implementing the magic method for equality and either lesser than or greater than. To also be able to use `<=` and `>=` in combination with your own object in your code, you also need to implement either lesser than and equal or greater than and equal. Note, that you can use two previous implemented magic methods to do that (this must be done to keep your code dry).
 
-
-In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to an object and sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
-
-Another argument that most sorting algorithm have is the default argument `reverse`. This argument ensures that the list is sorted in reverse order.
-
-Lastly, your implementation of merge sort and the two default arguments should work in any combination.  
-
-At this point, we understand how to sort a list of integers and grasp the necessity of a class. However, when making an application it is often required that this new data class is also sortable. In this assignment, you'll achieve this in two ways. The initial approach involves making the object itself sortable. This implies that the sorting algorithm's code remains unchanged when compared to sorting integers. An alternative method involves utilizing the default `key` argument in merge sort. This `key` argument facilitates sorting objects differently by applying a function to an object and sorting based on the function's return. For instance, this allows sorting based on the second item in a list or sorting based on a specific attribute (one that is sortable) of an object. In this assignment, you'll sort the person objects, for instance, based on their name using the `key` argument.
-
-Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
-
-To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration.
+After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemted the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects.
 
 ### Key and Reverse Arguments
 
+At this point, we know how to sort a list any list of sortable objects. However, sometimes we do not want to sort a list of objects in their default order. Let's say we have a list with tuples containing names and ages, see below for an example.
 
-At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to an object and sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
+```python
+name_age_lst = [("John", 30), ("Mary", 25), ("Christof", 40)]
+```
 
-Another argument that most sorting algorithm have is the default argument `reverse`. This argument ensures that the list is sorted in reverse order.
+Now, if we want to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. The default sorting of a tuple is on the first item, therefore, both algorithm should produce the following result:
 
-Lastly, your implementation of merge sort and the two default arguments should work in any combination.  
+```python
+>>> print(sorted(name_age_lst))
+[('Christof', 40), ('John', 30), ('Mary', 25)]
+```
 
-At this point, we understand how to sort a list of integers and grasp the necessity of a class. However, when making an application it is often required that this new data class is also sortable. In this assignment, you'll achieve this in two ways. The initial approach involves making the object itself sortable. This implies that the sorting algorithm's code remains unchanged when compared to sorting integers. An alternative method involves utilizing the default `key` argument in merge sort. This `key` argument facilitates sorting objects differently by applying a function to an object and sorting based on the function's return. For instance, this allows sorting based on the second item in a list or sorting based on a specific attribute (one that is sortable) of an object. In this assignment, you'll sort the person objects, for instance, based on their name using the `key` argument.
+This is nice but what if we want to sort the list based on age? We can try to flip the tuples such that we get an (age, name) tuple, then sort it, and finally flip the tuples back to their original order. However, there is an easier approach.
+
+
+
 
 Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
 
@@ -109,15 +107,17 @@ To finalize, ensure that your implementation of merge sort and the two default a
 
 ## Template
 
-The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. While it is not mandatory to use these files, it is highly recommended. In the files, you can also find more information what to do where. You are allowed to add more functions.
+The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. It is mandatory to use these files and also it is highly recommended. In the files, you can also find more information what to do where. You are allowed to add more functions.
 
-In this assignment, it is not allowed to use any hidden/private object attributes. A hidden/private object attribute in python can be recognized by a dubbel underscore e.g. `object.__height`. In many programming languages it is not possible to access these attributes outside the class. The reason for this is that the unspoken agreement is that class method should not change (get/set), but how a class internally works can be changed completely. This means that if you use hidden/private variables and the class gets updated, your code is likely to break. While it is possible in python to use any attribute of any object, it is not recommended for the same reason.
+In this assignment, it is not allowed to use any hidden/private object attributes. A hidden/private object attribute in python can be recognized by a dubbel underscore e.g. `object._height`. In many programming languages it is not possible to access these attributes outside the class. The reason for this is that the unspoken agreement is that class method should not change (get/set), but how a class internally works can be changed completely. This means that if you use hidden/private variables and the class gets updated, your code is likely to break. While it is possible in python to use any attribute of any object, it is not recommended for the same reason.
 
-In this assignment, the use of any hidden/private object attributes is prohibited. In Python, such attributes are identified by a double underscore or single underscore (which is preferred), for instance, `object._height`. Many programming languages restrict access to these attributes outside the class. Python does not have such a restriction, but an implicit agreement to not use underscore attributes. The idea of private variables comes from the unspoken agreement that class methods should not change (get/set), although the internal functionality of a class can undergo complete changes, i.e, the private varaible names can change when the software is updated. Therefore, using hidden/private variables might lead to code breakage if the class undergoes updates. When you use public methods (not private methods) each update should retain all the public methods such that your code does not break. While Python allows access to any attribute of any object, it's not recommended for similar reasons. Therefore, the use of any hidden/private object attributes/methods is prohibited.
+In this assignment, the use of any hidden/private object attributes is prohibited. In Python, such attributes are identified by a double underscore or single underscore (which is preferred), for instance, `object._height`. Many programming languages restrict access to these attributes outside the class. Python does not have such a restriction, but an implicit agreement to not use underscore attributes. The idea of private variables comes from the unspoken agreement that class methods should not change (get/set), although the internal functionality of a class can undergo complete changes, i.e, the private variable names can change when the software is updated. Therefore, using hidden/private variables might lead to code breakage if the class undergoes updates. When you use public methods (not private methods) each update should retain all the public methods such that your code does not break. While Python allows access to any attribute of any object, it's not recommended for similar reasons. Therefore, the use of any hidden/private object attributes/methods is prohibited.
 
 ### Merge Sort
 
-In `merge_sort.py`, your task involves implementing the recursive merge sort. Additionally, you'll create a small script to sort a list containing `Person` objects in various ways:
+In `merge_sort.py`, your task involves implementing the recursive merge sort. Before, you start sorting a list with `Person` objects check if you merge sort works on a list of integers. If your code works for sorting a list of integers and you made the `Person` class sortable than it should also work on a list of `Person` object without any adjustments to your merge sort algorithm.
+
+In addition to implementing the merge sort algorithm, you'll create a small script to sort a list containing `Person` objects in various ways:
 - Sorting without default arguments, meaning the list will be ordered from the shortest person to the tallest person, representing their default order.
 - Sorting in reverse by utilizing the default argument `reverse`.
 - Employing the default argument `key` to enable sorting `Person` objects any way you like, but at least according to various options which are mentioned in the grading criteria.
@@ -127,7 +127,7 @@ The script should print the list at least sorted in all possible ways listed in 
 
 ### Person class
 
-In `person.py`, your task is to construct the `Person` class along with a function, `create_persons_list`. The Person class should encompass functionalities outlined in the grading criteria. It's important to note that the `__init__` method is already provided, and the creation of any new object attributes like s`elf.some_name = ...` is prohibited.
+In `person.py`, your task is to construct the `Person` class along with a function, `create_persons_list`. The Person class should encompass functionalities outlined in the grading criteria. It's important to note that the `__init__` method is already provided, and the creation of any new object attributes like `self.some_name = ...` is prohibited.
 
 The `create_persons_list` function is expected to yield a list consisting of `Person` objects initialized randomly in accordance with the description given in the program section.
 
