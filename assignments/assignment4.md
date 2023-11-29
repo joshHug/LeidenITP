@@ -31,13 +31,9 @@ In this assignment, you will implemented merge sort and create your own `Person`
 
 ### Merge sort
 
-Merge sort is a common sorting algorithm known to be implemented recursively. The concept of mergesort involves dividing an "unsorted" list into two equal parts and sorting them individually. When pondering how to sort these smaller lists, the answer lies in applying mergesort again. This works because merge sort takes an unsorted list as input and produces a sorted list as output. The algorithm consists of two steps: a recursive phase that splits the lists into smaller lists and sorts them, and a merging phase that merges the sorted lists together. The initial step of merge sort stops when the list is sorted, which occurs when it contains only one item. An illustration of this first step of the algorithm might look something like this:
+Merge sort is a common sorting algorithm known to be implemented recursively. The concept of mergesort involves dividing an "unsorted" list into two equal parts and sorting them individually. When pondering how to sort these smaller lists, the answer lies in applying mergesort again. This works because merge sort takes an unsorted list as input and produces a sorted list as output. The algorithm consists of two steps: a recursive phase that splits the lists into smaller lists and sorts them, and a merging phase that merges the sorted lists together. The initial step of merge sort stops when the list is sorted, which occurs when it contains only one item. For illustrative purposes each split is colored red for the left part and blue for the right part. An illustration of this first step of the algorithm might look something like this:
 
-```
-[0, 8, 3, 2] # this list becomes
-[0, 8] and [3, 2] which is then split into
-[0], [8], [3], [2] – which are four sorted lists.
-```
+![images](/LeidenITP/assets/images/assignment4/tree.png)
 
 The subsequent step involves combining the lists in a manner that maintains their sorted order. Simply rejoining them wouldn't work, as it would recreate the input list. However, despite the appearance of minimal progress because we're combining two lists in sorted order, this actually makes sorting much simpler due to our knowledge that these lists themselves are sorted. First, let's examine how combining would appear in an example. Then, we'll discuss potential algorithms to achieve this.
 
@@ -68,7 +64,7 @@ For more information visited [this wiki page](https://nl.wikipedia.org/wiki/Merg
 
 ### Person class
 
-When managing data, there's often a need to store multiple data types within a single object. For instance, you might want to retain a person's name and age. While one might consider using two separate lists – one for names and another for ages – this approach isn't advisable. An inherent issue is the potential for misalignment in data. For instance, the first name in list "one" may no longer correspond to the first age in list "two". Hence, an alternative solution is required, often in the form of a [tuple](https://www.geeksforgeeks.org/tuples-in-python/) or a [named tuple](https://www.geeksforgeeks.org/namedtuple-in-python/). Although these structures are efficient for storing data, having our own class allows us to incorporate (magic) methods. In this task, you will create a Person class that mirrors the functionalities of named tuples and extends further. Both named tuples and the Person class are subscriptable, allowing the use of square brackets like person_object[0]. The template and grading criteria contain a comprehensive list of the functionalities required for this class.
+When managing data, there's often a need to store multiple data types within a single object. For instance, you might want to retain a person's name and age. While one might consider using two separate lists – one for names and another for ages – this approach isn't advisable. An inherent issue is the potential for misalignment in data. For instance, the first name in list "one" may no longer correspond to the first age in list "two". Hence, an alternative solution is required, often in the form of a [tuple](https://www.geeksforgeeks.org/tuples-in-python/). Although a tuple is efficient for storing data, having our own class allows us to incorporate (magic) methods. In this task, you will create a Person class with several (magic) methods. The template and grading criteria contain a comprehensive list of the functionalities required for this class.
 
 Each `Person` object should be randomly initialized with:
 - A name from the global list `NAMES`.
@@ -76,11 +72,14 @@ Each `Person` object should be randomly initialized with:
 - A height between 150 and 200 cm.
 - A weight between 45 and 100 kg.
 
-Note, if you are not familiar with named tuples have a look at this [link](https://www.geeksforgeeks.org/namedtuple-in-python/). However, they are simply tuples that are not only subscriptable but also accessible by attribute name. This makes them effectively a class with only an `__ini__`  and `__getitem__` method.
+Note, if you are not familiar with named tuples have a look at this [link](https://www.geeksforgeeks.org/namedtuple-in-python/). However, they are simply tuples that are not only subscriptable but also accessible by attribute name. This makes them effectively a class with only an `__init__`  and `__getitem__` method.
 
 ### Sorting Own Objects
 
-At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to a object an sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
+At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared such that it is known if they are equal or one is smaller than the other
+
+
+In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to an object and sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
 
 Another argument that most sorting algorithm have is the default argument `reverse`. This argument ensures that the list is sorted in reverse order.
 
@@ -91,6 +90,22 @@ At this point, we understand how to sort a list of integers and grasp the necess
 Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
 
 To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration.
+
+### Key and Reverse Arguments
+
+
+At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. In this assignment you will do this in two ways. The first approach will be to make the object sortable. This means that the sorting algorithm code does not change compared to sorting integers. The second approach would be to use the default `key` argument in merge sort. The `key` argument makes it possible to sort objects differently by applying a function to an object and sorting the return of this function. This way it is for example possible to sort on the second character in a list or to sort on a certain attribute (which is sortable) of an object. In this assignment, you will for example sort the person objects based on their name using the `key` argument.
+
+Another argument that most sorting algorithm have is the default argument `reverse`. This argument ensures that the list is sorted in reverse order.
+
+Lastly, your implementation of merge sort and the two default arguments should work in any combination.  
+
+At this point, we understand how to sort a list of integers and grasp the necessity of a class. However, when making an application it is often required that this new data class is also sortable. In this assignment, you'll achieve this in two ways. The initial approach involves making the object itself sortable. This implies that the sorting algorithm's code remains unchanged when compared to sorting integers. An alternative method involves utilizing the default `key` argument in merge sort. This `key` argument facilitates sorting objects differently by applying a function to an object and sorting based on the function's return. For instance, this allows sorting based on the second item in a list or sorting based on a specific attribute (one that is sortable) of an object. In this assignment, you'll sort the person objects, for instance, based on their name using the `key` argument.
+
+Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
+
+To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration.
+
 
 ## Template
 
