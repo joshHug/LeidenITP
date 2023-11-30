@@ -247,7 +247,7 @@ On level 1, there are two additional new features you'll need to use:
  - `bomb.get_wires()` - returns a list of colors, e.g. `["blue", "green", "orange"]`
  - `bomb.cut_XX_wire()` - There is one function per color. We do not provide the full list of colors. You'll need to figure these out through trial and error.
 
- Note: After cutting all wires succesfully from a single `get_wires` call, you may need to call `get_wires` again. For example, if on the first call of `get_wires` you get `["blue", "green", "orange"]`, the bomb may or may not be dismantled yet. You'll need to check using `is_dismantled`. If it is not yet dismantled, you should call `get_wires` to get the next set of wires.
+ Note: After cutting all wires successfully from a single `get_wires` call, you may need to call `get_wires` again. For example, if on the first call of `get_wires` you get `["blue", "green", "orange"]`, the bomb may or may not be dismantled yet. You'll need to check using `is_dismantled`. If it is not yet dismantled, you should call `get_wires` to get the next set of wires.
 
 The set of colors is randomly chosen each time you play. The number of times you'll have to call `get_wires` is randomly chosen each time you play.
 
