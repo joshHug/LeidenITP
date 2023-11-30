@@ -251,7 +251,7 @@ On level 1, there are two additional new features you'll need to use:
 
 The set of colors is randomly chosen each time you play. The number of times you'll have to call `get_wires` is randomly chosen each time you play.
 
-For a video demo giving a solution for level 1, see: []().
+For a video demo giving a solution for level 1, see: [https://youtu.be/ir4IvLWG2QY](https://youtu.be/ir4IvLWG2QY).
 
 ### Level 2
 
@@ -262,7 +262,7 @@ On level 2, there are three new thing you'll need to consider.
 
 Like all other levels, the wires and codes are random each time you play.
 
-For a video demo giving a solution for level 2, see: []().
+For a video demo giving a solution for level 2, see: [https://youtu.be/XZjcdZYVtSI](https://youtu.be/XZjcdZYVtSI).
 
 ### Level 3
 
