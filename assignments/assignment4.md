@@ -19,8 +19,6 @@ grand_parent: Leiden ITP
 1. TOC
 {:toc}
 
-# THIS ASSIGNMENT IS STILL UNDER CONSTRUCTION
-
 # Assignment 4: Recursive Merge Sort & Creating Classes
 
 **Deadline: 22 December 2023 23:59**
@@ -78,40 +76,74 @@ Each `Person` object should be randomly initialized with:
 
 At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared. This can be done by implementing the magic method for equality and either lesser than or greater than. To also be able to use `<=` and `>=` in combination with your own object in your code, you also need to implement either lesser than and equal or greater than and equal. Note, that you can use two previous implemented magic methods to do that (this must be done to keep your code dry).
 
-After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemted the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects.
+After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemented the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects.
 
 ### Key and Reverse Arguments
 
-At this point, we know how to sort a list any list of sortable objects. However, sometimes we do not want to sort a list of objects in their default order. Let's say we have a list with tuples containing names and ages, see below for an example.
+At this point, we know how to sort a list any list of sortable objects. However, sometimes we do not want to sort a list of objects on their default order. Let's say we have a list with tuples containing names and ages, see below for an example.
 
 ```python
-name_age_lst = [("John", 30), ("Mary", 25), ("Christof", 40)]
+name_age_lst = [("John", 30), ("Mary", 34), ("Christof", 40)]
 ```
 
 Now, if we want to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. The default sorting of a tuple is on the first item, therefore, both algorithm should produce the following result:
 
 ```python
 >>> print(sorted(name_age_lst))
-[('Christof', 40), ('John', 30), ('Mary', 25)]
+[('Christof', 40), ('John', 30), ('Mary', 34)]
 ```
 
-This is nice but what if we want to sort the list based on age? We can try to flip the tuples such that we get an (age, name) tuple, then sort it, and finally flip the tuples back to their original order. However, there is an easier approach.
+This is nice but what if we want to sort the list based on age? We can try to flip the tuples such that we get an (age, name) tuple, then sort it, and finally flip the tuples back to their original order. However, there is an easier approach. Most sorting function have the default argument `key`. This argument makes it possible to sort a list differently then the default sorting. The default of `key` is None, which result in the default sorting. However, if we have a function that maps the object we want to sort to another sortable object then we can use that function as `key` argument. This has as result that the list is no longer sorted on the original objects but on the objected return by the `key` argument. Let's break it down in an example. Now, we want to sort the `name_age_lst` variable on the second item in the tuple, i.e, the age. First, we need a function that returns this objects, for example:
 
+```python
+def get_second_item(name_age_tuple):
+    return name_age_tuple[1]
+```
 
+Now, if we apply this function to an object from the list, for example, `('John', 30)` then we get `30`. This is internally used in the sort function to instead compare the tuples compare this new object, age. This makes it possible to sort a function on age as follows:
 
+```python
+>>> print(sorted(name_age_lst, key=get_second_item))
+[('John', 30), ('Mary', 34), ('Christof', 40)]
+```
 
-Most sorting algorithms include another parameter, the default reverse argument. This argument ensures that the list is sorted in reverse order.
+In this assignment, it is your job to also implement this behavior into `merge_sort` using a default `key` argument. Tip: When implementing the `key` argument think about what part of the sorting algorithm should change and what can stay the same. It is really advised to use helper function for example `compare` to implement this `key` argument. In the following example you can see how this would work and what the output should be.
 
-To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration.
+```python
+>>> print(mergesort(name_age_lst, key=get_second_item))
+[('John', 30), ('Mary', 34), ('Christof', 40)]
+```
 
+In this assignment, you will also write a small script where you will among other things use the `key` argument to sort a list of `Person` objects in various ways.
+
+Most sorting algorithms also include another parameter, namely the default argument `reverse`. This argument ensures that the list is sorted in reverse order. For our previous example this would look as follows:
+
+```python
+>>> print(mergesort(name_age_lst, reverse=True))
+[('Mary', 34), ('John', 30), ('Christof', 40)]
+```
+
+When implementing reverse, you should not copy past the whole algorithm but think how you can alter the behavior of the code such that it works as intended. Adding an helper function to achieve this is a good idea or you can check the example in tips.
+
+To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration. For example:
+
+```python
+>>> print(mergesort(name_age_lst, key=get_second_item, reverse=True))
+[('Christof', 40), ('Mary', 34), ('John', 30)]
+```
 
 ## Template
 
 The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. It is mandatory to use these files and also it is highly recommended. In the files, you can also find more information what to do where. You are allowed to add more functions.
 
-In this assignment, it is not allowed to use any hidden/private object attributes. A hidden/private object attribute in python can be recognized by a dubbel underscore e.g. `object._height`. In many programming languages it is not possible to access these attributes outside the class. The reason for this is that the unspoken agreement is that class method should not change (get/set), but how a class internally works can be changed completely. This means that if you use hidden/private variables and the class gets updated, your code is likely to break. While it is possible in python to use any attribute of any object, it is not recommended for the same reason.
+It is generally good practise to not uses attributes of a class outside the class. In later courses you get more details on why. For example, the following code is bad practise:
 
-In this assignment, the use of any hidden/private object attributes is prohibited. In Python, such attributes are identified by a double underscore or single underscore (which is preferred), for instance, `object._height`. Many programming languages restrict access to these attributes outside the class. Python does not have such a restriction, but an implicit agreement to not use underscore attributes. The idea of private variables comes from the unspoken agreement that class methods should not change (get/set), although the internal functionality of a class can undergo complete changes, i.e, the private variable names can change when the software is updated. Therefore, using hidden/private variables might lead to code breakage if the class undergoes updates. When you use public methods (not private methods) each update should retain all the public methods such that your code does not break. While Python allows access to any attribute of any object, it's not recommended for similar reasons. Therefore, the use of any hidden/private object attributes/methods is prohibited.
+```python
+person1 = Person("John", 30, 180, 80)
+person1._age  # You should not do this.
+```
+
+To additionally signal to programmers that you should not use an attribute outside a class you can add one or two underscores if front of the variable name. examples can be found in the `Person` class. If you want to use, for example, `person1._age` you should make a method in the `Person` class that returns `self._age`. In this assignment, it is not allowed to use any attributes of a `Person` object outside the class `Person` itself.
 
 ### Merge Sort
 
@@ -193,7 +225,6 @@ class Binary():
       tmp = "".join(tmp)  # This joins all strings together e.g. "110"
       return int(tmp, 2)  # This converts a string to int with base two i.e. binary
 ```
-
 
 ## Grading
 

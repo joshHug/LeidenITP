@@ -78,6 +78,8 @@ To start your game you need the last two lines of the code above. You need to ma
 To make coding the snake game more approachable, we have set up several folders with different parts implemented or not. This way you can focus on making on part work and directly see if it works. Normally, when you make a game you have to implement several functionalities at once to see if something works making debugging more challenging than we have seen so far. Also, to show you a version of a complete snake game, how it could work, and most of all how to structure it, we created the folder "completed_snake_game" 
 
 
+[//]: # (idea make a snake with nothing, with eerything, )
+
 
 
 
