@@ -239,7 +239,7 @@ class Binary():
 
 *The remaining 4.5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 4.5 points, the grade is capped at a 10. Note, that completing the basic functionality does not mean flawless implementation. If you make a mistake in the basic functionality, you can still get additional points.*
 
-**Sorting with key arguments**: You should sort the list using the key argument in merge sort based on the following attributes of the `Person` class: (1 point)
+**Sorting with key arguments**: You should sort the list using the key argument in merge sort based on the following characteristics of the `Person` class, as a reminder you are not allowed to use `Person` class attributes outside the `Person` class itself: (1 point)
 - age
 - weight
 - height
