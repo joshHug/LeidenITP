@@ -26,11 +26,7 @@ This week we continue using PyCharm and running code in the terminal. In [lab 7]
 
 ## Overview of This Lab
 
-This week, the structure of the lab is a bit different. In the last 11 labs, we have covered the basic programming principles and the ways to use them in Python. It is important that you take the time to finish the previous labs and practice with each programming concept. You should only attempt this lab once you have finished all eleven of the previous labs. 
-
-This lab is an extra special very difficult challenge which contains only one, hopefully fun, challenge exercise. This exercise will focus on the concept of control flow and how to interact with class objects. It uses a lot of very strange concepts, and solving the puzzles inside would be challenging even for a veteran programmer.
-
-Also below, you can find an overview where you can practice certain programming concepts.
+This week, the structure of the lab is a bit different. In the last 11 labs, we have covered the basic programming principles and the ways to use them in Python. It is important that you take the time to finish the previous labs and practice with each programming concept. Therefore, this week will contain only one, hopefully fun, challenge exercise. This exercise will focus on the concept of control flow and how to interact with class objects. Also below, you can find an overview where you can practice certain programming concepts.
 
 Overview programming concept and exercise:
  * Numpy: [Lab 7](https://joshhug.github.io/LeidenITP/labs/lab7/#lab-7)
@@ -141,7 +137,7 @@ def parse_letter(character):
    """
    This function takes a character and returns either a lower case letter or nothing.
    """
-   if character.isalpha():
+   if character.isaplha():
       return character.lower()
 
 def increment_letter_dict(letter_dict, letter):
@@ -185,7 +181,7 @@ Thus, all the control flow to interact with an object should be in the class and
 
 ### Everything is an Object in Python
 
-The last thing unrelated to control flow what we need to discuss is everything in Python is an object. This means that a variable (or attribute) can contain a reference to anything: an integer, a string, a list, a function, a class, an instance of a class, etc. For example, in the code below `var` is just a name of a function. In other words, `var` is the variable name for a callable object.
+The last thing unrelated to control flow what we need to discuss is everything in Python is an object. This means that a variable or attribute can contain anything or in other words can be anything. For example, in the code below `var` is just a name of a function. In other words, `var` is the variable name for a callable object.
 
 ```python
 def var():
@@ -221,7 +217,7 @@ for func in func_lst:
     func()
 ```
 
-## The Bomb Lab (Challenge, Hard)
+## The Bomb Lab
 
 In this exercise, you will help a robot to dismantling a fictional bomb under the LIACS building. The bomb is build by an overly careful programmer that tried to make sure that nobody could temper with his bomb object. This results in some very bad code, but it also makes it near impossible to use or change any attributes of the bomb object. Luckily for us, he also left a way to dismantle the bomb by executing a precise sequence of methods for the robot.
 
@@ -231,69 +227,70 @@ There are multiple bombs with different difficulties to make the challenge more 
 bomb(level=1)
 ```
 
-Video solutions are provided for levels 1 and 2.
+There are 6 levels each adding additional complexity to the dismantling. We already completed dismantling the zeroth level and started on the first level. In the `bomb_dismanteling.py` file you can see how that works. The levels add the following steps to the bomb dismantling: 
+0. Starting the bomb dismantling program already dismantles the bomb. This can be done by typing the correct string in the bomb console, which can be done with `bomb.console(sentence)`. 
+1. In this level, the robot also needs to cut different colors of wires. Each wire color can be cut using its own method using the following code: `bomb.cut_COLOR_wire()`, where COLOR can be any color. For example, the red wire can be cut using `bomb.cur_red_wire()`. You can  either use trial and error to find all colored wires or try to find the most common colors for plotting.
+2. The second level brings new functionality to the console. When the bomb gives you a sequence of integers, you need to type them one by one into the console using the following code: `bomb.console(number)`.
+3. Now, the bomb can also give you a nested list of integers to type into the console. The order of the integers would be the order of printing.
+4. For level 4 you need to use two new functionality for the robot. The first one is removing parts of the bomb which can be done with the code: `bomb.remove_part()`. However, before you can remove a part you need to remove the screws which can be done with `screw.remove()`.
+5. To be able to complete the last level the robot needs to enter a secret password. This can be done with `bomb.insert_password(password)`. The password can be found be decrypting the encrypted password that the bomb gives you. The password can be decrypted by applying one of four sequence, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the fibonacci sequence is the correct one than the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. You know what sequence it is because the robot can give you a clue containing what the first index is and the small part of the sequence. For example the clue good be `2, [1, 2, 3, 5, 8]` which points to the fibonacci sequence.
 
-### Level 0
+Above, you can find what the robot can do. However, it can also ask the bomb several questions which can either results in an `BombStartsBeeping` error (which can be caught) or:
+- `bomb.get_wires()` can result in a sequence of colors that need to be cut in that order.
+- `bomb.get_cipher()` can result in a sequence of numbers that need to be typed in the console.
+- `bomb.get_part()` can result in part object.
+- `get_encrypted_password()` can result in a encrypted password.
 
-The `bomb` class has the following interface on all levels of the game.
- - `bomb(level=N)` starts level N.
- - `bomb.is_dismantled()` returns True if the bomb is dismantled and false otherwise.
- - `bomb.console(data)` enters the given text into the console. Example, the first step for every level is to call `bomb.console("Start dismantle bomb program.")`
+In each step of the dismantling process only one of the above function will give you a result and not an `BombStartsBeeping` error. With each bomb level the number of steps increases but it is always random. 
 
-### Level 1
+There is also two extra question you can ask the bomb to help the robot which are `bomb.get_screws()` and `bomb.get_clue()`.
 
-On level 1, there are two additional new features you'll need to use:
+To help you structure you approach we have already started dismantling a level one bomb. This can be found in the `bomb_dismanteling.py`. Below, you can also find a part of the code for extra information how it works.
 
- - `bomb.get_wires()` - returns a list of colors, e.g. `["blue", "green", "orange"]`
- - `bomb.cut_XX_wire()` - There is one function per color. We do not provide the full list of colors. You'll need to figure these out through trial and error.
+```python
+def cut_wires(colors): 
+    """
+    You can structure you code by handling each possible dismantling task in a separate function.
+    Here, we already made a function where you can program the control flow for cutting wires.
+    """
+    pass
 
- Note: After cutting all wires succesfully from a single `get_wires` call, you may need to call `get_wires` again. For example, if on the first call of `get_wires` you get `["blue", "green", "orange"]`, the bomb may or may not be dismantled yet. You'll need to check using `is_dismantled`. If it is not yet dismantled, you should call `get_wires` to get the next set of wires.
+def find_next_step(bomb):
+    """
+    This function Loops through the possible dismantling steps.
+    When a step is done, the function calls itself to perform another step.
+    """
+    for bomb_func, dismantle_func in BOMB_DISMANTLED_STEP.items():  
+        feedback = bomb_func()  # Ask the bomb for info
+        print("new code:", feedback)
 
-The set of colors is randomly chosen each time you play. The number of times you'll have to call `get_wires` is randomly chosen each time you play.
+        dismantle_func(feedback)  # Dismantle a step, depending on what function the bomb did not give a BombStartsBeeping error.
 
-For a video demo giving a solution for level 1, see: [https://youtu.be/ir4IvLWG2QY](https://youtu.be/afuYwokUR34). 
+        find_next_step(bomb)
 
-### Level 2
+"""
+This global dictionary can be used to connect a question that can be asked to the bomb with a function that dismantles that task. 
+We already filled it in for a level one bomb, where bomb.get_wires gives us the wires to cut and cut_wires handles the control flow to cut those wires.
+"""
+BOMB_DISMANTLED_STEP = {bomb.get_wires: cut_wires}
 
-On level 2, there are three new thing you'll need to consider.
- - `bomb.get_wires()` - returns a list of colors just like level 1, e.g. ["blue", "green", "orange"], but only if the next step is to cut wires. If the next step is NOT to cut wires or the bomb is dismantled, then a `BombStartsBeeping` exception occurs, which you should catch to keep the game running.
- - `bomb.get_cipher()` - returns a list of numbers that must be entered into the console, e.g. could return `[3, 1, 5, 9]`, which would require calling `bomb.console(3)`, then `bomb.console(1)`, and so forth. This only happens if the next step is to enter codes into the console. If the next step is NOT to enter numbers into the console or the bomb is dismantled, then a `BombStartsBeeping` execption occurs, which you should catch to keep the game running.
- - There is no way to ask the bomb directly whether the next step is to cut wires or enter codes. You must use trial and error with `get_wires` and `get_cipher`. Note that once the bomb is dismantled, both `get_wires` and `get_cipher` will cause the `BombStartsBeeping` exception.
+bomb(level=1)
+bomb.console("Start dismantle bomb program.")  # Step one in the bomb dismantling process
 
-Like all other levels, the wires and codes are random each time you play.
+find_next_step(bomb)  # A recursive function to dismantle all steps
+```
 
-For a video demo giving a solution for level 2, see: [https://youtu.be/XZjcdZYVtSI](https://youtu.be/Eyc5Gr_WilMgit).
 
-### Level 3
 
-Same as level 2, except that:
 
- - `bomb.get_cipher()` - Instead of a list, will now sometimes return a nested list, e.g. `[1, 2, [3, 4], [[20, 30], 7, 8], 9]`, in which case you should now enter the numbers 1, then 2, then 3, then 4, then 20, then 30, then 7, then 8, then 9, in that order. There is a clever way to do this.
 
-### Level 4
 
-Level 4 has these four new functions.
 
- - `bomb.get_part()` - gets a part to be removed.
- - `bomb.get_screws()` - gets a list of screws that must be removed. 
- - `screw.remove()` - removes a given screw. Note that this is a function of the screw object, not the bomb. All screws must be removed before `remove_part` is called.
- - `bomb.remove_part(part)` - removes the given part.
 
-Note that for this part, there are now three different functions you may need to call in order to figure out the next step to dismantle the bomb: `get_wires`, `get_cipher`, and `get_part`. You'll need to come up with some way to iterate over these three functions. Hint: To avoid a messy solution with lots of `try`/`except` statements, keep in mind that you can make lists or even dictionaries of functions. See the level 2 video above for a specific example.
 
-### Level 5
 
-To be able to complete the last level the robot needs to enter a secret password.
 
-The new attributes for this part are:
- - `bomb.get_encrypted_password()` - gets the encrypted password that needs to be input.
- - `bomb.insert_password(password)` - provide the solution to the encrypted password given by `get_encrypted_password`
- - `bomb.get_clue()` - gives a clue to help compute the password.
 
-The password can be decrypted by applying one of four sequences, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the fibonacci sequence is the correct one, than the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. 
 
-The `get_clue` function gives you a clue that you must use to determine which sequence is correct. `get_clue` returns a tuple where the first element is n (the starting index), and the second element is a list of integers. 
 
-For example the clue might be `2, [1, 2, 3, 5, 8]`. This means the correct sequence is the sequence where starting from n = 2, the values are `[1, 2, 3, 5, 8]`. This means the correct sequence is the fibonacci sequence. 
 
-Another clue might be `(3, [6, 10, 15, 21, 28, 36])`. This means the correct sequence is the sequence where starting from n = 3, the values are `[6, 10, 15, 21, 28, 36]`. This time, this is the triangular sequence, since the triangular sequence is `[0, 1, 3, 6, 10, 15, 21, 28, 36...]` for n = 0, 1, 2, 3, ... Note that the sequence matches starting from index 3.
