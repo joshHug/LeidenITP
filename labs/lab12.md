@@ -251,7 +251,7 @@ On level 1, there are two additional new features you'll need to use:
 
 The set of colors is randomly chosen each time you play. The number of times you'll have to call `get_wires` is randomly chosen each time you play.
 
-For a video demo giving a solution for level 1, see: [https://youtu.be/ir4IvLWG2QY](https://youtu.be/afuYwokUR34).
+For a video demo giving a solution for level 1, see: [https://youtu.be/ir4IvLWG2QY](https://youtu.be/gtjSoXblZIo).
 
 ### Level 2
 
@@ -290,10 +290,10 @@ The new attributes for this part are:
  - `bomb.insert_password(password)` - provide the solution to the encrypted password given by `get_encrypted_password`
  - `bomb.get_clue()` - gives a clue to help compute the password.
 
-The password can be decrypted by applying one of four sequences, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the fibonacci sequence is the correct one, than the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. 
+The password can be decrypted by applying one of four sequences, that we saw in previous labs, to the encrypted password. The four sequences are: fibonacci, padovan, triangular, and factorial. So let say the encrypted password is `[4,2,7,0]` and the Fibonacci sequence is the correct one, then the decrypted password would be `[fibo(4), fibo(2), fibo(7), fibo(0)] = [3, 1, 13, 0]`. 
 
 The `get_clue` function gives you a clue that you must use to determine which sequence is correct. `get_clue` returns a tuple where the first element is n (the starting index), and the second element is a list of integers. 
 
-For example the clue might be `2, [1, 2, 3, 5, 8]`. This means the correct sequence is the sequence where starting from n = 2, the values are `[1, 2, 3, 5, 8]`. This means the correct sequence is the fibonacci sequence. 
+For example, the clue might be `2, [1, 2, 3, 5, 8]`. This means the correct sequence is the sequence where starting from n = 2, the values are `[1, 2, 3, 5, 8]`. This means the correct sequence is the Fibonacci sequence. 
 
 Another clue might be `(3, [6, 10, 15, 21, 28, 36])`. This means the correct sequence is the sequence where starting from n = 3, the values are `[6, 10, 15, 21, 28, 36]`. This time, this is the triangular sequence, since the triangular sequence is `[0, 1, 3, 6, 10, 15, 21, 28, 36...]` for n = 0, 1, 2, 3, ... Note that the sequence matches starting from index 3.
