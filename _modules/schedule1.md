@@ -5,14 +5,12 @@ title: Introduction to Programming
 22 Dec
 : **Assignment 4 due**{: .label .label-red }
 
-5 Dec
-: **Assignment**{: .label .label-red }[Recursive Merge Sort & Creating Classes]({{ site.baseurl }}{% link assignments/assignment4.md %})
-
 4 Dec
 : **Assignment 3 due**{: .label .label-red }
 
 1 Dec
 : **Lab**{: .label .label-purple }[Bomb Lab]({{ site.baseurl }}{% link labs/lab12.md %})
+: **Assignment**{: .label .label-red }[Recursive Merge Sort & Creating Classes]({{ site.baseurl }}{% link assignments/assignment4.md %})
 
 29 Nov
 : **Lecture**{: .label .label-blue }[Functions as arguments and return values, Object Orientation & Recursion](https://brightspace.universiteitleiden.nl/d2l/le/lessons/240322/topics/2703125)
