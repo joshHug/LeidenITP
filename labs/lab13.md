@@ -1,7 +1,7 @@
 ---
 layout: minimal
 title: Lab 13
-description: &desc 1 December, 2023 - Game Lab
+description: &desc 8 December, 2023 - Game Lab
 summary: *desc
 nav_order: 1
 parent: Labs
