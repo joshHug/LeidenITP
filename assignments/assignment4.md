@@ -76,7 +76,7 @@ Each `Person` object should be randomly initialized with:
 
 At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared. This can be done by implementing the magic method for equality and either lesser than or greater than. To also be able to use `<=` and `>=` in combination with your own object in your code, you also need to implement either lesser than and equal or greater than and equal. Note, that you can use two previous implemented magic methods to do that (this must be done to keep your code dry).
 
-After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemented the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects.
+After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemented the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects. Note, that `sorted` has the same inputs, same functionality and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to.
 
 ### Key and Reverse Arguments
 
@@ -86,10 +86,10 @@ At this point, we know how to sort a list any list of sortable objects. However,
 name_age_lst = [("John", 30), ("Mary", 34), ("Christof", 40)]
 ```
 
-Now, if we want to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. The default sorting of a tuple is on the first item, therefore, both algorithm should produce the following result:
+Now, if we want to test how to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. Note, that `sorted` has the same inputs, same functionality and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to. The default sorting of a tuple is on the first item, therefore, both algorithm should produce the following result:
 
 ```python
->>> print(sorted(name_age_lst))
+>>> print(mergesort(name_age_lst))
 [('Christof', 40), ('John', 30), ('Mary', 34)]
 ```
 
@@ -103,7 +103,7 @@ def get_second_item(name_age_tuple):
 Now, if we apply this function to an object from the list, for example, `('John', 30)` then we get `30`. This is internally used in the sort function to instead compare the tuples compare this new object, age. This makes it possible to sort a function on age as follows:
 
 ```python
->>> print(sorted(name_age_lst, key=get_second_item))
+>>> print(mergesort(name_age_lst, key=get_second_item))
 [('John', 30), ('Mary', 34), ('Christof', 40)]
 ```
 
