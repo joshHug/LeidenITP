@@ -289,6 +289,7 @@ def get_items(lst, items, exclude=False):
    for item in lst:
       if item in items ^ exclude: #  ^ stands for the logic operator XOR. Make a truthtable and test it yourself, that it is correct.
          new_lst.append(item)
+   return new_lst
 ```
 
 ## Delivery
