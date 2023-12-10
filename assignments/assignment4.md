@@ -245,13 +245,13 @@ class Binary():
 - height
 - name
 - indices 0, 1, 2, and 3
-- tuple or list representation of a `Person` object
+- tuple or list conversion/casting of a `Person` object
 - an index of the tuple or list representation
 
 **Person Class**: A `Person` object should also contain the following: (1 point)
-- The string representation of `Person` objects should be the name.
-- The int and float representation of `Person` objects should be the age.
-- It should be possible to get a tuple or list representation of `Person` objects. When this is done the order should be: name, age, weight, height.
+- The string conversion/casting of `Person` objects should be the name.
+- The int and float conversion/casting of `Person` objects should be the age.
+- It should be possible to get a tuple or list conversion/casting of `Person` objects. When this is done the order should be: name, age, weight, height.
 - Similarly, a `Person` object should be subscriptable in the same order. For example, `person1[0]` should give the name of the object `person1`.
 
 **Combining key and reverse** You should be able to reverse sort in combination with any key argument. (1 point)
