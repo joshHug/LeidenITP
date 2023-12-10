@@ -27,11 +27,11 @@ Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden
 
 ## Program
 
-In this assignment, you will implemented merge sort and create your own `Person` class. 
+In this assignment, you will implement merge sort and create your own `Person` class. 
 
 ### Merge sort
 
-Merge sort is a common sorting algorithm known to be implemented recursively. The concept of mergesort involves dividing an "unsorted" list into two equal parts and sorting them individually. When pondering how to sort these smaller lists, the answer lies in applying mergesort again. This works because merge sort takes an unsorted list as input and produces a sorted list as output. The algorithm consists of two steps: a recursive phase that splits the lists into smaller lists and sorts them, and a merging phase that merges the sorted lists together. The initial step of merge sort stops when the list is sorted, which occurs when it contains only one item. For illustrative purposes each split is colored red for the left part and blue for the right part. An illustration of this first step of the algorithm might look something like this:
+Merge sort is a common sorting algorithm known to be implemented recursively. The concept of mergesort involves dividing an "unsorted" list into two equal parts and sorting them individually. When pondering how to sort these smaller lists, the answer lies in applying mergesort again. This works because merge sort takes an unsorted list as input and produces a sorted list as output. The algorithm consists of two steps: a recursive phase that splits the lists into smaller lists and sorts them, and a merging phase that merges the sorted lists together. The initial step of merge sort stops when the list is sorted, which occurs when it contains only one item. For illustrative purposes, each split is colored red for the left part and blue for the right part. An illustration of this first step of the algorithm might look something like this:
 
 ![images](/LeidenITP/assets/images/assignment4/tree.png)
 
@@ -48,19 +48,19 @@ The next item in the first list is 8, which is larger than 2. Thus, add two: [0,
 The next item in the second list is 3, which is smaller than 8. So, add three: [0, 2, 3]
 No items are left in the second list, 
 so add all remaining items from the first list: [0, 2, 3, 8]
-Note, this is possible because both lists were ordered.
+Note, that this is possible because both lists were ordered.
 There are no more lists to combine, thus merge sort is complete. 
 ```
 
 This example offers insight into how the algorithm operates. In brief, it could be described as zipping the lists together based on which item is smaller. In this assignment, your task is to implement this second step in the function merge. You'll have two options:
 
-Algorithm 1 involves looping through the lists using two indices, e.g. `i` and `j`. At each step you check if the element at index `i` in the first list is smaller than the element at index `j` in the second list. If so, add the value of the first list's index `i` to the new list and increment `i` by one. Otherwise, add the value of the second list's index `j` to the new list and increment `j` by one. When either `i` or `j` exceeds the bounds of their respective lists, stop and add the remaining list elements to the new list.
+Algorithm 1 involves looping through the lists using two indices, e.g. `i` and `j`. At each step, you check if the element at index `i` in the first list is smaller than the element at index `j` in the second list. If so, add the value of the first list's index `i` to the new list and increment `i` by one. Otherwise, add the value of the second list's index `j` to the new list and increment `j` by one. When either `i` or `j` exceeds the bounds of their respective lists, stop and add the remaining list elements to the new list.
 
 Algorithm 2 always selects the first item of each list, compares their values, and adds the smallest value to the new list. Then, it removes the first index from the list that contributed the smallest value. This continues until one list is empty. At that point, stop and add the remaining elements from the non-empty list to the new list.
 
 In your upcoming course on algorithms and data structures, you'll learn about the contexts in which each algorithm performs better and why. However, for this assignment, your main objective is to implement a functional solution.
 
-For more information visited [this wiki page](https://nl.wikipedia.org/wiki/Mergesort). Hint: Try to implement the algorithm yourself and do not look at the provided code. Copying code from any source is not permitted and could hinder your ability to create your own solution.
+For more information visit [this wiki page](https://nl.wikipedia.org/wiki/Mergesort). Hint: Try to implement the algorithm yourself and do not look at the provided code. Copying code from any source is not permitted and could hinder your ability to create your own solution.
 
 ### Person class
 
@@ -74,9 +74,9 @@ Each `Person` object should be randomly initialized with:
 
 ### Sorting Own Objects
 
-At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared. This can be done by implementing the magic method for equality and either lesser than or greater than. To also be able to use `<=` and `>=` in combination with your own object in your code, you also need to implement either lesser than and equal or greater than and equal. Note, that you can use two previous implemented magic methods to do that (this must be done to keep your code dry).
+At this point, we know how to sort a list of integers and why we need a class. However, when making an application it is often required that this new data class is also sortable. Sortable means that if you have two objects of your class they can be compared. This can be done by implementing the magic method for equality and either lesser than or greater than. To also be able to use `<=` and `>=` in combination with your own object in your code, you also need to implement either lesser than and equal or greater than and equal. Note, that you can use two previously implemented magic methods to do that (this must be done to keep your code dry).
 
-After, you made the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemented the magic methods correctly by using the python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects. Note, that `sorted` has the same inputs, same functionality and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to.
+After you make the `Person` class sortable you should be able to sort it similar to how you sort a list of integers. You can also test if you implemented the magic methods correctly by using the Python function `sorted(Person_object_list)`. This should give you a sorted list of `Person` objects. Note, that `sorted` has the same inputs, same functionality, and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to.
 
 ### Key and Reverse Arguments
 
@@ -86,14 +86,14 @@ At this point, we know how to sort a list any list of sortable objects. However,
 name_age_lst = [("John", 30), ("Mary", 34), ("Christof", 40)]
 ```
 
-Now, if we want to test how to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. Note, that `sorted` has the same inputs, same functionality and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to. The default sorting of a tuple is on the first item, therefore, both algorithm should produce the following result:
+Now, if we want to test how to sort this list we can just use `sorted` or the `merge_sort` that you have implemented previously. Note, that `sorted` has the same inputs, same functionality and a similar output as your `merge_sort`, thus it can be a great testing tool to check if your `Person` class is correctly implemented. Be careful that `sorted` can sort equal objects differently than you are supposed to. The default sorting of a tuple is on the first item, therefore, both algorithms should produce the following result:
 
 ```python
 >>> print(mergesort(name_age_lst))
 [('Christof', 40), ('John', 30), ('Mary', 34)]
 ```
 
-This is nice but what if we want to sort the list based on age? We can try to flip the tuples such that we get an (age, name) tuple, then sort it, and finally flip the tuples back to their original order. However, there is an easier approach. Most sorting function have the default argument `key`. This argument makes it possible to sort a list differently then the default sorting. The default of `key` is None, which result in the default sorting. However, if we have a function that maps the object we want to sort to another sortable object then we can use that function as `key` argument. This has as result that the list is no longer sorted on the original objects but on the objected return by the `key` argument. Let's break it down in an example. Now, we want to sort the `name_age_lst` variable on the second item in the tuple, i.e, the age. First, we need a function that returns this objects, for example:
+This is nice but what if we want to sort the list based on age? We can try to flip the tuples such that we get an (age, name) tuple, then sort it, and finally flip the tuples back to their original order. However, there is an easier approach. Most sorting functions have the default argument `key`. This argument makes it possible to sort a list differently than the default sorting. The default of `key` is None, which results in the default sorting. However, if we have a function that maps the object we want to sort to another sortable object then we can use that function as `key` argument. This has as a result that the list is no longer sorted on the original objects but on the objected return by the `key` argument. Let's break it down in an example. Now, we want to sort the `name_age_lst` variable on the second item in the tuple, i.e, the age. First, we need a function that returns these objects, for example:
 
 ```python
 def get_second_item(name_age_tuple):
@@ -107,7 +107,7 @@ Now, if we apply this function to an object from the list, for example, `('John'
 [('John', 30), ('Mary', 34), ('Christof', 40)]
 ```
 
-In this assignment, it is your job to also implement this behavior into `merge_sort` using a default `key` argument. Tip: When implementing the `key` argument think about what part of the sorting algorithm should change and what can stay the same. It is really advised to use helper function for example `compare` to implement this `key` argument. In the following example you can see how this would work and what the output should be.
+In this assignment, it is your job to also implement this behavior into `merge_sort` using a default `key` argument. Tip: When implementing the `key` argument think about what part of the sorting algorithm should change and what can stay the same. It is really advised to use a helper function for example `compare` to implement this `key` argument. In the following example, you can see how this would work and what the output should be.
 
 ```python
 >>> print(mergesort(name_age_lst, key=get_second_item))
@@ -116,14 +116,14 @@ In this assignment, it is your job to also implement this behavior into `merge_s
 
 In this assignment, you will also write a small script where you will among other things use the `key` argument to sort a list of `Person` objects in various ways.
 
-Most sorting algorithms also include another parameter, namely the default argument `reverse`. This argument ensures that the list is sorted in reverse order. For our previous example this would look as follows:
+Most sorting algorithms also include another parameter, namely the default argument `reverse`. This argument ensures that the list is sorted in reverse order. For our previous example, this would look as follows:
 
 ```python
 >>> print(mergesort(name_age_lst, reverse=True))
 [('Mary', 34), ('John', 30), ('Christof', 40)]
 ```
 
-When implementing reverse, you should not copy past the whole algorithm but think how you can alter the behavior of the code such that it works as intended. Adding an helper function to achieve this is a good idea or you can check the example in tips.
+When implementing reverse, you should not copy past the whole algorithm but think about how you can alter the behavior of the code such that it works as intended. Adding a helper function to achieve this is a good idea or you can check the example in the tips.
 
 To finalize, ensure that your implementation of merge sort and the two default arguments seamlessly operate together in any configuration. For example:
 
@@ -134,25 +134,25 @@ To finalize, ensure that your implementation of merge sort and the two default a
 
 ## Template
 
-The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. It is mandatory to use these files and also it is highly recommended. In the files, you can also find more information what to do where. You are allowed to add more functions.
+The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. It is mandatory to use these files and also it is highly recommended. In the files, you can also find more information on what to do where. You are allowed to add more functions. You are not allowed to change the code that is provided. So, you can not change the `init` of the `Person` class. Also, you need to use both functions for merge sort. Also, you need to use the create_persons_list for the tests.
 
-It is generally good practise to not uses attributes of a class outside the class. In later courses you get more details on why. For example, the following code is bad practise:
+It is generally good practice to not use attributes of a class outside the class. In later courses, you get more details on why. For example, the following code is bad practice:
 
 ```python
 person1 = Person("John", 30, 180, 80)
 person1._age  # You should not do this.
 ```
 
-To additionally signal to programmers that you should not use an attribute outside a class you can add one or two underscores if front of the variable name. examples can be found in the `Person` class. If you want to use, for example, `person1._age` you should make a method in the `Person` class that returns `self._age`. In this assignment, it is not allowed to use any attributes of a `Person` object outside the class `Person` itself.
+To additionally signal to programmers that you should not use an attribute outside a class you can add one or two underscores in front of the variable name. examples can be found in the `Person` class. If you want to use, for example, `person1._age` you should make a method in the `Person` class that returns `self._age`. In this assignment, it is not allowed to use any attributes of a `Person` object outside the class `Person` itself.
 
 ### Merge Sort
 
-In `merge_sort.py`, your task involves implementing the recursive merge sort. Before, you start sorting a list with `Person` objects check if you merge sort works on a list of integers. If your code works for sorting a list of integers and you made the `Person` class sortable than it should also work on a list of `Person` object without any adjustments to your merge sort algorithm.
+In `merge_sort.py`, your task involves implementing the recursive merge sort. Before you start sorting a list with `Person` objects check if you merge sort works on a list of integers. If your code works for sorting a list of integers and you made the `Person` class sortable then it should also work on a list of `Person` objects without any adjustments to your merge sort algorithm.
 
 In addition to implementing the merge sort algorithm, you'll create a small script to sort a list containing `Person` objects in various ways:
 - Sorting without default arguments, meaning the list will be ordered from the shortest person to the tallest person, representing their default order.
 - Sorting in reverse by utilizing the default argument `reverse`.
-- Employing the default argument `key` to enable sorting `Person` objects any way you like, but at least according to various options which are mentioned in the grading criteria.
+- Employing the default argument `key` to enable sorting `Person` objects any way you like, but at least according to various options that are mentioned in the grading criteria.
 - Creating a combination of `reverse` and `key` default arguments for sorting.
 
 The script should print the list at least sorted in all possible ways listed in the grading specification. Make sure when you print the list, sorted in a certain way, that it is clear which way it is sorted. For example, you first print: `Below you can find the list sorted on weight:` and then you print the list sorted on weight. This script can either be added in `merge_sort.py` below all classes and functions or you can use a `main` function and add `if __name__ == "__main__": main()` at the bottom of the file.
@@ -169,7 +169,7 @@ In `load_names.py` you will write code to load the file `names.txt`. The functio
 
 ## Dry code (Don't repeat yourself)
 
-During this assignment it is important to write *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborated than it sounds. For example, if you have an `if` `else` control-flow and both contain a few lines of similar code then it is not *dry*. This could be solved by removing the similar code outside the `if` `else` control-flow or write a function that execute the same code and call in both statements the new function. Old code could look like this:
+During this assignment, it is important to write *dry* code. This means that everything should only be defined once and no code should be repeated. This is more elaborate than it sounds. For example, if you have an `if` `else` control flow and both contain a few lines of similar code then it is not *dry*. This could be solved by removing the similar code outside the `if` `else` control flow or by writing a function that executes the same code and calls in both statements the new function. Old code could look like this:
 ```python
 if check_first_name(name):
    name = name.lower()
@@ -190,7 +190,7 @@ else:
 
 There are a few reasons why *dry* coding is important. Not only does it make your code shorter, often more readable, and it can save you time writing the same code over and over. Maybe the most important reason is your code is easier to update and to bugfix. Let's go through a scenario together. You find a bug in the code example above. This bug consists of a first name that has whitespace around it and you do not want extra spaces in your print statement. Now, you update your code by adding `.strip()` at line 2. This solves your problem. Two months later a co-worker comes to you saying your code prints extra white spaces. you are confused because you solved the problem. However, you only changed it for first names and not for last names. This is very common mistake in large code basis. However, if you had made the code *dry* this would not have happened because there is only one place where you reformat `name`.
 
-So, what you should learn about the example above is that *dry* coding not only means not typing the same line of code somewhere, but that it means not coding the same functionality twice. To demonstrate this let's go over the code snipped down below. This is only shows a small part of the class.
+So, what you should learn about the example above is that *dry* coding not only means not typing the same line of code somewhere but that it means not coding the same functionality twice. To demonstrate this let's go over the code snipped down below. This only shows a small part of the class.
 
 ```python
 class Binary():
@@ -209,7 +209,7 @@ class Binary():
       return int(tmp, 2)  # This converts a string to int with base two i.e. binary
 ```
 
-The code above implement to methods `to_int` and the magic method `__int__`. This makes it possible to transform/cast an object of class `Binary` in two ways: `int(binary_object)` and `binary_object.to_int()`. However, similar to the previous example there are two place with the same functionality (and same code). To solve this we can make use of the magic method by altering the code as follows:
+The code above implements two methods `to_int` and the magic method `__int__`. This makes it possible to transform/cast an object of class `Binary` in two ways: `int(binary_object)` and `binary_object.to_int()`. However, similar to the previous example there are two places with the same functionality (and same code). To solve this we can make use of the magic method by altering the code as follows:
 
 ```python
 class Binary():
@@ -228,16 +228,18 @@ class Binary():
 
 ## Grading
 
+The template for this assignment consists of 3 files: `merge_sort.py`, `person.py`, and `load_names.py`. It is mandatory to use these files and also it is highly recommended. In the files, you can also find more information on what to do where. You are allowed to add more functions. You are not allowed to change the code that is provided. So, you can not change the `init` of the `Person` class. Also, you need to use both functions for merge sort. Also, you need to use the create_persons_list for the tests.
+
 *Implementing the basic functionality will give you 5.5 points out of 10.*
-**Basic functionality**, this can be split in the following items:
-- Merge sort should be implemented recursive. (2 points)
-- Default merge sort should be done by comparing objects e.g. `Person` objects (not attributes of objects or the return of methods). When objects are equal the original order should be preserved. `Person` class objects should be compared/sorted on default on their height. (1 point)
+**Basic functionality**, this can be split into the following items:
+- Merge sort should be implemented recursively. (2 points)
+- Default merge sort should be done by comparing objects e.g. `Person` objects (not attributes of objects or the return of methods). When objects are equal the original order should be preserved. `Person` class objects should be compared/sorted by default on their height. (1 point)
 - You should be able to reverse sort using the default argument `reverse`. (1 point)
 - When a `Person` class object is printed it should show you the information of the object in a readable way. Thus, it should mention the name, weight, height, and age. (0.5 points)
-- The file `names.txt` should be loaded in correctly. (0.5 points)
+- The file `names.txt` should be loaded incorrectly. (0.5 points)
 - Include comments to explain the difficult parts of your code. It is generally good practice to write a comment for each code block. (0.5 points)
 
-*The remaining 4.5 points can only be obtained after completing the basic functionality. The following additional functionality will get you the additional 4.5 points, the grade is capped at a 10. Note, that completing the basic functionality does not mean flawless implementation. If you make a mistake in the basic functionality, you can still get additional points.*
+*The remaining 4.5 points can only be obtained after completing the basic functionality. The following additional functionality will get you an additional 4.5 points, the grade is capped at a 10. Note, that completing the basic functionality does not mean flawless implementation. If you make a mistake in the basic functionality, you can still get additional points.*
 
 **Sorting with key arguments**: You should sort the list using the key argument in merge sort based on the following characteristics of the `Person` class, as a reminder you are not allowed to use `Person` class attributes outside the `Person` class itself: (1 point)
 - age
@@ -256,7 +258,7 @@ class Binary():
 
 **Combining key and reverse** You should be able to reverse sort in combination with any key argument. (1 point)
 
-**Dry code**: For example, each functionality in you class should only be implemented once. Another example would be, there should only be one sorting algorithm. The two arguments `key` and `reverse` can be handled in a separate helper function. (1.5 points)
+**Dry code**: For example, each functionality in your class should only be implemented once. Another example would be, there should only be one sorting algorithm. The two arguments `key` and `reverse` can be handled in a separate helper function. (1.5 points)
 
 ## Tips
 
@@ -264,7 +266,7 @@ This assignment is structured such that everything is connected and you only hav
 
 When working on `load_names.py` think about how to correctly open and close a file or load in files using other libraries.
 
-Another tip is that coding is not only using control flows like `if elif else` or `while` loops but also using logic. Sometimes, you can achieve the same result using logic instead of an `if else`. For example, an argument that reverses the functionality of a function can be implemented in two ways. In the code below `exclude` change the functionality of `get_items` instead of returning a new list that only consists of `items` it returns a list without `items`. In the first code block `if else` is used. In the second codeblock logic is used.
+Another tip is that coding is not only using control flows like `if elif else` or `while` loops but also using logic. Sometimes, you can achieve the same result using logic instead of an `if else`. For example, an argument that reverses the functionality of a function can be implemented in two ways. In the code below `exclude` changes the functionality of `get_items` instead of returning a new list that only consists of `items` it returns a list without `items`. In the first code block `if else` is used. In the second codeblock logic is used.
 
 ```python
 def get_items(lst, items, exclude=False):
@@ -281,7 +283,7 @@ def get_items(lst, items, exclude=False):
    return new_lst
 ```
 
-This is not very readable code nor *dry* code. With a bit of logic we can remove the `if else` and make the code *dry*.
+This is not very readable code nor *dry* code. With a bit of logic, we can remove the `if else` and make the code *dry*.
 
 ```python
 def get_items(lst, items, exclude=False):
