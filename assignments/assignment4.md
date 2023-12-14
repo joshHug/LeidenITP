@@ -236,7 +236,7 @@ The template for this assignment consists of 3 files: `merge_sort.py`, `person.p
 - Default merge sort should be done by comparing objects e.g. `Person` objects (not attributes of objects or the return of methods). When objects are equal the original order should be preserved. `Person` class objects should be compared/sorted by default on their height. (1 point)
 - You should be able to reverse sort using the default argument `reverse`. (1 point)
 - When a `Person` class object is printed it should show you the information of the object in a readable way. Thus, it should mention the name, weight, height, and age. (0.5 points)
-- The file `names.txt` should be loaded incorrectly. (0.5 points)
+- The file `names.txt` should be loaded in correctly. (0.5 points)
 - Include comments to explain the difficult parts of your code. It is generally good practice to write a comment for each code block. (0.5 points)
 
 *The remaining 4.5 points can only be obtained after completing the basic functionality. The following additional functionality will get you an additional 4.5 points, the grade is capped at a 10. Note, that completing the basic functionality does not mean flawless implementation. If you make a mistake in the basic functionality, you can still get additional points.*
