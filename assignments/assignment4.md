@@ -21,7 +21,7 @@ grand_parent: Leiden ITP
 
 # Assignment 4: Recursive Merge Sort & Creating Classes
 
-**Deadline: 22 December 2023 23:59**
+**Deadline: 5 January 2024 23:59**
 
 Hand in your assignment via [Brightspace](https://brightspace.universiteitleiden.nl/d2l/home/240322). See the "Delivery" section for instructions.
 
